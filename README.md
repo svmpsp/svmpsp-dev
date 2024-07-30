@@ -2,6 +2,16 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Usage
+
+```bash
+# Build application
+pnpm build
+
+# Copy output to server (TODO: use rsync)
+scp -r .output/  134.209.249.247:/home/svmpsp
+```
+
 ## Setup
 
 Make sure to install the dependencies:
