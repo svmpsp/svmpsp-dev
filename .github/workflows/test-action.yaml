@@ -1,6 +1,6 @@
 name: Test action
 run-name: Test run name
-on: [push]
+on: workflow_dispatch
 permissions:
   contents: read
   packages: write
