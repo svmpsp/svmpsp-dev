@@ -3,6 +3,7 @@ run-name: Test run name
 on: [push]
 permissions:
   contents: read
+  packages: write
 jobs:
   simple_job:
     name: Test job
@@ -19,6 +20,12 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: svmpsp-dev
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
