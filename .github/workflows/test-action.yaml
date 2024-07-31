@@ -1,16 +1,16 @@
 name: Test action
-on:
-  push
+run-name: Test run name
+on: [push]
 permissions:
   contents: read
 jobs:
   simple_job:
     name: Test job
     runs-on: ubuntu-latest
-  steps:
-    - name: Checkout repo contents
-      uses: actions/checkout@v4
-    - name: Test commands
-      run: |
-        uname -a
-        ls -lh
+    steps:
+      - name: Checkout repo contents
+        uses: actions/checkout@v4
+      - name: Test commands
+        run: |
+          uname -a
+          ls -lh
