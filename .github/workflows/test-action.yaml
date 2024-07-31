@@ -15,11 +15,6 @@ jobs:
         run: |
           uname -a
           ls -lh
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: svmpsp-dev
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -30,4 +25,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ghcr.io/svmpsp-dev:latest
