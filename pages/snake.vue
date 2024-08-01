@@ -1,15 +1,18 @@
 <script setup lang="ts">
-// import { state } from './lib/state'
 const state = useDefaultStore()
-
+const { $viewport } = useNuxtApp()
 </script>
 
 <template>
-  <div id="main-contents">
-    <TitleBanner />
-    <GameCanvas :key="state.stageSize" />
-    <GameSettings />
-  </div>
+    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="main-contents">
+      <TitleBanner />
+      <GameCanvas :key="state.stageSize" />
+      <GameSettings />
+    </div>
+    <div v-else id="small-screen-box">
+      <div>Ti amo polpetta! ❤️🐙</div>
+    </div>
+
 </template>
 
 <style>
@@ -20,18 +23,25 @@ body {
   background-color: #fff;
 }
 
-#app {
+#small-screen-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100vh;
-  margin: 0;
-  padding: 0;
+  font-weight: bold;
+  font-size: 2rem;
+  color: darkslategrey;
+  background-color: white;
+  text-align: center;
 }
 
 #main-contents {
+  width: 900px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0 17%;
+  margin: 0 auto;
   padding: 0;
 }
 

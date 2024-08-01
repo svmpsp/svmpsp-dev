@@ -6,11 +6,6 @@ const state = useDefaultStore()
   <div class="olive-win noto-sans-regular" id="settings-bar">
     <fieldset id="main-settings">
       <legend>Game Settings</legend>
-      <fieldset>
-        <legend>Key bindings</legend>
-        <div><b>R</b> - Reset game</div>
-        <div><b>Z</b> - Pause/Unpause game</div>
-      </fieldset>
       <fieldset id="board-size">
         <legend>Board size</legend>
         <div>
@@ -45,6 +40,11 @@ const state = useDefaultStore()
           <label for="small">Large</label>
         </div>
       </fieldset>
+      <fieldset id="key-bindings">
+        <legend>Key bindings</legend>
+        <div><b>R</b> - Reset game</div>
+        <div><b>Z</b> - Pause/Unpause game</div>
+      </fieldset>
     </fieldset>
   </div>
 </template>
@@ -61,13 +61,17 @@ const state = useDefaultStore()
 #board-size {
   display: flex;
   flex-direction: row;
+  height: fit-content;
+}
+
+#key-bindings {
+  height: fit-content;
 }
 
 #main-settings {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #board-size div {

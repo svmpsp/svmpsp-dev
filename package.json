@@ -15,6 +15,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.2",
     "nuxt": "^3.12.4",
+    "nuxt-viewport": "^2.1.5",
     "pinia": "^2.2.0",
     "vue": "latest"
   },
