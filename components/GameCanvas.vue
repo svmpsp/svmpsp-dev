@@ -24,12 +24,12 @@ class CanvasManager {
         numCols.value = 15
         break
       case 'medium':
-        numRows.value = 20
-        numCols.value = 32
+        numRows.value = 22
+        numCols.value = 28
         break
       case 'large':
-        numRows.value = 32
-        numCols.value = 32
+        numRows.value = 30
+        numCols.value = 33
         break
       default:
         throw new Error(`invalid canvas size '${state.stageSize}'`)
@@ -89,10 +89,12 @@ function updateCanvas(
 </script>
 
 <template>
-  <div id="stage-container">
+  <div id="bouncer">
+    <div id="stage-container">
     <canvas id="stage" ref="canvasElement" :key="state.stageSize"></canvas>
     <ScoreBoard />
     <SnakeGame :rows="numRows" :cols="numCols" @redraw="updateCanvas" />
+  </div>
   </div>
 </template>
 
@@ -103,6 +105,7 @@ function updateCanvas(
   align-items: center;
   justify-content: space-evenly;
   padding: 1rem 0;
+  min-height: 500px;
 }
 
 #stage {
