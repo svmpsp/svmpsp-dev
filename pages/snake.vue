@@ -10,17 +10,27 @@ const { $viewport } = useNuxtApp()
       <GameSettings />
     </div>
     <div v-else id="small-screen-box">
-      <div>Ti amo polpetta! ❤️🐙</div>
+      <div>This page does not support <br>mobile devices. 🙁</div>
     </div>
 
 </template>
 
 <style>
+:root {
+  --body-bg-color: #fff;
+  --body-bg-gradient-from: #c9dabf;
+  --body-bg-gradient-to: #fff;
+  --mobile-banner-text-color: #5f6f65;
+  --panel-background-color: #9ca986;
+  --panel-settings-border-color: #808d7c;
+}
+
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(#c9dabf, #fff);
-  background-color: #fff;
+  min-width: 100%;
+  background: linear-gradient(var(--body-bg-gradient-from), var(--body-bg-gradient-to));
+  background-color: var(--body-bg-color);
 }
 
 #small-screen-box {
@@ -30,18 +40,19 @@ body {
   width: 100%;
   height: 100vh;
   font-weight: bold;
-  font-size: 2rem;
-  color: darkslategrey;
-  background-color: white;
+  font-size: 1.5rem;
+  color: var(--mobile-banner-text-color);
   text-align: center;
+  position: relative;
+  top: -50px;
 }
 
 #main-contents {
   width: 900px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  min-height: 100vh;
   padding: 0;
 }
 
@@ -62,7 +73,7 @@ body {
 /* Olive window */
 /* palette https://colorhunt.co/palette/c9dabf9ca986808d7c5f6f65 */
 .olive-win {
-  background: #9ca986;
-  border: 0.2rem solid #808d7c;
+  background: var(--panel-background-color);
+  border: 0.2rem solid var(--panel-settings-border-color);
 }
 </style>

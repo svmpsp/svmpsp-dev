@@ -55,17 +55,19 @@ const state = useDefaultStore()
   padding: 0.8rem;
   display: flex;
   text-align: left;
-  height: 100%;
+  height: auto;
 }
 
 #board-size {
   display: flex;
   flex-direction: row;
   height: fit-content;
+  width: fit-content;
 }
 
 #key-bindings {
   height: fit-content;
+  width: fit-content;
 }
 
 #main-settings {
