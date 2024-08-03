@@ -6,40 +6,6 @@ const state = useDefaultStore()
   <div class="olive-win noto-sans-regular" id="settings-bar">
     <fieldset id="main-settings">
       <legend>Game Settings</legend>
-      <fieldset id="board-size">
-        <legend>Board size</legend>
-        <div>
-          <input
-            type="radio"
-            id="small"
-            value="small"
-            name="canvasSize"
-            v-model="state.stageSize"
-            checked
-          />
-          <label for="small">Small</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="medium"
-            value="medium"
-            name="canvasSize"
-            v-model="state.stageSize"
-          />
-          <label for="small">Medium</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="large"
-            value="large"
-            name="canvasSize"
-            v-model="state.stageSize"
-          />
-          <label for="small">Large</label>
-        </div>
-      </fieldset>
       <fieldset id="key-bindings">
         <legend>Key bindings</legend>
         <div><b>R</b> - Reset game</div>

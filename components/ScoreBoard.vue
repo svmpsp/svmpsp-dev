@@ -5,9 +5,9 @@ const state = useDefaultStore()
 
 <template>
   <div id="score-board">
-    <h2 class="noto-sans-regular">Score: {{ state.gameScore }}</h2>
-    <h2 class="noto-sans-regular">Level: {{ state.gameSpeed + 1 }}</h2>
-    <h2 class="noto-sans-regular">High score: {{ state.highScore }}</h2>
+    <h2 class="noto-sans-regular score-item">Score: {{ state.gameScore }}</h2>
+    <h2 class="noto-sans-regular score-item">Level: {{ state.gameSpeed + 1 }}</h2>
+    <h2 class="noto-sans-regular score-item">High score: {{ state.highScore }}</h2>
   </div>
 </template>
 
@@ -18,12 +18,13 @@ const state = useDefaultStore()
   justify-content: space-between;
 }
 
-h2 {
+.score-item {
   font-size: 1.6rem;
   font-weight: bold;
-  text-align: center;
+  text-align: rleft;
   color: white;
   background-color: rgb(42, 42, 42);
   padding: 0.5rem;
+  min-width: 225px;
 }
 </style>

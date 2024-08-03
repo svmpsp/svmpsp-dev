@@ -17,23 +17,8 @@ class CanvasManager {
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas
     this.context2d = canvas.getContext('2d') as CanvasRenderingContext2D
-
-    switch (state.stageSize) {
-      case 'small':
-        numRows.value = 15
-        numCols.value = 15
-        break
-      case 'medium':
-        numRows.value = 22
-        numCols.value = 28
-        break
-      case 'large':
-        numRows.value = 30
-        numCols.value = 33
-        break
-      default:
-        throw new Error(`invalid canvas size '${state.stageSize}'`)
-    }
+    numRows.value = 20
+    numCols.value = 28
     this.canvas.height = numRows.value * this.tileSize
     this.canvas.width = numCols.value * this.tileSize
   }
@@ -89,12 +74,10 @@ function updateCanvas(
 </script>
 
 <template>
-  <div id="bouncer">
-    <div id="stage-container">
+  <div id="stage-container">
     <canvas id="stage" ref="canvasElement" :key="state.stageSize"></canvas>
     <ScoreBoard />
     <SnakeGame :rows="numRows" :cols="numCols" @redraw="updateCanvas" />
-  </div>
   </div>
 </template>
 
@@ -103,9 +86,8 @@ function updateCanvas(
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 1rem 0;
-  min-height: 500px;
+  justify-content: space-between;
+  padding: 3rem 0;
 }
 
 #stage {

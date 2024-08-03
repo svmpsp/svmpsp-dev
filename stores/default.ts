@@ -4,11 +4,6 @@ export const useDefaultStore = defineStore('default', () => {
   const gameScore = ref(0)
   const gameSpeed = ref(0)
   const highScore = ref(0)
-  const stageSize = ref('small')
-
-  function setSize(newSize: 'small' | 'medium' | 'large') {
-    stageSize.value = newSize
-  }
 
   function incrementScore() {
     gameScore.value += 100
@@ -36,8 +31,6 @@ export const useDefaultStore = defineStore('default', () => {
     gameScore,
     gameSpeed,
     highScore,
-    stageSize,
-    setSize,
     incrementScore,
     incrementSpeed,
     resetScore,
