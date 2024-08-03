@@ -87,10 +87,12 @@ function updateCanvas(
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 #stage {
+  height: 300px;
+  width: 420px;
   background-color: lightgrey;
   border: 0.2rem solid #808d7c;
 }

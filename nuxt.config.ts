@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       'Noto+Sans': [400],
-      'Lobster': [400],
+      'Lobster': [300, 400],
     }
   },
 })

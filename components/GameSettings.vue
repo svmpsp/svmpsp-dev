@@ -17,7 +17,7 @@ const state = useDefaultStore()
 
 <style scoped>
 #settings-bar {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding: 0.8rem;
   display: flex;
   text-align: left;

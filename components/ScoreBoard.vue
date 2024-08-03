@@ -19,7 +19,7 @@ const state = useDefaultStore()
 }
 
 .score-item {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-align: rleft;
   color: white;

@@ -6,7 +6,7 @@ const { $viewport } = useNuxtApp()
 <template>
     <div v-if="$viewport.isGreaterOrEquals('tablet')" id="main-contents">
       <TitleBanner />
-      <GameCanvas :key="state.stageSize" />
+      <GameCanvas />
       <GameSettings />
     </div>
     <div v-else id="small-screen-box">
@@ -58,7 +58,7 @@ body {
 
 .lobster-regular {
   font-family: 'Lobster', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 
