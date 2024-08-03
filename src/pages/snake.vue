@@ -1,18 +1,23 @@
 <script setup lang="ts">
-const state = useDefaultStore()
-const { $viewport } = useNuxtApp()
+import SideBanner from "../components/SideBanner.vue";
+
+const state = useDefaultStore();
+const { $viewport } = useNuxtApp();
 </script>
 
 <template>
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="main-contents">
+  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="main-and-banners">
+    <SideBanner />
+    <div id="main-contents">
       <TitleBanner />
       <GameCanvas />
       <GameSettings />
     </div>
-    <div v-else id="small-screen-box">
-      <div>This page does not support <br>mobile devices. 🙁</div>
-    </div>
-
+    <SideBanner />
+  </div>
+  <div v-else id="small-screen-box">
+    <div>This page does not support <br />mobile devices. 🙁</div>
+  </div>
 </template>
 
 <style>
@@ -29,7 +34,10 @@ body {
   padding: 0;
   margin: 0;
   min-width: 100%;
-  background: linear-gradient(var(--body-bg-gradient-from), var(--body-bg-gradient-to));
+  background: linear-gradient(
+    var(--body-bg-gradient-from),
+    var(--body-bg-gradient-to)
+  );
   background-color: var(--body-bg-color);
 }
 
@@ -47,6 +55,12 @@ body {
   top: -50px;
 }
 
+#main-and-banners {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 #main-contents {
   width: 700px;
   display: flex;
@@ -57,17 +71,17 @@ body {
 }
 
 .lobster-regular {
-  font-family: 'Lobster', sans-serif;
+  font-family: "Lobster", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 .noto-sans-regular {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: 'wdth' 100;
+  font-variation-settings: "wdth" 100;
 }
 
 /* Olive window */

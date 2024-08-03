@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const state = useDefaultStore()
+const state = useDefaultStore();
 </script>
 
 <template>

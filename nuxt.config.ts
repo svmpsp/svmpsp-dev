@@ -1,14 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: "2024-04-03",
+  srcDir: "src/",
   devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/google-fonts',
-    '@pinia/nuxt',
-    'nuxt-viewport',
-  ],
+  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "nuxt-viewport"],
   nitro: {
-    preset: 'node-server'
+    preset: "node-server",
   },
   viewport: {
     breakpoints: {
@@ -16,12 +13,12 @@ export default defineNuxtConfig({
       tablet: 900,
       laptop: 1000,
       desktop: Infinity,
-    }
+    },
   },
   googleFonts: {
     families: {
-      'Noto+Sans': [400],
-      'Lobster': [300, 400],
-    }
+      "Noto+Sans": [400],
+      Lobster: [300, 400],
+    },
   },
-})
+});
