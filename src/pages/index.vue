@@ -1,27 +1,37 @@
 <template>
-  <div>
+  <div id="index-root">
+    <Header />
     <div class="main-contents">
-      <h1>Sivam Pasupathipillai, Ph.D.</h1>
-      <hr />
-      <h2>a personal website</h2>
       <AppGallery />
     </div>
   </div>
 </template>
 
 <style>
-/* https://colorhunt.co/palette/def9c49cdba650b498468585 */
+/* https://colorhunt.co/palette/053b50176b8764ccc5eeeeee */
 :root {
-  --app-card-bg-color: #468585;
-  --app-card-border-color: #50B498;
+  --global-color-60: #EEEEEE;
+  --global-color-30: #053B50;
+  --global-color-10: #64CCC5;
+  --global-color-10-contrast: #176B87;
+
+  --app-card-bg-color: var(--global-color-30);
+  --app-card-border-color: var(--global-color-10-contrast);
   --app-card-color: #DEF9C4;
-  --app-card-font-size: 1rem;
-  --app-card-hover-border-color: #9CDBA6;
+  --app-card-font-size: 1.3rem;
+  --app-card-hover-border-color: var(--global-color-10);
   --app-card-shadow-color: grey;
   --general-box-padding: 1.5rem;
+  --header-font-size: 2rem;
   --main-contents-bg-color: #DEF9C4;
   --subtitle-color: #50B498;
   --title-color: #468585;
+  --body-bg-color: #fff;
+  --body-bg-gradient-from: #c9dabf;
+  --body-bg-gradient-to: #fff;
+  --mobile-banner-text-color: #5f6f65;
+  --panel-background-color: #9ca986;
+  --panel-settings-border-color: #808d7c;
 }
 
 body {
@@ -29,28 +39,16 @@ body {
   padding: 0;
 }
 
+#index-root {
+  color: var(--global-color-30);
+  background-color: var(--global-color-60);
+}
+
 .main-contents {
-  background-color: var(--main-contents-bg-color);
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   min-height: 100vh;
   width: 700px;
-}
-
-.main-contents h1,
-.main-contents h2 {
-  margin: 0;
-}
-.main-contents h1 {
-  color: var(--title-color);
-  padding: var(--general-box-padding);
-  padding-bottom: 0;
-}
-
-.main-contents h2 {
-  color: var(--subtitle-color);
-  padding-right: var(--general-box-padding);
-  text-align: right;
 }
 </style>

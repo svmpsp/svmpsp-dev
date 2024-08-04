@@ -3,11 +3,11 @@
 
 <template>
   <div id="app-container">
-    <a href="/snake">
+    <NuxtLink to="/snake">
       <div class="app-card">
         <div>SNAKE</div>
       </div>
-    </a>
+    </NuxtLink>
     <div class="app-card">
       <div>PYTHON</div>
     </div>
@@ -21,7 +21,12 @@
 </template>
 
 <style>
-#app-container a {
+
+#app-container a,
+#app-container a:visited,
+#app-container a:hover,
+#app-container a:active {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -36,22 +41,25 @@
 
 .app-card {
   align-items: center;
+  color: var(--global-color-60);
   background-color: var(--app-card-bg-color);
-  border: 0.15rem solid var(--app-card-border-color);
+  border: 5px solid var(--app-card-border-color);
   border-radius: 1rem;
-  box-shadow: 5px 5px 5px var(--app-card-shadow-color);
-  color: var(--app-card-color);
+  box-shadow: 3px 3px 3px var(--app-card-shadow-color);
   display: flex;
   font-size: var(--app-card-font-size);
-  font-style: bold;
+  font-weight: bold;
   height: 200px;
   justify-content: space-around;
+  text-align: center;
   width: 200px;
 }
 
 .app-card:hover {
-  border: 0.15rem solid var(--app-card-hover-border-color);
-  box-shadow: 5px 5px 5px grey;
+  color: var(--app-card-hover-border-color);
+  background-color: var(--global-color-10-contrast);
+  border: 5px solid var(--app-card-hover-border-color);
+  box-shadow: 5px 5px 5px var(--app-card-shadow-color);
 }
 
 </style>
