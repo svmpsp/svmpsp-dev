@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: "Home - svmpsp.dev",
+})
+</script>
+
 <template>
   <div class="main-contents">
     <AppGallery />
@@ -41,9 +47,6 @@ body {
   background-color: var(--global-color-60);
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  /* min-height: 100vh; */
-  width: 700px;
 }
 
 .lobster-regular {

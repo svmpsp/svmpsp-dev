@@ -3,11 +3,9 @@
 
 <template>
   <div id="app-container" class="merriweather-regular">
-    <NuxtLink to="/snake">
-      <div class="app-card">
-        <div>SNAKE</div>
-      </div>
-    </NuxtLink>
+    <div class="app-card">
+      <div>SNAKE</div>
+    </div>
     <div class="app-card">
       <div>PYTHON</div>
     </div>
@@ -31,12 +29,14 @@
 }
 
 #app-container {
+  margin: 0 auto;
   column-gap: var(--general-box-padding);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   padding: var(--general-box-padding);
   row-gap: var(--general-box-padding);
+  width: fit-content;
 }
 
 .app-card {

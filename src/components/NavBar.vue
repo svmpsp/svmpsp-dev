@@ -1,41 +1,34 @@
 <script setup lang="ts">
 const route = useRoute()
-console.log("stupid:", route.name)
-const navBarItems = ref(null)
+const routeRef = ref(route.path)
 
-// TODO: fix onMounted doesn't run
-// on page swaps
-
-onMounted(()=>{
-  if (navBarItems.value && route.name) {
-    let activeItemId: string
-    switch (route.name) {
-      case "index":
-        activeItemId = "navbar-home"
-        break;
-      case "about":
-        activeItemId = "navbar-about"
-        break;
-      case "blog":
-        activeItemId = "navbar-blog"
-        break;
-      case "contacts":
-        activeItemId = "navbar-contacts"
-        break;
-      case "courses":
-        activeItemId = "navbar-courses"
-        break;
-
-      default:
-        activeItemId = "invalid"
-    }
-    const navItem = document.getElementById(activeItemId) as HTMLDivElement
-    const documentStyles = getComputedStyle(document.documentElement)
-    navItem.style.color = documentStyles.getPropertyValue("--global-color-10")
+// FIXME: route does not update active item
+watch(routeRef, () => {
+  const activeItemId = getActiveIdFromRoute(routeRef.value)
+  console.log("active is:", activeItemId)
+  const documentStyles = getComputedStyle(document.documentElement)
+  const activeNavElem = document.getElementById(activeItemId)
+  if (activeNavElem) {
+    activeNavElem.style.color = documentStyles.getPropertyValue("--global-color-10")
   }
-
 })
 
+function getActiveIdFromRoute(route: string): string {
+  switch (route) {
+    case "index":
+      return "navbar-home"
+    case "about":
+      return "navbar-about"
+    case "blog":
+      return "navbar-blog"
+    case "contacts":
+      return "navbar-contacts"
+    case "courses":
+      return "navbar-courses"
+    default:
+      return "invalid"
+  }
+}
 </script>
 
 <template>
