@@ -56,7 +56,6 @@
 }
 
 .app-card:hover {
-  color: var(--app-card-hover-border-color);
   background-color: var(--global-color-10-contrast);
   border: 5px solid var(--app-card-hover-border-color);
   box-shadow: 5px 5px 5px var(--app-card-shadow-color);

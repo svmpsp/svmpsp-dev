@@ -75,7 +75,7 @@ function updateCanvas(
 
 <template>
   <div id="stage-container">
-    <canvas id="stage" ref="canvasElement" :key="state.stageSize"></canvas>
+    <canvas id="stage" ref="canvasElement"></canvas>
     <ScoreBoard />
     <SnakeGame :rows="numRows" :cols="numCols" @redraw="updateCanvas" />
   </div>
