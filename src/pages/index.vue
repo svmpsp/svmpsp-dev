@@ -1,9 +1,6 @@
 <template>
-  <div id="index-root">
-    <Header />
-    <div class="main-contents">
-      <AppGallery />
-    </div>
+  <div class="main-contents">
+    <AppGallery />
   </div>
 </template>
 
@@ -39,16 +36,27 @@ body {
   padding: 0;
 }
 
-#index-root {
+.main-contents {
   color: var(--global-color-30);
   background-color: var(--global-color-60);
-}
-
-.main-contents {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 700px;
+}
+
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.noto-sans-regular {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 </style>

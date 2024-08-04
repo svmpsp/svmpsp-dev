@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div id="app-container">
+  <div id="app-container" class="merriweather-regular">
     <NuxtLink to="/snake">
       <div class="app-card">
         <div>SNAKE</div>

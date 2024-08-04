@@ -1,4 +1,4 @@
+<script setup lang="ts"></script>
 <template>
-  <NuxtPage />
-  <h1>Sivam Pasupathipillai</h1>
+  <div>About</div>
 </template>
