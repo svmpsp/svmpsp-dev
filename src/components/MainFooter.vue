@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const year = new Date().getFullYear()
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -17,7 +17,8 @@ const year = new Date().getFullYear()
   background-color: var(--global-color-30);
   color: var(--global-color-60);
   text-align: center;
-  border-bottom: var(--header-border-width) solid var(--global-color-10-contrast);
+  border-bottom: var(--header-border-width) solid
+    var(--global-color-10-contrast);
 
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
@@ -26,6 +27,5 @@ const year = new Date().getFullYear()
 
   font-size: var(--footer-font-size);
   padding: 1.5rem;
-
 }
 </style>

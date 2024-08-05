@@ -1,23 +1,20 @@
 <script setup lang="ts">
-const apps = [
-  "Snake",
-  "Python",
-  "Machine Learning",
-  "Lorem Ipsum",
-]
+const apps = ["Snake", "Python", "Machine Learning", "Lorem Ipsum"];
 
+// TODO: add AppCard.vue component
 </script>
 
 <template>
   <div id="app-container" class="merriweather-regular">
     <div class="app-card" v-for="app in apps">
-      <div>{{ app }}</div>
+      <NuxtLink to="/snake">
+        <div>{{ app }}</div>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <style>
-
 #app-container a,
 #app-container a:visited,
 #app-container a:hover,
@@ -34,7 +31,6 @@ const apps = [
   grid-template-rows: 1fr 1fr;
   padding: var(--general-box-padding);
   row-gap: var(--general-box-padding);
-  width: fit-content;
 }
 
 .app-card {
@@ -42,7 +38,7 @@ const apps = [
   color: var(--global-color-60);
   background-color: var(--app-card-bg-color);
   border: 5px solid var(--app-card-border-color);
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   box-shadow: 3px 3px 3px var(--app-card-shadow-color);
   display: flex;
   font-size: var(--app-card-font-size);
@@ -57,5 +53,4 @@ const apps = [
   border: 5px solid var(--app-card-hover-border-color);
   box-shadow: 5px 5px 5px var(--app-card-shadow-color);
 }
-
 </style>

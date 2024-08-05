@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "format": "pnpm prettier --write .",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -16,6 +17,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@pinia/nuxt": "^0.5.2",
     "nuxt": "^3.12.4",
+    "nuxt-app": "link:",
     "nuxt-viewport": "^2.1.5",
     "pinia": "^2.2.0",
     "vue": "latest"

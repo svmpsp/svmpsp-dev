@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   title: "Home - svmpsp.dev",
-})
+});
 </script>
 
 <template>
@@ -13,7 +13,6 @@ useHead({
 </template>
 
 <style>
-
 body {
   background-color: var(--global-color-60);
   color: var(--global-color-30);

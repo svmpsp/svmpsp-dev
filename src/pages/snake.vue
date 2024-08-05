@@ -6,12 +6,10 @@ const { $viewport } = useNuxtApp();
 </script>
 
 <template>
-  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="main-and-banners">
-    <div id="main-contents">
-      <TitleBanner />
-      <GameCanvas />
-      <GameSettings />
-    </div>
+  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="snake-main-contents">
+    <TitleBanner />
+    <GameCanvas />
+    <GameSettings />
   </div>
   <div v-else id="small-screen-box">
     <div>This page does not support <br />mobile devices. 🙁</div>
@@ -33,20 +31,7 @@ const { $viewport } = useNuxtApp();
   top: -50px;
 }
 
-#main-and-banners {
-  min-width: 100%;
-  background: linear-gradient(
-    var(--body-bg-gradient-from),
-    var(--body-bg-gradient-to)
-  );
-  background-color: var(--body-bg-color);
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#main-contents {
+#snake-main-contents {
   width: 700px;
   display: flex;
   flex-direction: column;

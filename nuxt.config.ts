@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     preset: "node-server",
   },
   viewport: {
+    defaultBreakpoints: {},
     breakpoints: {
       mobile: 450,
       tablet: 900,
@@ -17,8 +18,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      "Merriweather": [400],
-      "Karla": [400],
+      Merriweather: [400],
+      Karla: [400],
     },
   },
 });
