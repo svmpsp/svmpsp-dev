@@ -1,20 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
-const routeRef = ref(route.path)
 
-// FIXME: route does not update active item
-watch(routeRef, () => {
-  const activeItemId = getActiveIdFromRoute(routeRef.value)
-  console.log("active is:", activeItemId)
-  const documentStyles = getComputedStyle(document.documentElement)
-  const activeNavElem = document.getElementById(activeItemId)
-  if (activeNavElem) {
-    activeNavElem.style.color = documentStyles.getPropertyValue("--global-color-10")
-  }
-})
-
-function getActiveIdFromRoute(route: string): string {
-  switch (route) {
+function getActiveRouteId(): string {
+  switch (route.name) {
     case "index":
       return "navbar-home"
     case "about":
@@ -29,25 +17,37 @@ function getActiveIdFromRoute(route: string): string {
       return "invalid"
   }
 }
+
+const navItems = [
+  {id: "navbar-home", title: "Home", to: "/", activeClass: "not-active"},
+  {id: "navbar-about", title: "About", to: "/about", activeClass: "not-active"},
+  {id: "navbar-courses", title: "Courses", to: "/courses", activeClass: "not-active"},
+  {id: "navbar-blog", title: "Blog", to: "/blog", activeClass: "not-active"},
+  {id: "navbar-contacts", title: "Contacts", to: "/contacts", activeClass: "not-active"},
+]
+
+function setActiveNavItem() {
+  const activeRouteId = getActiveRouteId()
+  for (const item of navItems) {
+    if (item.id === activeRouteId ) {
+      item["activeClass"] = "is-active"
+    }
+    else {
+      item["activeClass"] = "not-active"
+    }
+  }
+
+}
+setActiveNavItem()
+
+watch(() => route.name, setActiveNavItem)
 </script>
 
 <template>
   <div id="navbar-box">
-    <div id="navbar-items" ref="navBarItems">
-      <NuxtLink to="/">
-        <div class="navbar-item" id="navbar-home">Home</div>
-      </NuxtLink>
-      <NuxtLink to="/about">
-        <div class="navbar-item" id="navbar-about">About</div>
-      </NuxtLink>
-      <NuxtLink to="/courses">
-        <div class="navbar-item" id="navbar-courses">Courses</div>
-      </NuxtLink>
-      <NuxtLink to="/blog">
-        <div class="navbar-item" id="navbar-blog">Blog</div>
-      </NuxtLink>
-      <NuxtLink to="/contacts">
-        <div class="navbar-item" id="navbar-contacts">Contacts</div>
+    <div id="navbar-items" ref="navBarItems" :key="route.name">
+      <NuxtLink v-for="item in navItems" :to="item.to">
+        <div class="navbar-item" :class="item.activeClass" :key="item.id">{{ item.title}}</div>
       </NuxtLink>
     </div>
   </div>
@@ -72,7 +72,8 @@ function getActiveIdFromRoute(route: string): string {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 1.6rem;
+  font-size: var(--navbar-item-font-size);
+  margin: 0;
 }
 
 .navbar-item {
@@ -80,8 +81,12 @@ function getActiveIdFromRoute(route: string): string {
   border-top-left-radius: 1.3rem;
   border-top-right-radius: 1.3rem;
 }
+.navbar-item.is-active {
+  color: var(--global-color-10);
+}
 
 .navbar-item:hover {
+  color: var(--global-color-60);
   background-color: var(--global-color-10-contrast);
 }
 

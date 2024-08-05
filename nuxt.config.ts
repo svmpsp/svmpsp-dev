@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     },
   },
   googleFonts: {
-    families: {},
+    families: {
+      "Merriweather": [400],
+      "Karla": [400],
+    },
   },
 });

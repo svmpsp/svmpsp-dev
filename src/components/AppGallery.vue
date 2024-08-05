@@ -1,19 +1,17 @@
 <script setup lang="ts">
+const apps = [
+  "Snake",
+  "Python",
+  "Machine Learning",
+  "Lorem Ipsum",
+]
+
 </script>
 
 <template>
   <div id="app-container" class="merriweather-regular">
-    <div class="app-card">
-      <div>SNAKE</div>
-    </div>
-    <div class="app-card">
-      <div>PYTHON</div>
-    </div>
-    <div class="app-card">
-      <div>MACHINE LEARNING</div>
-    </div>
-    <div class="app-card">
-      <div>LOREM IPSUM</div>
+    <div class="app-card" v-for="app in apps">
+      <div>{{ app }}</div>
     </div>
   </div>
 </template>
@@ -48,7 +46,6 @@
   box-shadow: 3px 3px 3px var(--app-card-shadow-color);
   display: flex;
   font-size: var(--app-card-font-size);
-  font-weight: bold;
   height: 200px;
   justify-content: space-around;
   text-align: center;

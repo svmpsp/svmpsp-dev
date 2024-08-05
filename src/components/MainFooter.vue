@@ -1,18 +1,22 @@
+<script setup lang="ts">
+const year = new Date().getFullYear()
+</script>
+
 <template>
-  <div id="header-bar">
+  <div id="footer-bar">
     <div class="margins">
-      <div id="logo">Sivam Pasupathipillai - svmpsp.dev</div>
-      <NavBar />
+      <div>Made in Italy with ❤️</div>
+      <br />
+      <div>©️ {{ year }} Sivam Pasupathipillai. All rights reserved.</div>
     </div>
   </div>
 </template>
 
 <style>
-#header-bar {
+#footer-bar {
   background-color: var(--global-color-30);
   color: var(--global-color-60);
-  text-align: left;
-  width: 100%;
+  text-align: center;
   border-bottom: var(--header-border-width) solid var(--global-color-10-contrast);
 
   font-family: "Karla", sans-serif;
@@ -20,10 +24,8 @@
   font-weight: 400;
   font-style: normal;
 
-}
+  font-size: var(--footer-font-size);
+  padding: 1.5rem;
 
-#logo {
-  font-size: var(--header-title-font-size);
-  padding: var(--header-title-padding) 0;
 }
 </style>
