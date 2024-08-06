@@ -6,26 +6,26 @@ const courses = [
     title: "Programming in Python 🐍",
     description: "Learn to program in hours with Python",
     img: "abc",
-    id: 1,
+    id: "programming-in-python",
   },
   {
     title: "Programming in Python 🐍",
     description: "Learn to program in hours with Python",
     img: "abc",
-    id: 2,
+    id: "programming-in-python",
   },
   {
     title: "Programming in Python 🐍",
     description: "Learn to program in hours with Python",
     img: "abc",
-    id: 3,
+    id: "programming-in-python",
   },
 ];
 </script>
 
 <template>
-  <div id="course-gallery" v-for="course in courses">
-    <CourseCard v-bind="course" />
+  <div id="course-gallery">
+    <CourseCard v-for="course in courses" v-bind="course" />
   </div>
 </template>
 
@@ -34,6 +34,6 @@ const courses = [
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 120px;
+  height: 350px;
 }
 </style>

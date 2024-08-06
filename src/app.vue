@@ -72,6 +72,14 @@ h3 {
   --panel-settings-border-color: #808d7c;
 }
 
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+  width: fit-content;
+}
+
 /* Font classes */
 .merriweather-regular {
   font-family: "Merriweather", serif;

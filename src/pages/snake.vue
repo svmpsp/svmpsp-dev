@@ -1,23 +1,21 @@
 <script setup lang="ts">
-import SideBanner from "../components/SideBanner.vue";
-
 const state = useDefaultStore();
 const { $viewport } = useNuxtApp();
 </script>
 
 <template>
-  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="snake-main-contents">
+  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="snake-desktop">
     <TitleBanner />
     <GameCanvas />
     <GameSettings />
   </div>
-  <div v-else id="small-screen-box">
+  <div v-else id="snake-mobile">
     <div>This page does not support <br />mobile devices. 🙁</div>
   </div>
 </template>
 
 <style>
-#small-screen-box {
+#snake-mobile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +29,7 @@ const { $viewport } = useNuxtApp();
   top: -50px;
 }
 
-#snake-main-contents {
+#snake-desktop {
   width: 700px;
   display: flex;
   flex-direction: column;

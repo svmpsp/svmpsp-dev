@@ -36,8 +36,11 @@ const apps = ["Snake", "Python", "Machine Learning", "Lorem Ipsum"];
 .app-card {
   align-items: center;
   color: var(--global-color-60);
-  background-color: var(--app-card-bg-color);
-  border: 5px solid var(--app-card-border-color);
+  background: linear-gradient(
+    var(--app-card-bg-color),
+    var(--global-color-10-contrast)
+  );
+  border: 3px solid var(--app-card-border-color);
   border-radius: 0.8rem;
   box-shadow: 3px 3px 3px var(--app-card-shadow-color);
   display: flex;
@@ -49,8 +52,11 @@ const apps = ["Snake", "Python", "Machine Learning", "Lorem Ipsum"];
 }
 
 .app-card:hover {
-  background-color: var(--global-color-10-contrast);
-  border: 5px solid var(--app-card-hover-border-color);
+  background: linear-gradient(
+    var(--global-color-10-contrast),
+    var(--app-card-bg-color)
+  );
+  border: 3px solid var(--app-card-bg-color);
   box-shadow: 5px 5px 5px var(--app-card-shadow-color);
 }
 </style>
