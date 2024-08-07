@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const apps = ["Snake", "Python", "Machine Learning", "Lorem Ipsum"];
+const route = useRoute();
+const { locale } = route.params;
+
+const apps = [{ title: "Snake", link: `/${locale}/snake` }];
 
 // TODO: add AppCard.vue component
 </script>
@@ -7,13 +10,12 @@ const apps = ["Snake", "Python", "Machine Learning", "Lorem Ipsum"];
 <template>
   <div id="app-container" class="merriweather-regular">
     <div class="app-card" v-for="app in apps">
-      <NuxtLink to="/snake">
-        <div>{{ app }}</div>
+      <NuxtLink :to="app.link">
+        <div>{{ app.title }}</div>
       </NuxtLink>
     </div>
   </div>
 </template>
-
 <style>
 #app-container a,
 #app-container a:visited,

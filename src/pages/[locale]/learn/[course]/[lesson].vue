@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const { $viewport } = useNuxtApp();
 const route = useRoute();
-const lessonId = route.params.id;
+const { locale, course: courseId, lesson: lessonId } = route.params;
+
+const courseLink = `/${locale}/learn/${courseId}`;
 
 const { data: lessonHTML } = await useFetch("/api/lesson-html", {
   query: {
@@ -14,6 +16,7 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
 <template>
   <div v-if="$viewport.isGreaterOrEquals('tablet')" id="lesson-desktop">
     <div class="margins">
+      <NuxtLink id="back-link" :to="courseLink"><<< Back to course</NuxtLink>
       <div id="lesson-desktop" v-html="lessonHTML"></div>
     </div>
   </div>
@@ -21,6 +24,11 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
 </template>
 
 <style>
+#back-link {
+  display: block;
+  margin-top: 1.5rem;
+}
+
 #lesson-desktop h1,
 #lesson-desktop h2,
 #lesson-desktop h3 {

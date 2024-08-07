@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { $viewport } = useNuxtApp();
 const route = useRoute();
-const courseId = route.params.id;
+const courseId = route.params.course;
+const locale = route.params.locale;
 
 const { data: lessons, error } = await useFetch("/api/lessons", {
   method: "GET",
@@ -16,7 +17,7 @@ const { data: lessons, error } = await useFetch("/api/lessons", {
       <h2>Programming in Python</h2>
       <ol>
         <li class="lesson-link" v-for="lesson of lessons">
-          <NuxtLink :to="`/course/lesson/${lesson.id}`">
+          <NuxtLink :to="`/${locale}/learn/${courseId}/${lesson.id}`">
             {{ lesson.title }}
           </NuxtLink>
         </li>

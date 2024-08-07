@@ -2,8 +2,14 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   srcDir: "src/",
+  pages: true,
   devtools: { enabled: true },
-  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "nuxt-viewport"],
+  router: {
+    options: {
+      sensitive: true,
+    }
+  },
+  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "nuxt-viewport", "@nuxtjs/i18n"],
   nitro: {
     preset: "node-server",
   },

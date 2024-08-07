@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const props = defineProps(["title", "description", "id", "img"]);
-const courseRoute = `/course/${props.id}`;
+const route = useRoute();
+const locale = route.params.locale;
+const props = defineProps(["title", "description", "id"]);
+const courseRoute = `/${locale}/learn/${props.id}`;
 
 // TODO: add translucent image on course card
 </script>

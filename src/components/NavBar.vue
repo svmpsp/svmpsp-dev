@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
+const locale = route.params.locale;
 
 function getActiveRouteId(): string {
   switch (route.name) {
@@ -23,20 +24,25 @@ const navItems = [
   {
     id: "navbar-about",
     title: "About",
-    to: "/about",
+    to: `/${locale}/about`,
     activeClass: "not-active",
   },
   {
     id: "navbar-courses",
     title: "Courses",
-    to: "/courses",
+    to: `/${locale}/learn`,
     activeClass: "not-active",
   },
-  { id: "navbar-blog", title: "Blog", to: "/blog", activeClass: "not-active" },
+  {
+    id: "navbar-blog",
+    title: "Blog",
+    to: `/${locale}/blog`,
+    activeClass: "not-active",
+  },
   {
     id: "navbar-contacts",
     title: "Contacts",
-    to: "/contacts",
+    to: `/${locale}/contacts`,
     activeClass: "not-active",
   },
 ];

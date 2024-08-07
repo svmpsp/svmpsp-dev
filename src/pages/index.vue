@@ -1,16 +1,11 @@
 <script setup lang="ts">
-useHead({
-  title: "Home - svmpsp.dev",
+const router = useRouter();
+console.log("router: ", router.getRoutes());
+
+definePageMeta({
+  redirect: "/en/",
 });
 </script>
-
-<template>
-  <div id="index-main-contents">
-    <div class="margins">
-      <AppGallery />
-    </div>
-  </div>
-</template>
 
 <style>
 body {
@@ -25,7 +20,7 @@ body {
 }
 
 .margins {
-  width: 800px;
+  width: 750px;
   margin: 0 auto;
 }
 
