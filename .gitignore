@@ -25,3 +25,6 @@ logs
 
 # VS Code
 .vscode
+
+# Personal
+.dev

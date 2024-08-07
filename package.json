@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@pinia/nuxt": "^0.5.2",
+    "@pinia/nuxt": "^0.5.3",
     "nuxt": "^3.12.4",
     "nuxt-app": "link:",
     "nuxt-viewport": "^2.1.5",
-    "pinia": "^2.2.0",
+    "pinia": "^2.2.1",
     "showdown": "^2.1.0",
     "vue": "latest"
   },

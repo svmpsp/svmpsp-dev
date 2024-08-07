@@ -1,3 +1,9 @@
+## Lesson 1: What is Programming?
+
+Welcome to the world of programming with Python!
+
+In this first lesson, we'll introduce you to the basics of programming and why it's an exciting field to explore.
+
 ### What is Programming?
 
 Programming is the process of designing, writing, testing, and maintaining the source code of computer programs. This source code is written in one or more programming languages, such as Python, Java, C++, or many others.

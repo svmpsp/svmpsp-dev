@@ -3,26 +3,24 @@ const { $viewport } = useNuxtApp();
 const route = useRoute();
 const courseId = route.params.id;
 
-const lessons = [
-  "Introduction",
-  "Variables",
-  "For loop",
-  "If and Else",
-  "Classes",
-];
+const { data: lessons, error } = await useFetch("/api/lessons", {
+  method: "GET",
+  immediate: true,
+  query: { c: courseId },
+});
 </script>
 
 <template>
   <div v-if="$viewport.isGreaterOrEquals('tablet')" id="course-desktop">
     <div class="margins">
       <h2>Programming in Python</h2>
-      <ul>
+      <ol>
         <li class="lesson-link" v-for="lesson of lessons">
-          <NuxtLink to="/course/lesson/my-lesson">
-            {{ lesson }}
+          <NuxtLink :to="`/course/lesson/${lesson.id}`">
+            {{ lesson.title }}
           </NuxtLink>
         </li>
-      </ul>
+      </ol>
     </div>
   </div>
   <div v-else id="course-mobile"></div>

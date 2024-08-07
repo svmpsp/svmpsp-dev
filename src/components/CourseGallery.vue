@@ -1,26 +1,9 @@
 <script setup lang="ts">
 import CourseCard from "./CourseCard.vue";
 
-const courses = [
-  {
-    title: "Programming in Python 🐍",
-    description: "Learn to program in hours with Python",
-    img: "abc",
-    id: "programming-in-python",
-  },
-  {
-    title: "Programming in Python 🐍",
-    description: "Learn to program in hours with Python",
-    img: "abc",
-    id: "programming-in-python",
-  },
-  {
-    title: "Programming in Python 🐍",
-    description: "Learn to program in hours with Python",
-    img: "abc",
-    id: "programming-in-python",
-  },
-];
+const { data: courses } = useFetch("/api/courses", {
+  method: "GET",
+});
 </script>
 
 <template>
