@@ -1,19 +1,17 @@
 <script setup lang="ts">
-const route = useRoute();
-const locale = route.params.locale;
 const props = defineProps(["title", "description", "id"]);
-const courseRoute = `/${locale}/learn/${props.id}`;
+const courseRoute = `/learn/${props.id}`;
 
 // TODO: add translucent image on course card
 </script>
 
 <template>
-  <NuxtLink :to="courseRoute">
+  <NuxtLinkLocale :to="courseRoute">
     <div class="course-card-box">
       <h3>{{ props.title }}</h3>
       <div>{{ props.description }}</div>
     </div>
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <style>

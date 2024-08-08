@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import CourseCard from "./CourseCard.vue";
-
+const { locale } = useI18n();
 const { data: courses } = useFetch("/api/courses", {
   method: "GET",
+  query: {
+    locale: locale,
+  },
 });
 </script>
 

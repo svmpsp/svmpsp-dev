@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { getAssetsPath } from "../utils";
+import { getAssetsPath, pathMappings } from "../utils";
 
 function getTitle(lessonFilename: string): string {
   const output = lessonFilename.replaceAll("-", " ").replace(".md", "");
@@ -18,9 +18,14 @@ function getLessonObject(lessonFilename: string): {
 }
 
 export default defineEventHandler((event) => {
-  const query = getQuery(event);
-  const courseId = query.c as string;
-  const courseDir = path.join(getAssetsPath(), "courses", courseId);
+  const { locale, courseId } = getQuery(event);
+
+  const pathPrefix = pathMappings.get(locale as string);
+  if (!pathPrefix) {
+    throw new Error(`invalid locale ${locale}`);
+  }
+
+  const courseDir = path.join(getAssetsPath(), pathPrefix, courseId as string);
   try {
     return fs
       .readdirSync(courseDir)

@@ -2,32 +2,43 @@
 const { $viewport } = useNuxtApp();
 const route = useRoute();
 const courseId = route.params.course;
-const locale = route.params.locale;
+
+const { locale } = useI18n();
 
 const { data: lessons, error } = await useFetch("/api/lessons", {
   method: "GET",
   immediate: true,
-  query: { c: courseId },
+  query: { courseId: courseId, locale: locale },
 });
 </script>
 
 <template>
   <div v-if="$viewport.isGreaterOrEquals('tablet')" id="course-desktop">
     <div class="margins">
-      <h2>Programming in Python</h2>
-      <ol>
+      <h2>{{ courseId }}</h2>
+      <ul>
         <li class="lesson-link" v-for="lesson of lessons">
-          <NuxtLink :to="`/${locale}/learn/${courseId}/${lesson.id}`">
+          <NuxtLinkLocale :to="`/learn/${courseId}/${lesson.id}`">
             {{ lesson.title }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
-      </ol>
+      </ul>
     </div>
   </div>
-  <div v-else id="course-mobile"></div>
+  <div v-else id="course-mobile">
+    <h2>{{ courseId }}</h2>
+    <ul>
+      <li class="lesson-link" v-for="lesson of lessons">
+        <NuxtLinkLocale :to="`/learn/${courseId}/${lesson.id}`">
+          {{ lesson.title }}
+        </NuxtLinkLocale>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style>
+#course-mobile,
 #course-desktop {
   padding: 1rem;
 }

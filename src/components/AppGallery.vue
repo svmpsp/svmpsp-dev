@@ -2,7 +2,7 @@
 const route = useRoute();
 const { locale } = route.params;
 
-const apps = [{ title: "Snake", link: `/${locale}/snake` }];
+const apps = [{ title: "Snake", link: "snake" }];
 
 // TODO: add AppCard.vue component
 </script>
@@ -10,9 +10,9 @@ const apps = [{ title: "Snake", link: `/${locale}/snake` }];
 <template>
   <div id="app-container" class="merriweather-regular">
     <div class="app-card" v-for="app in apps">
-      <NuxtLink :to="app.link">
+      <NuxtLinkLocale :to="app.link">
         <div>{{ app.title }}</div>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>

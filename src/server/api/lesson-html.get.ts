@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import showdown from "showdown";
+import { getAssetsPath, pathMappings } from "../utils";
 
 function markdown2HTML(markdowStr: string): string {
   const converter = new showdown.Converter();
@@ -9,13 +10,17 @@ function markdown2HTML(markdowStr: string): string {
 
 export default defineEventHandler((event) => {
   const query = getQuery(event);
-  const courseId = query.c as string;
-  const lessonId = query.l as string;
+  const { courseId, lessonId, locale } = query;
+
+  const pathPrefix = pathMappings.get(locale as string);
+  if (!pathPrefix) {
+    throw new Error(`invalid locale ${locale}`);
+  }
+
   const lessonFilename = path.join(
-    "src",
-    "assets",
-    "courses",
-    courseId,
+    getAssetsPath(),
+    pathPrefix,
+    courseId as string,
     `${lessonId}.md`,
   );
   try {

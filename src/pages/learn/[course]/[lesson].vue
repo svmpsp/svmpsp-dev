@@ -1,14 +1,17 @@
 <script setup lang="ts">
 const { $viewport } = useNuxtApp();
 const route = useRoute();
-const { locale, course: courseId, lesson: lessonId } = route.params;
+const { locale } = useI18n();
 
-const courseLink = `/${locale}/learn/${courseId}`;
+const { course: courseId, lesson: lessonId } = route.params;
+
+const courseLink = `/learn/${courseId}`;
 
 const { data: lessonHTML } = await useFetch("/api/lesson-html", {
   query: {
-    c: "programming-in-python",
-    l: lessonId,
+    courseId: courseId,
+    lessonId: lessonId,
+    locale: locale,
   },
 });
 </script>
@@ -16,17 +19,34 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
 <template>
   <div v-if="$viewport.isGreaterOrEquals('tablet')" id="lesson-desktop">
     <div class="margins">
-      <NuxtLink id="back-link" :to="courseLink"><<< Back to course</NuxtLink>
+      <NuxtLinkLocale id="back-link" :to="courseLink"
+        >Back to course</NuxtLinkLocale
+      >
       <div id="lesson-desktop" v-html="lessonHTML"></div>
     </div>
   </div>
-  <div v-else id="lesson-mobile">I am mobile</div>
+  <div v-else id="lesson-mobile">
+    <NuxtLinkLocale id="back-link" :to="courseLink"
+      >Back to course</NuxtLinkLocale
+    >
+    <div v-html="lessonHTML"></div>
+  </div>
 </template>
 
 <style>
-#back-link {
+#lesson-mobile {
+  padding: 1rem;
+  width: 100vw;
+}
+
+#lesson-desktop #back-link {
   display: block;
   margin-top: 1.5rem;
+}
+
+#lesson-mobile #back-link {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 #lesson-desktop h1,
@@ -40,7 +60,8 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
   font-weight: 500;
 }
 
-#lesson-desktop pre {
+#lesson-desktop pre,
+#lesson-mobile pre {
   background-color: var(--global-color-30);
   color: white;
   width: 100%;
@@ -49,5 +70,10 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
   line-height: 1.5;
   font-family: monospace;
   font-size: 1.1rem;
+}
+
+#lesson-mobile pre {
+  width: auto;
+  overflow: scroll;
 }
 </style>

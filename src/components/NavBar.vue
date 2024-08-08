@@ -1,6 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
 const route = useRoute();
-const locale = route.params.locale;
 
 function getActiveRouteId(): string {
   switch (route.name) {
@@ -20,29 +20,29 @@ function getActiveRouteId(): string {
 }
 
 const navItems = [
-  { id: "navbar-home", title: "Home", to: "/", activeClass: "not-active" },
+  { id: "navbar-home", title: "Home", to: "index", activeClass: "not-active" },
   {
     id: "navbar-about",
     title: "About",
-    to: `/${locale}/about`,
+    to: "about",
     activeClass: "not-active",
   },
   {
     id: "navbar-courses",
     title: "Courses",
-    to: `/${locale}/learn`,
+    to: "learn",
     activeClass: "not-active",
   },
   {
     id: "navbar-blog",
     title: "Blog",
-    to: `/${locale}/blog`,
+    to: "blog",
     activeClass: "not-active",
   },
   {
     id: "navbar-contacts",
-    title: "Contacts",
-    to: `/${locale}/contacts`,
+    title: t("mainHeaderContacts"),
+    to: "contacts",
     activeClass: "not-active",
   },
 ];
@@ -65,11 +65,11 @@ watch(() => route.name, setActiveNavItem);
 <template>
   <div id="navbar-box">
     <div id="navbar-items" ref="navBarItems" :key="route.name">
-      <NuxtLink v-for="item in navItems" :to="item.to">
+      <NuxtLinkLocale v-for="item in navItems" :to="item.to">
         <div class="navbar-item" :class="item.activeClass" :key="item.id">
           {{ item.title }}
         </div>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>

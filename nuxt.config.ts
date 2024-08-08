@@ -7,9 +7,14 @@ export default defineNuxtConfig({
   router: {
     options: {
       sensitive: true,
-    }
+    },
   },
-  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "nuxt-viewport", "@nuxtjs/i18n"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "nuxt-viewport",
+    "@nuxtjs/i18n",
+  ],
   nitro: {
     preset: "node-server",
   },
@@ -27,5 +32,11 @@ export default defineNuxtConfig({
       Merriweather: [400],
       Karla: [400],
     },
+  },
+  i18n: {
+    vueI18n: "./i18n.config.ts",
+    locales: ["en", "it"],
+    defaultLocale: "en",
+    strategy: "prefix_and_default",
   },
 });
