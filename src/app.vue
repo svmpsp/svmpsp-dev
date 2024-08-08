@@ -13,7 +13,7 @@
 <style>
 .main-contents {
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 /* Remove margins from headers */
@@ -79,11 +79,6 @@ body {
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.margins {
-  width: 750px;
-  margin: 0 auto;
 }
 
 #index-main-contents {

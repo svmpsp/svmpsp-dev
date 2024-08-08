@@ -1,18 +1,24 @@
+<script setup lang="ts">
+const { $viewport } = useNuxtApp();
+</script>
+
 <template>
-  <div id="header-bar">
-    <div class="margins">
-      <div id="logo">Sivam Pasupathipillai - svmpsp.dev</div>
-      <NavBar />
-    </div>
+  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="header-desktop">
+    <div id="logo">Sivam Pasupathipillai - svmpsp.dev</div>
+    <NavBar />
+  </div>
+  <div v-else id="header-mobile">
+    <div id="logo">svmpsp.dev</div>
   </div>
 </template>
 
 <style>
-#header-bar {
+#header-desktop,
+#header-mobile {
   background-color: var(--global-color-30);
   color: var(--global-color-60);
   text-align: left;
-  width: 100%;
+  width: 100vw;
   border-bottom: var(--header-border-width) solid
     var(--global-color-10-contrast);
 
@@ -22,8 +28,14 @@
   font-style: normal;
 }
 
-#logo {
+#header-desktop #logo {
   font-size: var(--header-title-font-size);
   padding: var(--header-title-padding) 0;
+}
+
+#header-mobile #logo {
+  text-align: center;
+  font-size: var(--header-title-font-size);
+  padding: 1.5rem;
 }
 </style>

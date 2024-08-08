@@ -36,7 +36,6 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
 <style>
 #lesson-mobile {
   padding: 1rem;
-  width: 100vw;
 }
 
 #lesson-desktop #back-link {
@@ -64,7 +63,6 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
 #lesson-mobile pre {
   background-color: var(--global-color-30);
   color: white;
-  width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
   line-height: 1.5;
@@ -73,7 +71,6 @@ const { data: lessonHTML } = await useFetch("/api/lesson-html", {
 }
 
 #lesson-mobile pre {
-  width: auto;
   overflow: scroll;
 }
 </style>

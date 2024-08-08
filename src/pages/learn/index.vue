@@ -1,19 +1,18 @@
 <script setup lang="ts">
-useHead({
-  title: "Courses - svmpsp.dev",
-});
+const { $viewport } = useNuxtApp();
 </script>
 
 <template>
-  <div id="courses-main-contents">
-    <div class="margins">
-      <CourseCatalog />
-    </div>
+  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="learn-desktop">
+    <CourseCatalog />
+  </div>
+  <div v-else id="learn-mobile">
+    <CourseCatalog />
   </div>
 </template>
 
 <style>
-#courses-main-contents {
-  margin-bottom: 1rem;
+#courses-desktop {
+  margin: auto 1rem;
 }
 </style>

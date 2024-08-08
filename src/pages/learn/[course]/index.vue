@@ -14,16 +14,14 @@ const { data: lessons, error } = await useFetch("/api/lessons", {
 
 <template>
   <div v-if="$viewport.isGreaterOrEquals('tablet')" id="course-desktop">
-    <div class="margins">
-      <h2>{{ courseId }}</h2>
-      <ul>
-        <li class="lesson-link" v-for="lesson of lessons">
-          <NuxtLinkLocale :to="`/learn/${courseId}/${lesson.id}`">
-            {{ lesson.title }}
-          </NuxtLinkLocale>
-        </li>
-      </ul>
-    </div>
+    <h2>{{ courseId }}</h2>
+    <ul>
+      <li class="lesson-link" v-for="lesson of lessons">
+        <NuxtLinkLocale :to="`/learn/${courseId}/${lesson.id}`">
+          {{ lesson.title }}
+        </NuxtLinkLocale>
+      </li>
+    </ul>
   </div>
   <div v-else id="course-mobile">
     <h2>{{ courseId }}</h2>

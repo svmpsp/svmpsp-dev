@@ -23,7 +23,7 @@ const courseRoute = `/learn/${props.id}`;
   color: var(--global-color-30);
   background: linear-gradient(var(--global-color-60), #ddd);
   text-decoration: none;
-  width: 450px;
+  width: fit-content;
 }
 
 .course-card-box:hover {

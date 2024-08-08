@@ -76,6 +76,7 @@ watch(() => route.name, setActiveNavItem);
 
 <style>
 #navbar-box {
+  width: fit-content;
   display: flex;
   flex-direction: row;
 }
