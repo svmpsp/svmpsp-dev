@@ -1,5 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1.0",
+      title: "Title - svmpsp.dev",
+      meta: [
+        {
+          name: "description",
+          content: "Sivam Pasupathipillai's personal website.",
+        },
+      ],
+      script: [
+        {
+          async: true,
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7590734585602123",
+          crossorigin: "anonymous",
+        },
+      ],
+    }
+  },
   compatibilityDate: "2024-04-03",
   srcDir: "src/",
   pages: true,
