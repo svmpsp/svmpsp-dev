@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - name: Test commands
         run: |
           uname -a
@@ -27,3 +31,9 @@ jobs:
           push: true
           tags: |
             ghcr.io/svmpsp/svmpsp-dev:latest
+      - name: Redeploy DigitalOcean app
+        env:
+          DO_APP_ID: c0eef10f-6b0f-4e5f-84fd-270549528a9c
+        run: |
+          echo "Updating deployment for app $DO_APP_ID"
+          doctl apps create-deployment "$DO_APP_ID"
