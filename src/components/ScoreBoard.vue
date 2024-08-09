@@ -29,6 +29,6 @@ const state = useDefaultStore();
   color: white;
   background-color: rgb(42, 42, 42);
   padding: 0.5rem;
-  min-width: 225px;
+  min-width: 200px;
 }
 </style>

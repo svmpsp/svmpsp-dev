@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-viewport",
     "@nuxtjs/i18n",
+    "@nuxt/image",
   ],
   nitro: {
     preset: "node-server",
@@ -60,4 +61,5 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     strategy: "prefix_and_default",
   },
+  image: {},
 });

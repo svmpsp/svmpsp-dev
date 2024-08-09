@@ -1,4 +1,4 @@
-name: Test action
+name: Build and deploy
 run-name: Test run name
 on: workflow_dispatch
 permissions:

@@ -4,13 +4,17 @@ const { $viewport } = useNuxtApp();
 </script>
 
 <template>
-  <div v-if="$viewport.isGreaterOrEquals('tablet')" id="snake-desktop">
-    <TitleBanner />
-    <GameCanvas />
-    <GameSettings />
-  </div>
-  <div v-else id="snake-mobile">
-    <div>This page does not support <br />mobile devices. 🙁</div>
+  <div id="snake">
+    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="snake-desktop">
+      <div class="margins">
+        <TitleBanner />
+        <GameCanvas />
+        <GameSettings />
+      </div>
+    </div>
+    <div v-else id="snake-mobile">
+      <div>This page does not support <br />mobile devices. 🙁</div>
+    </div>
   </div>
 </template>
 
@@ -30,11 +34,9 @@ const { $viewport } = useNuxtApp();
 }
 
 #snake-desktop {
-  width: 700px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 100vh;
   padding: 0;
 }
 

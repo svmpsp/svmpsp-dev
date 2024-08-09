@@ -3,11 +3,11 @@ const props = defineProps(["link", "title"]);
 </script>
 
 <template>
-  <div class="app-card">
-    <NuxtLinkLocale :to="props.link">
+  <NuxtLinkLocale :to="props.link">
+    <div class="app-card">
       <div>{{ props.title }}</div>
-    </NuxtLinkLocale>
-  </div>
+    </div>
+  </NuxtLinkLocale>
 </template>
 
 <style>
@@ -18,8 +18,7 @@ const props = defineProps(["link", "title"]);
     var(--app-card-bg-color),
     var(--global-color-10-contrast)
   );
-  border: 3px solid var(--app-card-border-color);
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   box-shadow: 3px 3px 3px var(--app-card-shadow-color);
   display: flex;
   font-size: var(--app-card-font-size);
@@ -34,7 +33,6 @@ const props = defineProps(["link", "title"]);
     var(--global-color-10-contrast),
     var(--app-card-bg-color)
   );
-  border: 3px solid var(--app-card-bg-color);
   box-shadow: 5px 5px 5px var(--app-card-shadow-color);
 }
 </style>
