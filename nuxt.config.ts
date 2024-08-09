@@ -18,8 +18,9 @@ export default defineNuxtConfig({
           crossorigin: "anonymous",
         },
       ],
-    }
+    },
   },
+  css: ["~/assets/css/main.css"],
   compatibilityDate: "2024-04-03",
   srcDir: "src/",
   pages: true,

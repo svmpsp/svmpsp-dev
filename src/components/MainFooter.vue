@@ -21,17 +21,7 @@ const year = new Date().getFullYear();
 <style>
 #footer {
   display: flex;
-  width: 100%;
   flex-direction: column;
-}
-
-#footer div {
-  width: fit-content;
-}
-
-#footer-desktop,
-#footer-mobile {
-  width: 100vw;
   background-color: var(--global-color-30);
   color: var(--global-color-60);
   text-align: center;
@@ -41,7 +31,8 @@ const year = new Date().getFullYear();
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-
   font-size: var(--footer-font-size);
+
+  padding: 1rem;
 }
 </style>
