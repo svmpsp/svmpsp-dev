@@ -1,14 +1,19 @@
 <script setup lang="ts">
 const { $viewport } = useNuxtApp();
+
 const route = useRoute();
-const courseId = route.params.course;
+const courseSlug = route.params.course;
 
-const { locale } = useI18n();
-
-const { data: lessons, error } = await useFetch("/api/lessons", {
+const { data: courseRef } = await useFetch("/api/course-by-slug", {
   method: "GET",
   immediate: true,
-  query: { courseId: courseId, locale: locale },
+  query: { courseSlug },
+});
+
+const { data: lessons } = await useFetch("/api/course", {
+  method: "GET",
+  immediate: true,
+  query: { courseId: courseRef.value.id },
 });
 </script>
 
@@ -16,10 +21,10 @@ const { data: lessons, error } = await useFetch("/api/lessons", {
   <div id="course">
     <div v-if="$viewport.isGreaterOrEquals('tablet')" id="course-desktop">
       <div class="margins">
-        <h2>{{ courseId }}</h2>
+        <h2>{{ courseRef.title }}</h2>
         <ul>
           <li class="lesson-link" v-for="lesson of lessons">
-            <NuxtLinkLocale :to="`/learn/${courseId}/${lesson.id}`">
+            <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.url_slug}`">
               {{ lesson.title }}
             </NuxtLinkLocale>
           </li>
@@ -27,10 +32,10 @@ const { data: lessons, error } = await useFetch("/api/lessons", {
       </div>
     </div>
     <div v-else id="course-mobile">
-      <h2>{{ courseId }}</h2>
+      <h2>{{ courseRef.id }}</h2>
       <ul>
         <li class="lesson-link" v-for="lesson of lessons">
-          <NuxtLinkLocale :to="`/learn/${courseId}/${lesson.id}`">
+          <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.id}`">
             {{ lesson.title }}
           </NuxtLinkLocale>
         </li>

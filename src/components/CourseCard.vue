@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const props = defineProps(["title", "description", "id"]);
-const courseRoute = `/learn/${props.id}`;
+const props = defineProps(["id", "title", "description", "url_slug"]);
+const courseRoute = `/learn/${props.url_slug}`;
 
 // TODO: add translucent image on course card
 </script>
 
 <template>
-  <NuxtLinkLocale :to="courseRoute">
+  <NuxtLinkLocale v-bind="{ to: courseRoute, params: { id: props.id } }">
     <div class="course-card-box">
       <h3>{{ props.title }}</h3>
       <div>{{ props.description }}</div>

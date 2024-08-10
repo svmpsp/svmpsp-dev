@@ -1,17 +1,20 @@
 <script setup lang="ts">
 const { $viewport } = useNuxtApp();
 const route = useRoute();
-const { locale } = useI18n();
 
-const { course: courseId, lesson: lessonId } = route.params;
+const { course: courseSlug, lesson: lessonSlug } = route.params;
 
-const courseLink = `/learn/${courseId}`;
+const courseLink = `/learn/${courseSlug}`;
 
-const { data: lessonHTML } = await useFetch("/api/lesson-html", {
+const { data: lessonRef } = await useFetch("/api/post-by-slug", {
   query: {
-    courseId: courseId,
-    lessonId: lessonId,
-    locale: locale,
+    postSlug: lessonSlug,
+  },
+});
+
+const { data: lessonHTML } = await useFetch("/api/post-html", {
+  query: {
+    postId: lessonRef.value.id,
   },
 });
 </script>

@@ -1,38 +1,17 @@
-import fs from "node:fs";
-import path from "node:path";
-import { getAssetsPath, pathMappings } from "../utils";
+import pg from "pg";
 
-function getCourseObject(courseDir: string): {
-  description: string;
-  id: string;
-  title: string;
-} {
-  return {
-    id: courseDir,
-    title: getCourseTitle(courseDir),
-    description: "hello world",
-  };
-}
-
-function getCourseTitle(courseDir: string): string {
-  const replaced = courseDir.replaceAll("-", " ");
-  return replaced.charAt(0).toUpperCase() + replaced.slice(1);
+async function getCourses(dbClient: pg.Client, locale: string) {
+  const results = await dbClient.query(
+    `
+    SELECT id, title, description, url_slug
+    FROM svmpsp_dev.courses
+    WHERE language = '${locale}'`,
+  );
+  return results.rows;
 }
 
 export default defineEventHandler((event) => {
-  const locale = getQuery(event).locale as string;
-
-  const pathPrefix = pathMappings.get(locale);
-  if (!pathPrefix) {
-    throw new Error(`invalid locale ${locale}`);
-  }
-
-  const coursesDir = path.join(getAssetsPath(), pathPrefix);
-  try {
-    return fs
-      .readdirSync(coursesDir)
-      .map((filename) => getCourseObject(filename));
-  } catch (err) {
-    console.log(err);
-  }
+  const { locale } = getQuery(event);
+  const dbClient = event.context.dbClient;
+  return getCourses(dbClient, locale as string);
 });
