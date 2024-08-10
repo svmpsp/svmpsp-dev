@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    postgres: {
+      user: process.env.POSTGRES_USER,
+      host: process.env.POSTGRES_HOST,
+      port: process.env.POSTGRES_PORT,
+      db: process.env.POSTGRES_DB,
+      pwd: process.env.POSTGRES_PWD,
+    },
+  },
   app: {
     head: {
       charset: "utf-8",
