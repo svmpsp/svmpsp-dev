@@ -1,4 +1,4 @@
-## Lesson 1: Introduction to Programming?
+## Lesson 1: Introduction to Programming
 
 Welcome to the world of programming with Python!
 

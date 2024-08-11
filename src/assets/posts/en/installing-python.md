@@ -1,3 +1,3 @@
-## Lesson 1.1: Installing Python
+## Lesson 2: Installing Python
 
 TBD.

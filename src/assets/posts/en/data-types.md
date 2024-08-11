@@ -1,4 +1,4 @@
-## Lesson 1: Data Types in Python
+## Lesson 7: Data Types in Python
 
 ### Introduction
 

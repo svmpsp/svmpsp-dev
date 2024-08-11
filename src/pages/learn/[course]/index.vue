@@ -19,35 +19,20 @@ const { data: lessons } = await useFetch("/api/course", {
 
 <template>
   <div id="course">
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="course-desktop">
-      <div class="margins">
-        <h2>{{ courseRef.title }}</h2>
-        <ul>
-          <li class="lesson-link" v-for="lesson of lessons">
-            <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.url_slug}`">
-              {{ lesson.title }}
-            </NuxtLinkLocale>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div v-else id="course-mobile">
-      <h2>{{ courseRef.id }}</h2>
-      <ul>
-        <li class="lesson-link" v-for="lesson of lessons">
-          <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.id}`">
-            {{ lesson.title }}
-          </NuxtLinkLocale>
-        </li>
-      </ul>
-    </div>
+    <h2>{{ courseRef.title }}</h2>
+    <ol>
+      <li class="lesson-link" v-for="lesson of lessons">
+        <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.url_slug}`">
+          {{ lesson.title }}
+        </NuxtLinkLocale>
+      </li>
+    </ol>
   </div>
 </template>
 
 <style>
-#course-mobile,
-#course-desktop {
-  padding: 1rem;
+#course {
+  padding: 1.5rem;
 }
 
 .lesson-link {

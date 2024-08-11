@@ -7,15 +7,6 @@ useHead({
 
 <template>
   <div id="about">
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="about-desktop">
-      <div class="margins">
-        <AboutContents />
-      </div>
-    </div>
-    <div v-else id="about-mobile">
-      <AboutContents />
-    </div>
+    <AboutContents />
   </div>
 </template>
-
-<style></style>

@@ -21,26 +21,13 @@ const { data: lessonHTML } = await useFetch("/api/post-html", {
 
 <template>
   <div id="lesson">
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="lesson-desktop">
-      <div class="margins">
-        <NuxtLinkLocale id="back-link" :to="courseLink"
-          >&lt;&lt;&lt; Back to course</NuxtLinkLocale
-        >
-        <div v-html="lessonHTML"></div>
-        <NuxtLinkLocale id="back-link" :to="courseLink"
-          >&lt;&lt;&lt; Back to course</NuxtLinkLocale
-        >
-      </div>
-    </div>
-    <div v-else id="lesson-mobile">
-      <NuxtLinkLocale id="back-link" :to="courseLink"
-        >&lt;&lt;&lt; Back to course</NuxtLinkLocale
-      >
-      <div v-html="lessonHTML"></div>
-      <NuxtLinkLocale id="back-link" :to="courseLink"
-        >&lt;&lt;&lt; Back to course</NuxtLinkLocale
-      >
-    </div>
+    <NuxtLinkLocale id="back-link" :to="courseLink"
+      >&lt;&lt;&lt; Back to course</NuxtLinkLocale
+    >
+    <div v-html="lessonHTML"></div>
+    <NuxtLinkLocale id="back-link" :to="courseLink"
+      >&lt;&lt;&lt; Back to course</NuxtLinkLocale
+    >
   </div>
 </template>
 
@@ -49,6 +36,10 @@ const { data: lessonHTML } = await useFetch("/api/post-html", {
   padding: 1rem;
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+#lesson h2 {
+  margin-top: 1.5rem;
 }
 
 #lesson pre {

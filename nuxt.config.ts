@@ -45,6 +45,7 @@ export default defineNuxtConfig({
     "nuxt-viewport",
     "@nuxtjs/i18n",
     "@nuxt/image",
+    "@nuxt/icon"
   ],
   nitro: {
     preset: "node-server",

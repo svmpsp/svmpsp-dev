@@ -7,13 +7,6 @@ const { $viewport } = useNuxtApp();
 
 <template>
   <div id="index">
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="index-desktop">
-      <div class="margins">
-        <AppGallery />
-      </div>
-    </div>
-    <div v-else id="index-mobile">
-      <AppGallery />
-    </div>
+    <AppGallery />
   </div>
 </template>

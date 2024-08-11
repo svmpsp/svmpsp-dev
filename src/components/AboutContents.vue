@@ -5,7 +5,6 @@ const { $viewport } = useNuxtApp();
 <template>
   <div id="about-contents">
     <ProfilePic />
-    <h2>About</h2>
     <p>
       I am a data scientist and software engineer hailing from Italy. I enjoy
       building elegant, robust and maintainable software & AI systems.

@@ -1,4 +1,4 @@
-## Lesson 2: Introduction to Python
+## Lesson 4: Introduction to Python
 
 Welcome to the world of Python programming!
 

@@ -1,4 +1,4 @@
-## Lesson 4: Functions in Python
+## Lesson 6: Functions in Python
 
 In this lesson, we're going to explore one of the most powerful tools in Python programming: **functions**. A function is a block of code that can be executed multiple times from different parts of your program, allowing you to reuse code and make it more modular.
 
