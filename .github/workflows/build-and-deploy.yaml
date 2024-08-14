@@ -1,20 +1,21 @@
 name: Build and deploy
 run-name: Test run name
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
 permissions:
   contents: read
   packages: write
 jobs:
-  simple_job:
-    name: Test job
+  docker_build:
+    name: Build docker image and push
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - name: Test commands
         run: |
           uname -a
@@ -25,15 +26,20 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ghcr.io/svmpsp/svmpsp-dev
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: |
-            ghcr.io/svmpsp/svmpsp-dev:latest
-      - name: Redeploy DigitalOcean app
-        env:
-          DO_APP_ID: c0eef10f-6b0f-4e5f-84fd-270549528a9c
-        run: |
-          echo "Updating deployment for app $DO_APP_ID"
-          doctl apps create-deployment "$DO_APP_ID"
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}          
