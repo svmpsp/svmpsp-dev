@@ -2,14 +2,26 @@ import pg from "pg";
 const { Client } = pg;
 
 export default defineNitroPlugin(async (nitroApp) => {
-  const postgresConfig = useRuntimeConfig().postgres;
+  const {
+    postgresUser,
+    postgresDb,
+    postgresHost,
+    postgresPassword,
+    postgresPort,
+  } = useRuntimeConfig();
+
+  console.log("TEST ME LOG!");
+  console.info(
+    `Connecting to POSTGRES at http://${postgresHost}:${postgresPort}`,
+  );
+  console.info(`Connection string: username=${postgresUser} db=${postgresDb}`);
 
   const client = new Client({
-    user: postgresConfig.user,
-    host: postgresConfig.host,
-    database: postgresConfig.db,
-    password: postgresConfig.pwd,
-    port: Number(postgresConfig.port),
+    user: postgresUser,
+    host: postgresHost,
+    database: postgresDb,
+    password: postgresPassword,
+    port: Number(postgresPort),
   });
 
   await client.connect();
