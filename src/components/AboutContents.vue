@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { $viewport } = useNuxtApp();
 useHead({
   title: "About",
 });
@@ -8,18 +7,38 @@ useHead({
 <template>
   <div id="about-contents">
     <ProfilePic />
-    <p>
-      I am a data scientist and software engineer hailing from Italy. I enjoy
-      building elegant, robust and maintainable software & AI systems.
-    </p>
-    <p>
-      My tech toolkit includes: Python, deep learning, LLM, distributed systems,
-      Big Data technologies, linux, Typescript, gRPC, web development and more.
-    </p>
+    <div>
+      <p>
+        📍 I am a full-stack AI specialist hailing from Italy. I hold a Ph.D in
+        Artificial Intelligence, and I have more than 5 years of work experience
+        under my belt.
+      </p>
+      <p>
+        💚 I am passionate about designing, building & thinkering about
+        high-quality software & AI systems. I enjoy writing blog posts and
+        courses to share my passion and have fun while doing it.
+      </p>
+      <p>
+        🤖 My tech toolkit includes: Python, deep learning, LLMs, distributed
+        systems, Big Data technologies, linux, Typescript, gRPC, web development
+        and more.
+      </p>
+      <p>
+        In my spare time, you can find me hiking 🏔, social dancing 🕺🏾, or
+        playing my guitar 🎸.
+      </p>
+    </div>
   </div>
 </template>
 
 <style>
+#if-desktop #about-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #about-contents {
   padding: 1rem;
 }

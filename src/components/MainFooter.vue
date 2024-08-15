@@ -4,7 +4,7 @@ const year = new Date().getFullYear();
 
 <template>
   <div id="footer">
-    <div>Made in Italy with ❤️</div>
+    <div>Made in Italy with 🤍</div>
     <br />
     <div>©️ {{ year }} Sivam Pasupathipillai. All rights reserved.</div>
   </div>
@@ -14,7 +14,6 @@ const year = new Date().getFullYear();
 #footer {
   display: flex;
   flex-direction: column;
-  /* background-color: var(--color-main-accent); */
   background: linear-gradient(
     var(--color-main-accent),
     var(--color-main-accent-contrast)

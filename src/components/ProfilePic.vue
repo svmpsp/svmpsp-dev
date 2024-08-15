@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  margin: 1rem;
+  margin: 0 1.5rem;
 }
 
 #profile-pic-box img {

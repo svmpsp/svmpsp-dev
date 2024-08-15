@@ -33,7 +33,7 @@ const { data: lessonHTML } = await useFetch("/api/post-html", {
 <style>
 #lesson {
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 
@@ -42,8 +42,8 @@ const { data: lessonHTML } = await useFetch("/api/post-html", {
 }
 
 #lesson pre {
-  background-color: var(--global-color-30);
-  color: white;
+  background-color: var(--color-main-darker);
+  color: var(--color-main-lighter);
   padding: 1rem;
   border-radius: 0.5rem;
   line-height: 1.5;

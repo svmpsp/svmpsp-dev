@@ -19,7 +19,7 @@ const courseRoute = `/learn/${props.url_slug}`;
     <div class="course-card">
       <div class="course-card-head-box">
         <h3>{{ props.title }}</h3>
-        <h3>+{{ props.likes }}❤️</h3>
+        <h3>+{{ props.likes }}💚</h3>
       </div>
       <div>{{ props.description }}</div>
     </div>
@@ -39,16 +39,17 @@ const courseRoute = `/learn/${props.url_slug}`;
 
 #if-desktop .course-card {
   width: 500px;
+  min-height: 150px;
 }
 
 .course-card {
   width: 100%;
-  border: 2px solid var(--app-card-shadow-color);
+  border: 2px solid var(--color-main-shadow-color);
   border-radius: 0.8rem;
-  box-shadow: 3px 3px 3px var(--app-card-shadow-color);
+  box-shadow: 3px 3px 3px var(--color-main-shadow-color);
   padding: 1rem;
-  color: var(--global-color-30);
-  background: linear-gradient(var(--global-color-60), #ddd);
+  color: var(--color-main-darker);
+  background: linear-gradient(var(--color-main-lighter), #fff);
   text-decoration: none;
   width: fit-content;
   font-size: 1.1rem;
@@ -56,7 +57,7 @@ const courseRoute = `/learn/${props.url_slug}`;
 }
 
 .course-card:hover {
-  background: linear-gradient(#ddd, var(--global-color-60));
-  box-shadow: 5px 5px 5px var(--app-card-shadow-color);
+  background: linear-gradient(#fff, var(--color-main-lighter));
+  box-shadow: 5px 5px 5px var(--color-main-shadow-color);
 }
 </style>

@@ -7,7 +7,7 @@ useHead({
 <template>
   <div id="index">
     <LatestNews />
-    <h1 id="course-head">Most Liked Courses:</h1>
+    <h1 id="course-head">👍 Most Liked Courses:</h1>
     <CourseGallery />
   </div>
 </template>

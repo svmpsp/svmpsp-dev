@@ -13,10 +13,10 @@ const props = defineProps(["link", "title"]);
 <style>
 .app-card {
   align-items: center;
-  color: var(--global-color-60);
+  color: var(--color-main-lighter);
   background: linear-gradient(
     var(--app-card-bg-color),
-    var(--global-color-10-contrast)
+    var(--color-main-contrast)
   );
   border-radius: 1rem;
   box-shadow: 3px 3px 3px var(--app-card-shadow-color);

@@ -22,7 +22,9 @@ function toggleNavbarMenu() {
       <NuxtLinkLocale to="/">
         <div id="icon">🐘</div>
       </NuxtLinkLocale>
-      <div id="logo">svmpsp.dev</div>
+      <NuxtLinkLocale to="/">
+        <div id="logo">svmpsp.dev</div>
+      </NuxtLinkLocale>
       <button @click="toggleNavbarMenu" id="header-menu-button">
         <Icon
           size="2.5rem"
@@ -62,6 +64,7 @@ function toggleNavbarMenu() {
 }
 
 .mobile-navbar-item {
+  background-color: var(--color-main-accent);
   list-style-type: none;
   font-size: 1.5rem;
   text-align: center;
@@ -69,14 +72,19 @@ function toggleNavbarMenu() {
   border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
 }
 
+.router-link-active .mobile-navbar-item {
+  border: 0;
+  background-color: var(--color-main-accent-contrast);
+}
+
 #header-menu-button {
   padding: 0.5rem;
   background-color: inherit;
-  border: 2px solid var(--global-color-60);
+  border: 2px solid var(--color-main-lighter);
   border-radius: 0.5rem;
 }
 
 #header-menu-button:active {
-  border: 2px solid var(--global-color-10-contrast);
+  border: 2px solid var(--color-main-accent-contrast);
 }
 </style>

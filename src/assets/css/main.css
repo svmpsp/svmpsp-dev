@@ -14,19 +14,16 @@
   --color-main-lighter: #eef2ee;
   --color-main-accent: #245b00;
   --color-main-accent-contrast: #3a9100;
+  --color-main-shadow-color: grey;
 
   --border-header-width: 5px;
 
-  --global-color-60: #eef2ee;
-  --global-color-30: #053b50;
-  --global-color-10: #64ccc5;
-  --global-color-10-contrast: #176b87;
+  /* REVIEW >>> */
   --header-title-font-size: 2rem;
   --header-title-padding: 2rem;
   --header-border-width: 5px;
   --navbar-item-font-size: 1.5rem;
   --footer-font-size: 1.3rem;
-
   --app-card-bg-color: var(--global-color-30);
   --app-card-border-color: var(--global-color-10-contrast);
   --app-card-color: #def9c4;

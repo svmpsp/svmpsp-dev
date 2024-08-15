@@ -14,7 +14,7 @@ const modifiedDate = new Date(props.modified_at as string).toLocaleDateString();
   <NuxtLinkLocale :to="postLink">
     <div class="news-card">
       <div class="news-card-header">
-        <h3>New Post:</h3>
+        <h3>New post:</h3>
         <h3>{{ modifiedDate }}</h3>
       </div>
       <h2>{{ props.title }}</h2>
@@ -39,7 +39,7 @@ const modifiedDate = new Date(props.modified_at as string).toLocaleDateString();
 }
 
 #if-desktop .news-card {
-  min-width: 30vw;
+  min-width: 350px;
 }
 
 .news-card {
@@ -48,16 +48,16 @@ const modifiedDate = new Date(props.modified_at as string).toLocaleDateString();
   flex-direction: column;
   margin: 0.5rem;
   padding: 1rem;
-  background: linear-gradient(var(--global-color-60), #ddd);
-  border: 2px solid var(--app-card-shadow-color);
+  background: linear-gradient(var(--color-main-lighter), #fff);
+  border: 2px solid var(--color-main-shadow-color);
   border-radius: 1rem;
-  box-shadow: 3px 3px 3px var(--app-card-shadow-color);
-  color: var(--global-color-30);
+  box-shadow: 3px 3px 3px var(--color-main-shadow-color);
+  color: var(--color-main-darker);
 }
 
 .news-card:hover {
-  background: linear-gradient(#ddd, var(--global-color-60));
-  box-shadow: 5px 5px 5px var(--app-card-shadow-color);
+  background: linear-gradient(#fff, var(--color-main-lighter));
+  box-shadow: 5px 5px 5px var(--color-main-shadow-color);
 }
 
 .abstract-box {

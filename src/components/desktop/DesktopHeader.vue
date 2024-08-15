@@ -7,7 +7,9 @@
         <NuxtLinkLocale to="/">
           <div id="icon">🐘</div>
         </NuxtLinkLocale>
-        <div id="logo">svmpsp.dev</div>
+        <NuxtLinkLocale to="/">
+          <div id="logo">svmpsp.dev</div>
+        </NuxtLinkLocale>
       </div>
       <NavBar
         nav-bar-id="desktop-navbar"

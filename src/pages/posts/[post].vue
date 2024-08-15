@@ -14,6 +14,8 @@ const { data: postHTML } = await useFetch("/api/post-html", {
     postId: postRef.value.id,
   },
 });
+
+// TODO: remove duplication between lesson and posts
 </script>
 
 <template>
@@ -25,7 +27,7 @@ const { data: postHTML } = await useFetch("/api/post-html", {
 <style>
 #post {
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 
@@ -34,8 +36,8 @@ const { data: postHTML } = await useFetch("/api/post-html", {
 }
 
 #post pre {
-  background-color: var(--global-color-30);
-  color: white;
+  background-color: var(--color-main-darker);
+  color: var(--color-main-lighter);
   padding: 1rem;
   border-radius: 0.5rem;
   line-height: 1.5;
