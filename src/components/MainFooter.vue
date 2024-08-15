@@ -20,14 +20,14 @@ const year = new Date().getFullYear();
     var(--color-main-accent-contrast)
   );
 
-  color: var(--color-main-light);
+  color: var(--color-main-lighter);
   text-align: center;
   border-top: var(--border-header-width) solid var(--color-main-accent-contrast);
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: var(--footer-font-size);
+  font-size: 1.3rem;
 
   padding: 1rem;
 }

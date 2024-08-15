@@ -23,7 +23,7 @@ const route = useRoute();
 <style>
 .header {
   background-color: var(--color-main-accent);
-  color: var(--color-main-light);
+  color: var(--color-main-lighter);
   text-align: left;
   width: 100vw;
   border-bottom: var(--border-header-width) solid
