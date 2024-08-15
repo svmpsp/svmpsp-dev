@@ -14,7 +14,7 @@ db:
 		-e POSTGRES_PASSWORD=$(POSTGRES_PWD) \
 		-e PGDATA=/var/lib/postgresql/data/pgdata \
 		-d \
-		-p 5432:5432 \
+		-p 8888:5432 \
 		-v ~/docker-mounts/postgres-db-data:/var/lib/postgresql/data \
 		postgres
 

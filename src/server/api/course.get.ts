@@ -5,8 +5,8 @@ async function getCourseLessons(dbClient: pg.Client, courseId: string) {
     `
     SELECT
       P.id, P.title, P.url_slug, L.course_order
-    FROM svmpsp_dev.posts AS P
-    JOIN svmpsp_dev.lessons as L
+    FROM posts AS P
+    JOIN lessons as L
     ON L.post_id = P.id
     WHERE L.course_id = '${courseId}'
     ORDER BY L.course_order ASC

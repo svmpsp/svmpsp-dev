@@ -4,7 +4,7 @@ async function getCourses(dbClient: pg.Client, locale: string) {
   const results = await dbClient.query(
     `
     SELECT id, title, description, url_slug
-    FROM svmpsp_dev.courses
+    FROM courses
     WHERE language = '${locale}'`,
   );
   return results.rows;

@@ -5,7 +5,7 @@ async function getPostInfo(dbClient: pg.Client, postSlug: string) {
     `
     SELECT
       id, title
-    FROM svmpsp_dev.posts
+    FROM posts
     WHERE url_slug = '${postSlug}'
     `,
   );

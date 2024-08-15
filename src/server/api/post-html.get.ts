@@ -9,7 +9,7 @@ async function getPostAssetsPath(dbClient: pg.Client, postId: string) {
   const results = await dbClient.query(
     `
     SELECT ('posts/' || language || '/' || content_path) AS assets_path
-    FROM svmpsp_dev.posts
+    FROM posts
     WHERE id = '${postId}'
     `,
   );

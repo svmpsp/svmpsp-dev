@@ -5,7 +5,7 @@ async function getCourseInfo(dbClient: pg.Client, courseSlug: string) {
     `
     SELECT
       id, title
-    FROM svmpsp_dev.courses
+    FROM courses
     WHERE url_slug = '${courseSlug}'
     `,
   );
