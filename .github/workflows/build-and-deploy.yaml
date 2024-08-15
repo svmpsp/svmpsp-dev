@@ -1,5 +1,5 @@
 name: Build and deploy
-run-name: Test run name
+run-name: From ${{ github.event.head_commit.message }} by @${{ github.actor }}
 on:
   push:
     branches:
@@ -42,4 +42,4 @@ jobs:
         with:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}          
+          labels: ${{ steps.meta.outputs.labels }}
