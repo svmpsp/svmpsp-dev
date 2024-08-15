@@ -4,12 +4,13 @@ on:
   push:
     tags:
       - "v*"
+    branches:
+      - "main"
 permissions:
   contents: read
   packages: write
 jobs:
   docker_build:
-    if: ${{ github.ref == 'refs/heads/main' }}
     name: Build docker image and push
     runs-on: ubuntu-latest
     steps:
