@@ -2,8 +2,6 @@ name: Build and deploy
 run-name: From ${{ github.event.head_commit.message }} by @${{ github.actor }}
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*"
 permissions:
@@ -11,6 +9,7 @@ permissions:
   packages: write
 jobs:
   docker_build:
+    if: ${{ github.ref == 'refs/heads/main' }}
     name: Build docker image and push
     runs-on: ubuntu-latest
     steps:
