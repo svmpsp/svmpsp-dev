@@ -10,7 +10,6 @@ export default defineNitroPlugin(async (nitroApp) => {
     postgresPort,
   } = useRuntimeConfig();
 
-  console.log("TEST ME LOG!");
   console.info(
     `Connecting to POSTGRES at http://${postgresHost}:${postgresPort}`,
   );
