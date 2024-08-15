@@ -1,5 +1,5 @@
 name: Build and deploy
-run-name: From ${{ github.event.head_commit.message }} by @${{ github.actor }}
+run-name: ${{ github.event.head_commit.message }} by @${{ github.actor }}
 on:
   push:
     tags:
