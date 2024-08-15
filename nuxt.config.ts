@@ -61,6 +61,8 @@ export default defineNuxtConfig({
     families: {
       Merriweather: [400],
       Karla: [400],
+      "Noto Sans": [400, 500],
+      Sarabun: [500],
     },
   },
   i18n: {

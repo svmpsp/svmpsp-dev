@@ -1,20 +1,12 @@
 <script setup lang="ts">
-const { $viewport } = useNuxtApp();
 const year = new Date().getFullYear();
 </script>
 
 <template>
   <div id="footer">
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="footer-desktop">
-      <div>Made in Italy with ❤️</div>
-      <br />
-      <div>©️ {{ year }} Sivam Pasupathipillai. All rights reserved.</div>
-    </div>
-    <div v-else id="footer-mobile">
-      <div>Made in Italy with ❤️</div>
-      <br />
-      <div>©️ {{ year }} Sivam Pasupathipillai. All rights reserved.</div>
-    </div>
+    <div>Made in Italy with ❤️</div>
+    <br />
+    <div>©️ {{ year }} Sivam Pasupathipillai. All rights reserved.</div>
   </div>
 </template>
 
@@ -22,10 +14,15 @@ const year = new Date().getFullYear();
 #footer {
   display: flex;
   flex-direction: column;
-  background-color: var(--global-color-30);
-  color: var(--global-color-60);
+  /* background-color: var(--color-main-accent); */
+  background: linear-gradient(
+    var(--color-main-accent),
+    var(--color-main-accent-contrast)
+  );
+
+  color: var(--color-main-light);
   text-align: center;
-  border-top: var(--header-border-width) solid var(--global-color-10-contrast);
+  border-top: var(--border-header-width) solid var(--color-main-accent-contrast);
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;

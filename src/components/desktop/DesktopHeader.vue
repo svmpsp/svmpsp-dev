@@ -9,7 +9,6 @@
         </NuxtLinkLocale>
         <div id="logo">svmpsp.dev</div>
       </div>
-      <div id="ruler"></div>
       <NavBar
         nav-bar-id="desktop-navbar"
         nav-element-class="desktop-navbar-item"
@@ -19,12 +18,6 @@
 </template>
 
 <style>
-/* #ruler {
-  border-bottom: var(--header-border-width) solid
-    var(--global-color-10-contrast);
-  border-radius: 2rem;
-} */
-
 #icon-logo-box {
   display: flex;
   flex-direction: row;
@@ -45,28 +38,29 @@
 }
 
 #desktop-navbar {
-  border-top: var(--header-border-width) solid var(--global-color-10-contrast);
+  border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
   padding: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
+  list-style-type: none;
 }
 
 .desktop-navbar-item {
-  font-size: 1.2rem;
-  list-style-type: none;
+  font-size: 1.5rem;
+  font-weight: 500;
   padding: 1.3rem;
-  /* border-top-left-radius: 1.3rem;
-  border-top-right-radius: 1.3rem; */
 }
 
 .desktop-navbar-item:hover {
-  color: var(--global-color-60);
-  background-color: var(--global-color-10-contrast);
+  /* color: var(--color-main-darker); */
+  background-color: var(--color-main-accent-contrast);
 }
 
-.router-link-exact-active {
-  color: var(--global-color-10);
+#desktop-navbar .router-link-exact-active {
+  text-decoration: underline var(--color-main-accent-contrast);
+  text-decoration-thickness: var(--border-header-width);
+  /* color: var(--color-main-alert); */
 }
 </style>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { $viewport } = useNuxtApp();
+useHead({
+  title: "Learn",
+});
 </script>
 
 <template>

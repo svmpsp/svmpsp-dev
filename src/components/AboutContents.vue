@@ -24,11 +24,7 @@ useHead({
   padding: 1rem;
 }
 
-#about-contents h2 {
-  text-align: center;
-}
-
 #about-contents p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 </style>

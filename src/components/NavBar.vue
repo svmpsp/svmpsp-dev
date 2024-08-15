@@ -15,8 +15,8 @@ const navItems = [
     to: "about",
   },
   {
-    id: "navbar-courses",
-    title: "Courses",
+    id: "navbar-learns",
+    title: "Learn",
     to: "learn",
   },
   {
@@ -37,27 +37,4 @@ const navItems = [
   </ul>
 </template>
 
-<style>
-#navbar-desktop {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: var(--navbar-item-font-size);
-  margin: 0;
-}
-
-/* .navbar-item {
-  padding: 1.3rem;
-  border-top-left-radius: 1.3rem;
-  border-top-right-radius: 1.3rem;
-}
-.navbar-item.is-active {
-  color: var(--global-color-10);
-}
-
-.navbar-item:hover {
-  color: var(--global-color-60);
-  background-color: var(--global-color-10-contrast);
-} */
-</style>
+<style></style>

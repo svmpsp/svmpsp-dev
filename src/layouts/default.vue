@@ -22,12 +22,12 @@ const route = useRoute();
 
 <style>
 .header {
-  background-color: var(--global-color-30);
-  color: var(--global-color-60);
+  background-color: var(--color-main-accent);
+  color: var(--color-main-light);
   text-align: left;
   width: 100vw;
-  border-bottom: var(--header-border-width) solid
-    var(--global-color-10-contrast);
+  border-bottom: var(--border-header-width) solid
+    var(--color-main-accent-contrast);
 
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;

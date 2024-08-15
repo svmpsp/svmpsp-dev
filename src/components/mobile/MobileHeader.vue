@@ -63,10 +63,10 @@ function toggleNavbarMenu() {
 
 .mobile-navbar-item {
   list-style-type: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 1rem 0;
-  border-top: var(--header-border-width) solid var(--global-color-10-contrast);
+  border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
 }
 
 #header-menu-button {

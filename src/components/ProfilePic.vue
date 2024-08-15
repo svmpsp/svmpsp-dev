@@ -13,8 +13,9 @@
   margin: 1rem;
 }
 
-#profile-pic {
-  height: 240px;
-  width: 240px;
+#profile-pic-box img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
 }
 </style>
