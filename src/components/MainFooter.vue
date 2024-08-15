@@ -25,8 +25,7 @@ const year = new Date().getFullYear();
   background-color: var(--global-color-30);
   color: var(--global-color-60);
   text-align: center;
-  border-bottom: var(--header-border-width) solid
-    var(--global-color-10-contrast);
+  border-top: var(--header-border-width) solid var(--global-color-10-contrast);
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;

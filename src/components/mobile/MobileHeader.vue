@@ -19,10 +19,13 @@ function toggleNavbarMenu() {
 <template>
   <div class="header" id="mobile-header">
     <div id="mobile-fixed-header">
+      <NuxtLinkLocale to="/">
+        <div id="icon">🐘</div>
+      </NuxtLinkLocale>
       <div id="logo">svmpsp.dev</div>
       <button @click="toggleNavbarMenu" id="header-menu-button">
         <Icon
-          size="3rem"
+          size="2.5rem"
           name="material-symbols-light:menu-rounded"
           style="color: #eeeeee"
         />
@@ -34,7 +37,12 @@ function toggleNavbarMenu() {
 
 <style>
 #mobile-header #logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+#mobile-header #icon {
+  font-size: 3rem;
+  line-height: 10px;
 }
 
 #mobile-fixed-header {
@@ -42,7 +50,8 @@ function toggleNavbarMenu() {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.3rem;
+  justify-items: center;
+  padding: 1rem;
 }
 
 #mobile-navbar {
@@ -54,20 +63,20 @@ function toggleNavbarMenu() {
 
 .mobile-navbar-item {
   list-style-type: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   padding: 1rem 0;
   border-top: var(--header-border-width) solid var(--global-color-10-contrast);
 }
 
 #header-menu-button {
-  padding: 0 1.5rem;
+  padding: 0.5rem;
   background-color: inherit;
-  border: 0;
+  border: 2px solid var(--global-color-60);
+  border-radius: 0.5rem;
 }
 
-#header-mobile #logo {
-  text-align: center;
-  padding: 1.5rem;
+#header-menu-button:active {
+  border: 2px solid var(--global-color-10-contrast);
 }
 </style>

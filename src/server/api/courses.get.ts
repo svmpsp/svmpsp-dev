@@ -3,9 +3,11 @@ import pg from "pg";
 async function getCourses(dbClient: pg.Client, locale: string) {
   const results = await dbClient.query(
     `
-    SELECT id, title, description, url_slug
+    SELECT id, title, description, url_slug, likes
     FROM courses
-    WHERE language = '${locale}'`,
+    WHERE language = '${locale}'
+    ORDER BY likes DESC
+    `,
   );
   return results.rows;
 }

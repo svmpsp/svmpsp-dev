@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { $viewport } = useNuxtApp();
 const route = useRoute();
 
 const { course: courseSlug, lesson: lessonSlug } = route.params;
@@ -51,7 +50,7 @@ const { data: lessonHTML } = await useFetch("/api/post-html", {
   font-family: monospace;
 }
 
-#lesson-mobile pre {
+#if-mobile pre {
   overflow: scroll;
 }
 </style>

@@ -14,11 +14,4 @@ const { data: courses } = useFetch("/api/courses", {
   </div>
 </template>
 
-<style>
-#course-gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 350px;
-}
-</style>
+<style></style>

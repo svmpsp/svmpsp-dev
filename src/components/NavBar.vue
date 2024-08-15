@@ -15,11 +15,6 @@ const navItems = [
     to: "about",
   },
   {
-    id: "navbar-blog",
-    title: "Blog",
-    to: "blog",
-  },
-  {
     id: "navbar-courses",
     title: "Courses",
     to: "learn",
@@ -52,7 +47,7 @@ const navItems = [
   margin: 0;
 }
 
-.navbar-item {
+/* .navbar-item {
   padding: 1.3rem;
   border-top-left-radius: 1.3rem;
   border-top-right-radius: 1.3rem;
@@ -64,5 +59,5 @@ const navItems = [
 .navbar-item:hover {
   color: var(--global-color-60);
   background-color: var(--global-color-10-contrast);
-}
+} */
 </style>

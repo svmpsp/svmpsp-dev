@@ -4,13 +4,17 @@ const { $viewport } = useNuxtApp();
 
 <template>
   <div id="learn">
-    <div v-if="$viewport.isGreaterOrEquals('tablet')" id="learn-desktop">
-      <div class="margins">
-        <CourseCatalog />
-      </div>
-    </div>
-    <div v-else id="learn-mobile">
-      <CourseCatalog />
-    </div>
+    <h1>Course Catalog</h1>
+    <CourseGallery />
   </div>
 </template>
+
+<style>
+#learn {
+  padding: 1rem;
+}
+
+#learn h1 {
+  margin-top: 0;
+}
+</style>

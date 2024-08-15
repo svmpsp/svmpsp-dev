@@ -8,10 +8,11 @@ docker-build:
 
 db:
 	docker run --name svmpsp-postgres --rm \
-		-e POSTGRES_USER=$(POSTGRES_USER) \
-		-e POSTGRES_DB=$(POSTGRES_DB) \
+		-e NUXT_POSTGRES_USER=$(NUXT_POSTGRES_USER) \
+		-e NUXT_POSTGRES_DB=$(NUXT_POSTGRES_DB) \
 		-e POSTGRES_HOST_AUTH_METHOD=trust \
-		-e POSTGRES_PASSWORD=$(POSTGRES_PWD) \
+		-e NUXT_POSTGRES_PASSWORD=$(NUXT_POSTGRES_PASSWORD) \
+		-e NUXT_POSTGRES_HOST=$(NUXT_POSTGRES_HOST) \
 		-e PGDATA=/var/lib/postgresql/data/pgdata \
 		-d \
 		-p 8888:5432 \
