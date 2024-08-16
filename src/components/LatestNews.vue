@@ -2,7 +2,7 @@
 
 <template>
   <div id="latest-news">
-    <h1>📖 Latest News:</h1>
+    <h1>📰 Latest News</h1>
     <NewsGallery />
   </div>
 </template>
