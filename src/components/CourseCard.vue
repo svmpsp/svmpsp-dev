@@ -15,14 +15,15 @@ const courseRoute = `/learn/${props.url_slug}`;
 </script>
 
 <template>
-  <NuxtLinkLocale v-bind="{ to: courseRoute, params: { id: props.id } }">
-    <div class="course-card">
-      <div class="course-card-head-box">
-        <h3>{{ props.title }}</h3>
-        <h3>+{{ props.likes }}💚</h3>
-      </div>
-      <div>{{ props.description }}</div>
+  <NuxtLinkLocale
+    v-bind="{ to: courseRoute, params: { id: props.id } }"
+    class="course-card"
+  >
+    <div class="course-card-head-box">
+      <h3 class="course-card-title">{{ props.title }}</h3>
+      <h3>+{{ props.likes }}💚</h3>
     </div>
+    <div>{{ props.description }}</div>
   </NuxtLinkLocale>
 </template>
 
@@ -34,30 +35,27 @@ const courseRoute = `/learn/${props.url_slug}`;
   justify-content: space-between;
 }
 
-/* #if-desktop .course-card {
-} */
-
-#if-desktop .course-card {
-  width: 500px;
-  min-height: 150px;
+.course-card-title {
+  text-decoration: underline;
 }
 
 .course-card {
+  border-left: var(--border-header-width) solid
+    var(--color-main-accent-contrast);
   width: 100%;
-  border: 2px solid var(--color-main-shadow-color);
-  border-radius: 0.8rem;
-  box-shadow: 3px 3px 3px var(--color-main-shadow-color);
+  height: 15vh;
+  /* border: 2px solid var(--color-main-shadow-color);
+  border-radius: 0.8rem; */
   padding: 1rem;
   color: var(--color-main-darker);
-  background: linear-gradient(var(--color-main-lighter), #fff);
-  text-decoration: none;
-  width: fit-content;
+  background-color: var(--color-main-lighter);
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .course-card:hover {
-  background: linear-gradient(#fff, var(--color-main-lighter));
-  box-shadow: 5px 5px 5px var(--color-main-shadow-color);
+  width: 100%;
+  background: linear-gradient(var(--color-main-lighter), #fff);
 }
 </style>

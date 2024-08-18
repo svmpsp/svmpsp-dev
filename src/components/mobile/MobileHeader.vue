@@ -54,13 +54,30 @@ function toggleNavbarMenu() {
   align-items: center;
   justify-items: center;
   padding: 1rem;
+  border-bottom: var(--border-header-width) solid
+    var(--color-main-accent-contrast);
 }
+
+/* @keyframes navbarSlideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+} */
 
 #mobile-navbar {
   display: v-bind(mobileNavbarDisplay);
   margin: 0;
   padding: 0;
   width: 100vw;
+  /* position: fixed; */
+
+  /* animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-name: navbarSlideIn;
+  animation-fill-mode: backwards; */
 }
 
 .mobile-navbar-item {
@@ -69,7 +86,8 @@ function toggleNavbarMenu() {
   font-size: 1.5rem;
   text-align: center;
   padding: 1rem 0;
-  border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
+  border-bottom: var(--header-border-width) solid
+    var(--color-main-accent-contrast);
 }
 
 .router-link-active .mobile-navbar-item {

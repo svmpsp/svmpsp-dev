@@ -20,6 +20,12 @@
 </template>
 
 <style>
+#desktop-header {
+  background-color: var(--color-main-accent);
+  border-bottom: var(--border-header-width) solid
+    var(--color-main-accent-contrast);
+}
+
 #icon-logo-box {
   display: flex;
   flex-direction: row;

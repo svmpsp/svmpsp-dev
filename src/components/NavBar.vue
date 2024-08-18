@@ -15,14 +15,9 @@ const navItems = [
     to: "about",
   },
   {
-    id: "navbar-learns",
+    id: "navbar-learn",
     title: "Learn",
     to: "learn",
-  },
-  {
-    id: "navbar-contacts",
-    title: t("mainHeaderContacts"),
-    to: "contacts",
   },
 ];
 </script>

@@ -26,8 +26,8 @@ const route = useRoute();
   color: var(--color-main-lighter);
   text-align: left;
   width: 100vw;
-  border-bottom: var(--border-header-width) solid
-    var(--color-main-accent-contrast);
+  /* border-bottom: var(--border-header-width) solid
+    var(--color-main-accent-contrast); */
 
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;

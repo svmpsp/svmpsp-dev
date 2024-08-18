@@ -4,7 +4,7 @@ async function getCourseInfo(dbClient: pg.Client, courseSlug: string) {
   const results = await dbClient.query(
     `
     SELECT
-      id, title
+      id, title, description
     FROM courses
     WHERE url_slug = '${courseSlug}'
     `,

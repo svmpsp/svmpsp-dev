@@ -4,7 +4,7 @@ async function getCourseLessons(dbClient: pg.Client, courseId: string) {
   const results = await dbClient.query(
     `
     SELECT
-      P.id, P.title, P.url_slug, L.course_order
+      P.id, P.title, P.abstract, P.url_slug, L.course_order
     FROM posts AS P
     JOIN lessons as L
     ON L.post_id = P.id

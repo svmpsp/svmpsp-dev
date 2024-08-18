@@ -7,10 +7,10 @@ useHead({
 <template>
   <div id="about-contents">
     <ProfilePic />
-    <div>
+    <div id="about-text">
       <p>
-        📍 I am a full-stack AI specialist hailing from Italy. I hold a Ph.D in
-        Artificial Intelligence, and I have more than 5 years of work experience
+        📍 I am a full-stack AI engineer hailing from Italy. I hold a Ph.D in
+        Artificial Intelligence, and have more than 5 years of work experience
         under my belt.
       </p>
       <p>
@@ -43,7 +43,7 @@ useHead({
   padding: 1rem;
 }
 
-#about-contents p {
+#about-text {
   font-size: 1.3rem;
 }
 </style>

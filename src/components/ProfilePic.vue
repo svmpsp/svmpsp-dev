@@ -13,9 +13,12 @@
   margin: 0 1.5rem;
 }
 
+#if-desktop #profile-pic-box img {
+  width: 25vw;
+  height: 25vw;
+}
+
 #profile-pic-box img {
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
 }
 </style>

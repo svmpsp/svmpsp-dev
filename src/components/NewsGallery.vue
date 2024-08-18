@@ -16,8 +16,10 @@ const { data: newsItems } = useFetch("/api/latest-posts", {
 
 <style>
 #news-gallery {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
+  flex-shrink: 0;
+  overflow-x: hidden;
 }
 </style>
