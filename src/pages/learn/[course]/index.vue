@@ -20,9 +20,10 @@ const { data: lessons } = await useFetch("/api/course", {
 <template>
   <div id="course">
     <div id="course-header">
-      <h2 id="course-title">{{ courseRef.title }}</h2>
+      <h1 id="course-title">{{ courseRef.title }}</h1>
       <div id="course-subtitle">{{ courseRef.description }}</div>
     </div>
+    <h2 id="lessons-header">Lessons</h2>
     <ul>
       <li class="lesson-link" v-for="lesson of lessons">
         <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.url_slug}`">
@@ -35,6 +36,13 @@ const { data: lessons } = await useFetch("/api/course", {
 </template>
 
 <style>
+#lessons-header {
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+  border-bottom: var(--border-header-width) solid
+    var(--color-main-accent-contrast);
+}
+
 #course {
   padding: 1.5rem;
 }
@@ -59,8 +67,8 @@ const { data: lessons } = await useFetch("/api/course", {
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   list-style-type: none;
-  border-left: var(--border-header-width) solid
-    var(--color-main-accent-contrast);
+  /* border-left: var(--border-header-width) solid
+    var(--color-main-accent-contrast); */
   margin-bottom: 1rem;
   width: 100%;
 }
@@ -74,7 +82,8 @@ const { data: lessons } = await useFetch("/api/course", {
 .lesson-link:hover {
   /* font-weight: bolder; */
   text-decoration: none;
-  border-left: var(--border-header-width) solid var(--color-main-alert);
+  border-left: var(--border-header-width) solid
+    var(--color-main-accent-contrast);
   background-color: var(--color-main-lighter);
 }
 </style>
