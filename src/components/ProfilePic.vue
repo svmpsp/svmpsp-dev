@@ -1,6 +1,6 @@
 <template>
   <div id="profile-pic-box">
-    <NuxtImg src="/eleph.jpeg" />
+    <NuxtImg src="/pics/eleph.jpeg" />
   </div>
 </template>
 

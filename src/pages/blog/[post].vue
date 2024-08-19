@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const route = useRoute();
-
-const { post: postSlug } = route.params;
+const { post: postSlug } = useRoute().params;
 
 const { data: postRef } = await useFetch("/api/post-by-slug", {
   query: {
@@ -20,6 +18,10 @@ const { data: courseRef, error } = await useFetch("/api/course-by-post", {
   query: {
     postId: postRef.value.id,
   },
+});
+
+useHead({
+  title: postRef.value.title,
 });
 
 if (!error.value) {
@@ -64,6 +66,22 @@ if (!error.value) {
   padding: var(--main-contents-header-padding);
   border-radius: 0.5rem;
   font-family: monospace;
+}
+
+#post-contents img {
+  display: block;
+  width: 100%;
+}
+
+#if-desktop #post-contents .img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#if-desktop #post-contents img {
+  width: 30vw;
+  margin: auto 0;
 }
 
 #post-contents h1,
