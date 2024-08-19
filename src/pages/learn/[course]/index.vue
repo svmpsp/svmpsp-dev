@@ -26,7 +26,7 @@ const { data: lessons } = await useFetch("/api/course", {
     <h2 id="lessons-header">Lessons</h2>
     <ul>
       <li class="lesson-link" v-for="lesson of lessons">
-        <NuxtLinkLocale :to="`/learn/${courseSlug}/${lesson.url_slug}`">
+        <NuxtLinkLocale :to="`/blog/${lesson.url_slug}`">
           <div class="course-lesson-title">{{ lesson.title }}</div>
           <div class="course-lesson-abstract">{{ lesson.abstract }}</div>
         </NuxtLinkLocale>
@@ -44,7 +44,7 @@ const { data: lessons } = await useFetch("/api/course", {
 }
 
 #course {
-  padding: 1.5rem;
+  padding: var(--main-contents-padding);
 }
 
 #course ul {
@@ -80,7 +80,6 @@ const { data: lessons } = await useFetch("/api/course", {
 }
 
 .lesson-link:hover {
-  /* font-weight: bolder; */
   text-decoration: none;
   border-left: var(--border-header-width) solid
     var(--color-main-accent-contrast);

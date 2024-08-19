@@ -7,17 +7,13 @@ useHead({
 
 <template>
   <div id="learn">
-    <h1>Course Catalog</h1>
+    <h2>Course Catalog</h2>
     <CourseGallery />
   </div>
 </template>
 
 <style>
 #learn {
-  padding: 1rem;
-}
-
-#learn h1 {
-  margin-top: 0;
+  padding: var(--main-contents-padding);
 }
 </style>

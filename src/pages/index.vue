@@ -6,18 +6,20 @@ useHead({
 
 <template>
   <div id="index">
+    <h2>Latest News</h2>
     <LatestNews />
-    <h1 id="course-head">👍 Most Liked Courses:</h1>
+    <h2 id="course-head">Popular courses</h2>
     <CourseGallery />
   </div>
 </template>
 
 <style>
 #index {
-  padding: 1.7rem;
+  padding: var(--main-contents-padding);
+  line-height: var(--main-contents-line-height);
 }
 
 #course-head {
-  margin-top: 1.5rem;
+  margin-top: var(--main-contents-section-margin-top);
 }
 </style>

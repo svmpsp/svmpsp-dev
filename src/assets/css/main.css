@@ -19,6 +19,15 @@
 
   --border-header-width: 5px;
 
+  --navbar-font-size: 1.4rem;
+
+  --main-contents-padding: 1.5rem;
+  --main-contents-font-size: 1.2rem;
+  --main-contents-font-weight: 500;
+  --main-contents-section-margin-top: 1rem;
+  --main-contents-header-padding: .8rem;
+  --main-contents-header-subtitle-font-size: 1.4rem;
+
   /* REVIEW >>> */
   --header-title-font-size: 2rem;
   --header-title-padding: 2rem;

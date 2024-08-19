@@ -14,8 +14,13 @@
 }
 
 #if-desktop #profile-pic-box img {
-  width: 25vw;
-  height: 25vw;
+  width: 20vw;
+  height: 20vw;
+}
+
+#if-mobile #profile-pic-box img {
+  width: 55vw;
+  height: 55vw;
 }
 
 #profile-pic-box img {

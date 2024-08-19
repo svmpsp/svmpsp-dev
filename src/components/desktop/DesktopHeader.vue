@@ -36,7 +36,7 @@
 
 #icon {
   line-height: 10px;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 #logo {
@@ -48,27 +48,25 @@
 #desktop-navbar {
   border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0;
   list-style-type: none;
 }
 
 .desktop-navbar-item {
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 1.3rem;
+  font-size: var(--main-contents-header-subtitle-font-size);
+  font-weight: var(--main-contents-font-weight);
+  padding: var(--main-contents-header-padding);
 }
 
 .desktop-navbar-item:hover {
-  /* color: var(--color-main-darker); */
   background-color: var(--color-main-accent-contrast);
 }
 
 #desktop-navbar .router-link-exact-active {
   text-decoration: underline var(--color-main-accent-contrast);
   text-decoration-thickness: var(--border-header-width);
-  /* color: var(--color-main-alert); */
 }
 </style>

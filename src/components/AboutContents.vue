@@ -34,16 +34,16 @@ useHead({
 <style>
 #if-desktop #about-contents {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
 }
 
 #about-contents {
-  padding: 1rem;
+  padding: var(--main-contents-padding);
 }
 
 #about-text {
-  font-size: 1.3rem;
+  font-size: var(--main-contents-font-size);
 }
 </style>

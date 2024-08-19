@@ -38,22 +38,13 @@ function toggleNavbarMenu() {
 </template>
 
 <style>
-#mobile-header #logo {
-  font-size: 1.8rem;
-}
-
-#mobile-header #icon {
-  font-size: 3rem;
-  line-height: 10px;
-}
-
 #mobile-fixed-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   justify-items: center;
-  padding: 1rem;
+  padding: var(--main-contents-header-padding);
   border-bottom: var(--border-header-width) solid
     var(--color-main-accent-contrast);
 }
@@ -83,10 +74,10 @@ function toggleNavbarMenu() {
 .mobile-navbar-item {
   background-color: var(--color-main-accent);
   list-style-type: none;
-  font-size: 1.5rem;
+  font-size: var(--navbar-font-size);
   text-align: center;
-  padding: 1rem 0;
-  border-bottom: var(--header-border-width) solid
+  padding: var(--main-contents-header-padding) 0;
+  border-bottom: var(--border-header-width) solid
     var(--color-main-accent-contrast);
 }
 

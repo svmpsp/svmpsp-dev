@@ -4,7 +4,7 @@ async function getPostInfo(dbClient: pg.Client, postSlug: string) {
   const results = await dbClient.query(
     `
     SELECT
-      id, title
+      id, title, abstract
     FROM posts
     WHERE url_slug = '${postSlug}'
     `,

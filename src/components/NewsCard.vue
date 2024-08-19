@@ -6,7 +6,7 @@ const props = defineProps({
   modified_at: String,
   url_slug: String,
 });
-const postLink = `/posts/${props.url_slug}`;
+const postLink = `/blog/${props.url_slug}`;
 const modifiedDate = new Date(props.modified_at as string).toLocaleDateString();
 </script>
 

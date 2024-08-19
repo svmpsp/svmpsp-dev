@@ -1,5 +1,3 @@
-## Lesson 5: Variables in Python
-
 In this lesson, we will introduce you to one of the fundamental concepts in programming: variables. A variable is a name given to a value that can change during the execution of your program.
 
 ### What are variables?
