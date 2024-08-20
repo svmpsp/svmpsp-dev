@@ -46,4 +46,8 @@ useHead({
 #about-text {
   font-size: var(--main-contents-font-size);
 }
+
+#about-text > p {
+  margin-top: 0;
+}
 </style>

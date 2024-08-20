@@ -77,6 +77,7 @@ if (!error.value) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 #if-desktop #post-contents img {

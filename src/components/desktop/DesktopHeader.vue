@@ -1,4 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { locale, locales, setLocale } = useI18n();
+
+function getLocaleIcon(): String {
+  const inactiveLocale = locales.value.filter(
+    (loc) => loc.code !== locale.value,
+  )[0];
+  return inactiveLocale.icon;
+}
+
+function changeLocale() {
+  switch (locale.value) {
+    case "it":
+      setLocale("en");
+      break;
+    case "en":
+      setLocale("it");
+      break;
+    default:
+      console.log("Invalid locale: ", locale.value);
+  }
+}
+</script>
 
 <template>
   <div class="header" id="desktop-header">
@@ -11,10 +33,17 @@
           <div id="logo">svmpsp.dev</div>
         </NuxtLinkLocale>
       </div>
-      <NavBar
-        nav-bar-id="desktop-navbar"
-        nav-element-class="desktop-navbar-item"
-      />
+      <div id="navbar-locale-box">
+        <NavBar
+          nav-bar-id="desktop-navbar"
+          nav-element-class="desktop-navbar-item"
+        />
+        <button
+          id="locale-icon"
+          v-html="getLocaleIcon()"
+          @click="changeLocale"
+        ></button>
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +53,17 @@
   background-color: var(--color-main-accent);
   border-bottom: var(--border-header-width) solid
     var(--color-main-accent-contrast);
+}
+
+#navbar-locale-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
+
+  font-size: var(--main-contents-header-subtitle-font-size);
+  font-weight: var(--main-contents-font-weight);
 }
 
 #icon-logo-box {
@@ -46,7 +86,6 @@
 }
 
 #desktop-navbar {
-  border-top: var(--header-border-width) solid var(--color-main-accent-contrast);
   padding: 0;
   margin: 0;
   display: flex;
@@ -55,9 +94,22 @@
   list-style-type: none;
 }
 
+#locale-icon {
+  margin: 0;
+  padding: var(--main-contents-header-padding);
+  text-align: center;
+  line-height: 10px;
+
+  background-color: inherit;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  /* border: 2px solid var(--color-main-lighter);
+  border-radius: 0.5rem; */
+}
+
 .desktop-navbar-item {
-  font-size: var(--main-contents-header-subtitle-font-size);
-  font-weight: var(--main-contents-font-weight);
   padding: var(--main-contents-header-padding);
 }
 

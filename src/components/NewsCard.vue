@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+const { locale } = useI18n();
 const props = defineProps({
   id: String,
   title: String,
@@ -7,13 +9,16 @@ const props = defineProps({
   url_slug: String,
 });
 const postLink = `/blog/${props.url_slug}`;
-const modifiedDate = new Date(props.modified_at as string).toLocaleDateString();
+const modifiedDate = new Date(props.modified_at as string).toLocaleDateString(
+  locale.value,
+  { month: "long", year: "numeric", day: "numeric" },
+);
 </script>
 
 <template>
   <NuxtLinkLocale :to="postLink" class="news-card">
     <div class="news-card-header">
-      <h3>New post:</h3>
+      <h3>{{ t("homeNewsCardHeading") }}:</h3>
       <h3>{{ modifiedDate }}</h3>
     </div>
     <h2 class="news-card-title">{{ props.title }}</h2>

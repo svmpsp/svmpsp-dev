@@ -11,12 +11,12 @@ const navItems = [
   { id: "navbar-home", title: "Home", to: "index" },
   {
     id: "navbar-about",
-    title: "About",
+    title: t("navbarAbout"),
     to: "about",
   },
   {
     id: "navbar-learn",
-    title: "Learn",
+    title: t("navbarLearn"),
     to: "learn",
   },
 ];

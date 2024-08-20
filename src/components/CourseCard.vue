@@ -6,7 +6,16 @@ const props = defineProps({
   url_slug: String,
   likes: Number,
 });
-const courseRoute = `/learn/${props.url_slug}`;
+const { locale } = useI18n();
+const localeRoute = useLocaleRoute();
+const coursePath = localeRoute("learn", locale.value)?.path;
+const courseRoute = `${coursePath}/${props.url_slug}`;
+
+// for (const route of useRouter().getRoutes()) {
+//   console.log("route: ", route);
+// }
+
+// console.log("coursePath is: ", coursePath);
 
 // TODO: fix likes markup if there is a large number
 // TODO: add translucent image on course card

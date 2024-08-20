@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n();
 useHead({
   title: "Home",
 });
@@ -6,9 +7,9 @@ useHead({
 
 <template>
   <div id="index">
-    <h2>Latest News</h2>
+    <h2>{{ t("homeNewsHeader") }}</h2>
     <LatestNews />
-    <h2 id="course-head">Popular courses</h2>
+    <h2 id="course-head">{{ t("homeLearnHeader") }}</h2>
     <CourseGallery />
   </div>
 </template>
@@ -17,6 +18,10 @@ useHead({
 #index {
   padding: var(--main-contents-padding);
   line-height: var(--main-contents-line-height);
+}
+
+#index > h2 {
+  font-size: var(--main-contents-h2-font-size);
 }
 
 #course-head {

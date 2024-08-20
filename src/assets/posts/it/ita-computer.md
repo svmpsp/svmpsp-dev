@@ -19,6 +19,11 @@ Per esempio, i seguenti sono solo alcuni dei problemi che è possibile risolvere
 
 ### Come è fatto un computer?
 
+<figure class="img-box">
+  <img src="/pics/computer_parts.png" alt="Parts of a computer"/>
+  <figcaption>I componenti principali di un computer: CPU, RAM e disco rigido.</figcaption>
+</figure>
+
 Un computer è composto principalmente da tre componenti:
 
 - **il processore -** è il "cervello" del computer, serve per eseguire operazioni sui dati, come ad esempio creare dati, modificare dati, etc.
@@ -37,8 +42,12 @@ Tra questi, il processore è l'unico componente **attivo**, ovvero che esegue op
 
 Il processore lavora trasferendo dati tra il disco e la memoria ed eseguendo operazioni su questi dati.
 
-<p class="img-box">
-  <img src="/pics/computer_parts.png" />
-</p>
+### In conclusione
 
-E questo è tutto quello che dobbiamo sapere per poter iniziare ad usare un computer.
+I computer sono oggetti che usiamo tutti i giorni, ad esempio come smartphone, per questo è importante sapere come funzionano per utilizzarli al meglio.
+
+I computer ci aiutano a gestire informazioni digitali, o dati. Esistono molti tipi di dati, per esempio documenti testuali, foto, video e molti altri.
+
+In questa lezione abbiamo imparato cos'è un computer e quali sono i principali componenti che lo costituiscono: il processore, la memoria e il disco rigido.
+
+Questo è tutto quello che dobbiamo sapere per poter iniziare ad usare un computer.

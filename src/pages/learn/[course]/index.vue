@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { $viewport } = useNuxtApp();
+const { t } = useI18n();
 
 const route = useRoute();
 const courseSlug = route.params.course;
@@ -23,7 +23,7 @@ const { data: lessons } = await useFetch("/api/course", {
       <h1 id="course-title">{{ courseRef.title }}</h1>
       <div id="course-subtitle">{{ courseRef.description }}</div>
     </div>
-    <h2 id="lessons-header">Lessons</h2>
+    <h2 id="lessons-header">{{ t("courseLessonsHeader") }}</h2>
     <ul>
       <li class="lesson-link" v-for="lesson of lessons">
         <NuxtLinkLocale :to="`/blog/${lesson.url_slug}`">
@@ -36,9 +36,9 @@ const { data: lessons } = await useFetch("/api/course", {
 </template>
 
 <style>
-#lessons-header {
+#course > h2 {
   margin: 1.5rem 0;
-  font-size: 1.8rem;
+  font-size: var(--main-contents-h2-font-size);
   border-bottom: var(--border-header-width) solid
     var(--color-main-accent-contrast);
 }

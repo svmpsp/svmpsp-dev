@@ -1,8 +1,31 @@
 <script setup lang="ts">
+const { locale, locales, setLocale } = useI18n();
+
 const mobileNavbarDisplay = ref("none");
 
-function toggleNavbarMenu() {
+function getLocaleIcon(): String {
+  const inactiveLocale = locales.value.filter(
+    (loc) => loc.code !== locale.value,
+  )[0];
+  console.log("Inactive locale is: ", inactiveLocale);
+  return inactiveLocale.icon;
+}
+
+function changeLocale() {
   console.log("Button was clicked!");
+  switch (locale.value) {
+    case "it":
+      setLocale("en");
+      break;
+    case "en":
+      setLocale("it");
+      break;
+    default:
+      console.log("Invalid locale: ", locale.value);
+  }
+}
+
+function toggleNavbarMenu() {
   switch (mobileNavbarDisplay.value) {
     case "none":
       mobileNavbarDisplay.value = "block";
@@ -25,6 +48,11 @@ function toggleNavbarMenu() {
       <NuxtLinkLocale to="/">
         <div id="logo">svmpsp.dev</div>
       </NuxtLinkLocale>
+      <button
+        id="locale-icon"
+        v-html="getLocaleIcon()"
+        @click="changeLocale"
+      ></button>
       <button @click="toggleNavbarMenu" id="header-menu-button">
         <Icon
           size="2.5rem"
@@ -47,6 +75,13 @@ function toggleNavbarMenu() {
   padding: var(--main-contents-header-padding);
   border-bottom: var(--border-header-width) solid
     var(--color-main-accent-contrast);
+}
+
+#locale-icon {
+  margin: 0;
+  text-align: center;
+  border: none;
+  font-size: 1.5rem;
 }
 
 /* @keyframes navbarSlideIn {

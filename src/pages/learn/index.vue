@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n();
 useHead({
   title: "Learn",
 });
@@ -6,7 +7,7 @@ useHead({
 
 <template>
   <div id="learn">
-    <h2>Course Catalog</h2>
+    <h2 id="learn-header">{{ t("learnHeader") }}</h2>
     <CourseGallery />
   </div>
 </template>
@@ -14,5 +15,9 @@ useHead({
 <style>
 #learn {
   padding: var(--main-contents-padding);
+}
+
+#learn > h2 {
+  font-size: var(--main-contents-h2-font-size);
 }
 </style>

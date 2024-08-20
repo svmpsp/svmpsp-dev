@@ -66,10 +66,28 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    customRoutes: "config",
     vueI18n: "./i18n.config.ts",
-    locales: ["en", "it"],
+    locales: [
+      { code: "en", name: "English", icon: "🇬🇧" },
+      { code: "it", name: "Italiano", icon: "🇮🇹" },
+    ],
     defaultLocale: "en",
     strategy: "prefix_and_default",
+    pages: {
+      about: {
+        en: "/about",
+        it: "/contatti",
+      },
+      "learn/index": {
+        en: "/learn",
+        it: "/impara",
+      },
+      "learn/[course]/index": {
+        en: "/learn/[course]",
+        it: "/impara/[course]",
+      },
+    },
   },
   image: {},
 });
