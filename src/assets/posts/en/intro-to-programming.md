@@ -1,5 +1,3 @@
-## Lesson 1: Introduction to Programming
-
 Welcome to the world of programming with Python!
 
 In this first lesson, we'll introduce you to the basics of programming and why it's an exciting field to explore.
@@ -28,6 +26,8 @@ Additionally, programming is used in:
 
 ### What is Python?
 
+In this course we will focus on Python.
+
 Python is a popular programming language known for its simplicity, readability, and ease of use. Althought it is not the fastest programming program available, its ease-of-use makes it perfect for running small programs and automating small tasks.
 
 Nonetheless, it can also be used for bigger projects such as:
@@ -38,13 +38,4 @@ Nonetheless, it can also be used for bigger projects such as:
 
 All of these concepts might sound weird at first, but do not worry. We will describe each step in a simple way to make programming sound intuitive and fun.
 
-### Next Steps
-
-In the next lessons, we'll explore the basic syntax of Python and write our first program. Don't worry if you're new to programming; we'll take it one step at a time!
-
-**Your Turn**
-
-1. What do you think is the most exciting application of programming?
-2. Have you heard about any projects or companies that use programming in interesting ways?
-
-Share your thoughts, and let's get started on this programming journey together!
+In the next posts, we'll explore the basic syntax of Python and write our first program. Don't worry if you're new to programming; we'll take it one step at a time!

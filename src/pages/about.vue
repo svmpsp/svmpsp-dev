@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { $viewport } = useNuxtApp();
+const { t } = useI18n();
 useHead({
-  title: "About - svmpsp.dev",
+  title: t("navbarAbout"),
 });
 </script>
 

@@ -1,3 +1,3 @@
-## Lesson 8: Strings in Python
+Strings are the name given by programmers to text data.
 
 TBD.

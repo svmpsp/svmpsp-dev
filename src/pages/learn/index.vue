@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 useHead({
-  title: "Learn",
+  title: t("navbarLearn"),
 });
 </script>
 

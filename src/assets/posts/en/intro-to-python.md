@@ -1,5 +1,3 @@
-## Lesson 4: Introduction to Python
-
 Welcome to the world of Python programming!
 
 In this first lesson, we'll introduce you to the basics of Python and set the stage for our journey into the wonderful world of coding.

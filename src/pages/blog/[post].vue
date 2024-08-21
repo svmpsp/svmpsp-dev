@@ -31,18 +31,12 @@ if (!error.value) {
 
 <template>
   <div id="post">
-    <!-- <NuxtLinkLocale id="back-link" :to="courseLink"
-      >&lt;&lt;&lt; Back to course</NuxtLinkLocale
-    > -->
     <div id="post-header">
       <h2>{{ postRef.title }}</h2>
       <div>{{ postRef.abstract }}</div>
     </div>
     <CourseAnchor v-if="courseSlug" v-bind="courseRef" />
     <div id="post-contents" v-html="postHTML"></div>
-    <!-- <NuxtLinkLocale id="back-link" :to="courseLink"
-      >&lt;&lt;&lt; Back to course</NuxtLinkLocale
-    > -->
   </div>
 </template>
 
@@ -58,6 +52,7 @@ if (!error.value) {
   padding: var(--main-contents-padding);
   font-size: var(--main-contents-font-size);
   font-weight: var(--main-contents-font-weight);
+  line-height: 1.5rem;
 }
 
 #post-contents pre {
@@ -65,6 +60,14 @@ if (!error.value) {
   color: var(--color-main-lighter);
   padding: var(--main-contents-header-padding);
   border-radius: 0.5rem;
+  font-family: monospace;
+}
+
+p > code {
+  background-color: var(--color-main-darker);
+  color: var(--color-main-lighter);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
   font-family: monospace;
 }
 
@@ -92,7 +95,13 @@ if (!error.value) {
     var(--color-main-accent-contrast);
 }
 
-#if-mobile pre {
-  overflow: scroll;
+#if-mobile code {
+}
+
+p.note {
+  background-color: var(--color-main-lighter);
+  border-left: var(--border-header-width) solid var(--color-main-note);
+  padding: 1rem;
+  margin-top: 1rem;
 }
 </style>

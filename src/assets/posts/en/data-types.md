@@ -1,7 +1,3 @@
-## Lesson 7: Data Types in Python
-
-### Introduction
-
 In this lesson, we'll explore the fundamental concept of data types in Python programming. Understanding data types is crucial to writing effective and efficient code. By the end of this lesson, you'll be able to identify and work with different data types in Python.
 
 ### What are Data Types?
@@ -78,7 +74,7 @@ Now it's your turn! Try out these exercises to solidify your understanding of da
 2. Convert an integer variable `x` to a string, then back to an integer.
 3. Compare two strings using the `==` operator. What happens when you compare them with different casing (e.g., "hello" vs. "HELLO")?
 
-## Conclusion
+### Conclusions
 
 In this lesson, we've explored the fundamental concept of data types in Python programming. You now know how to identify and work with various data types, including integers, floats, strings, and booleans. Remember to use the `type()` function to check the data type of a variable, and be mindful of data types when performing operations or comparisons.
 

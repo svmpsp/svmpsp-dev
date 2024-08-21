@@ -1,5 +1,3 @@
-## Lesson 9: Lists in Python
-
 In this lesson, we will learn about one of the most powerful data structures in Python: lists.
 
 ### What is a List?

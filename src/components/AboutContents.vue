@@ -10,8 +10,7 @@ useHead({
     <div id="about-text">
       <p>
         📍 I am a full-stack AI engineer hailing from Italy. I hold a Ph.D in
-        Artificial Intelligence, and have more than 5 years of work experience
-        under my belt.
+        Artificial Intelligence.
       </p>
       <p>
         💚 I am passionate about designing, building & thinkering about
@@ -24,7 +23,7 @@ useHead({
         and more.
       </p>
       <p>
-        In my spare time, you can find me hiking 🏔, social dancing 🕺🏾, or
+        In my spare time, you can find me hiking 🏔, latin dancing 🪇, or
         playing my guitar 🎸.
       </p>
     </div>
@@ -45,6 +44,10 @@ useHead({
 
 #about-text {
   font-size: var(--main-contents-font-size);
+}
+
+#if-desktop #about-text {
+  margin-right: 5vw;
 }
 
 #about-text > p {
