@@ -96,6 +96,7 @@ p > code {
 }
 
 #if-mobile code {
+  overflow-x: scroll;
 }
 
 p.note {
