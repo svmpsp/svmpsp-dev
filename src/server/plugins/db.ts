@@ -13,7 +13,9 @@ export default defineNitroPlugin(async (nitroApp) => {
   console.log(
     `Connecting to POSTGRES at http://${postgresHost}:${postgresPort}`,
   );
-  console.log(`Connection string: username=${postgresUser} db=${postgresDb}`);
+  console.log(
+    `Connection string: username=${postgresUser} db=${postgresDb} pwd=${postgresPassword}`,
+  );
 
   const client = new Client({
     user: postgresUser,
