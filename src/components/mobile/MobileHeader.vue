@@ -7,7 +7,6 @@ function getLocaleIcon(): String {
   const inactiveLocale = locales.value.filter(
     (loc) => loc.code !== locale.value,
   )[0];
-  console.log("Inactive locale is: ", inactiveLocale);
   return inactiveLocale.icon;
 }
 
