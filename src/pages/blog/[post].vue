@@ -95,7 +95,7 @@ p > code {
     var(--color-main-accent-contrast);
 }
 
-#if-mobile code {
+#if-mobile pre {
   overflow-x: scroll;
 }
 

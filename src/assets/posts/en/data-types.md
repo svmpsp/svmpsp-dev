@@ -66,16 +66,6 @@ print(y)  # prints: '5'
 - Be mindful of data types when performing arithmetic operations or comparisons. Python will automatically convert between compatible types, but this may not always produce the desired result.
 - When working with strings, remember that they are case-sensitive.
 
-### Practice Time!
-
-Now it's your turn! Try out these exercises to solidify your understanding of data types in Python:
-
-1. Assign a value of your choice to each of the following variables: `age`, `name`, and `is_admin`. Verify their data types using the `type()` function.
-2. Convert an integer variable `x` to a string, then back to an integer.
-3. Compare two strings using the `==` operator. What happens when you compare them with different casing (e.g., "hello" vs. "HELLO")?
-
 ### Conclusions
 
 In this lesson, we've explored the fundamental concept of data types in Python programming. You now know how to identify and work with various data types, including integers, floats, strings, and booleans. Remember to use the `type()` function to check the data type of a variable, and be mindful of data types when performing operations or comparisons.
-
-In the next lesson, we'll dive deeper into variables, operators, and control structures in Python. See you there!

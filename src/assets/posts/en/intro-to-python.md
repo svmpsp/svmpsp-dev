@@ -21,36 +21,48 @@ So, why should you learn Python? Here are some reasons:
 3. **Cross-Platform**: Python can run on multiple operating systems, including Windows, macOS, and Linux.
 4. **Extensive Libraries**: Python has an extensive collection of libraries and frameworks that make it easy to perform various tasks, such as data analysis, web development, and more.
 
-### Setting Up Your Environment
+### Experiment with Python
 
-To get started with Python, you'll need a few things:
+One of the great things about Python is that is comes with an interpreter, the `python` program. So if you want to experiment or understand a concept better, you can easily start an interpreter session and experiment with the code there.
 
-1. **Install Python**: Download and install the latest version of Python from the official website: <https://www.python.org/downloads/>
-2. **Choose an Editor**: You can use any text editor or IDE (Integrated Development Environment) to write your Python code. Some popular options include PyCharm, Visual Studio Code, and Sublime Text.
-3. **Get Familiar with the Command Line**: Learn the basics of the command line interface (CLI) to interact with your Python environment.
+For example:
 
-### First Steps in Python
-
-Now that you have Python installed and an editor set up, let's take our first steps in writing some Python code!
-
-Here's a simple "Hello World" program to get you started:
-
-```python
-print("Hello, World!")
+```
+$ python
+Python 3.11.9 (main, Aug  2 2024, 17:55:55) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = 123
+>>> b = 4
+>>> a + b
+127
 ```
 
-Run this code by saving it to a file (e.g., `hello.py`) and then executing it using the command line: `python hello.py`
+This is a great way to learn and to quickly test things out as we dive deeper into programming with Python.
 
-Congratulations! You've just written your first Python program!
+### A note about comments
 
-In our next lesson, we'll dive deeper into the world of Python, exploring data types, variables, and basic syntax.
+As in other programming languages, Python supports writing code comments.
 
-### Homework
+Code comments are special parts of the program that are ignored by the interpreter and are used to
+comment the code. For example:
 
-1. Install Python and set up an editor.
-2. Write a simple "Hello World" program using the `print()` function.
-3. Experiment with running your code using the command line.
+```
+# This is a comment, the following variables
+# represent the current year and month
+x = 2023
+y = 12
+```
 
-That's it for now! Keep practicing, and you'll be well on your way to becoming a Python master!
+When you run this program, the interpreter removes the comments:
 
-**Next Lesson:** [Introduction to Data Types and Variables](https://www.example.com/next-lesson)
+```
+x = 2023
+y = 12
+```
+
+Comments should only be used to explain code that is difficult to understand.
+It is far better to use variable names and clear code instead of comments.
+
+### Conclusions
+
+In this post we have introduced some of the features of the Python language, and we discussed why it is a good programming language for beginners.

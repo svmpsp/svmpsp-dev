@@ -42,6 +42,6 @@ which tells the interpreter to print that sentence. And that's exactly what the 
 
 ### Conclusions
 
-Congratulations!!! You have successfully written and executed a Python program.
+Congratulations! You have successfully written and executed a Python program.
 
 If you don't understand exactly how that was possible do not worry. We'll discuss all the details in the following posts.
