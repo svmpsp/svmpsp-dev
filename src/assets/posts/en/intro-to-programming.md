@@ -1,28 +1,18 @@
-Welcome to the world of programming with Python!
-
 In this first lesson, we'll introduce you to the basics of programming and why it's an exciting field to explore.
 
 ### What is Programming?
 
-Programming is the process of making a computer do your work for you. With programming we can automate repetitive tasks and we can focus on what matters the most.
+Programming means telling a computer do your work for you. With programming we can automate repetitive tasks and we can focus on what we are good at: creative thinking and finding new problems to solve.
 
-Technically, programming is the process of designing, writing, testing, and maintaining the source code of a computer programs. This source code is written in one or more programming languages, such as Python, Java, C++, or many others.
+Technically, programming is the process of designing, writing, testing, and maintaining the source code of computer programs. This source code is written in one or more programming languages, such as Python, Java, C++, or many others.
 
-Think of programming like building with LEGO bricks. You have individual blocks (source code) that can be connected in different ways to create a structure (program). Just as you need to follow certain rules and guidelines when building with LEGOs, programmers follow specific rules and guidelines when writing code to ensure it works correctly and efficiently.
+Don't be scared by terminology here, a "source code document" is simply a file with some words written in it. The words must be valid programming instructions from a programming language. Exactly as you could open a text document and write a letter in Spanish, you could open a document and write a program in Java.
 
 ### Why is Programming Important?
 
-Programming has become an essential part of our daily lives.
+Programming has become an essential part of our daily lives. Everything you use, watch, work with, drive works thanks to a computer program.
 
-You can probably apply programming to automate the boring parts of your daily work, like sending an email each week, or analyzing a spreadsheet to extract relevant information or graphs.
-
-Additionally, programming is used in:
-
-1. **Web development**: Building websites, web applications, and mobile apps that we use every day.
-2. **Artificial intelligence (AI) and machine learning (ML)**: Creating intelligent systems that can learn from data and make decisions.
-3. **Gaming**: Developing video games that entertain and challenge us.
-4. **Scientific research**: Analyzing large datasets, simulating complex phenomena, and discovering new insights.
-5. **Automation**: Controlling robots, drones, and other machines to perform tasks efficiently.
+You can probably apply programming to automate the boring parts of your daily work, like sending an email each week, or analyzing a spreadsheet to extract relevant information.
 
 ### What is Python?
 
