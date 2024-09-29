@@ -9,21 +9,20 @@ useHead({
     <ProfilePic />
     <div id="about-text">
       <p>
-        📍 I am a full-stack AI engineer hailing from Italy. I hold a Ph.D in
-        Artificial Intelligence.
+        📍 I am a full-stack AI specialist hailing from Italy. I hold a Ph.D. in
+        data science a a M.Sc. in Computer Engineering.
       </p>
       <p>
-        💚 I am passionate about designing, building & thinkering about
-        high-quality software & AI systems. I enjoy writing blog posts and
-        courses to share my passion and have fun while doing it.
+        💚 I am passionate about designing, building & tinkering about elegant
+        software solutions & AI systems. I enjoy sharing my passions through
+        authoring blog posts and courses.
       </p>
       <p>
-        🤖 My tech toolkit includes: Python, deep learning, LLMs, distributed
-        systems, Big Data technologies, linux, Typescript, gRPC, web development
-        and more.
+        🤖 My tech toolkit includes: Python, deep learning, LLMs, big data
+        technologies, linux, Typescript, gRPC, web development and more.
       </p>
       <p>
-        In my spare time, you can find me hiking 🏔, latin dancing 🪇, or
+        In my spare time, you can find me hiking 🏔, social dancing 🪇, or
         playing my guitar 🎸.
       </p>
     </div>
