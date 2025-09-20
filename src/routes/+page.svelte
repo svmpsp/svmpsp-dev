@@ -1,368 +1,398 @@
 <script>
-	import Section from '$lib/components/Section.svelte';
-	import Card from '$lib/components/Card.svelte';
-	import SkillBadge from '$lib/components/SkillBadge.svelte';
-	import ContactLink from '$lib/components/ContactLink.svelte';
-	import Stat from '$lib/components/Stat.svelte';
-	import Button from '$lib/components/Button.svelte';
+  import Section from "$lib/components/Section.svelte";
+  import Card from "$lib/components/Card.svelte";
+  import SkillBadge from "$lib/components/SkillBadge.svelte";
+  import ContactLink from "$lib/components/ContactLink.svelte";
+  import Stat from "$lib/components/Stat.svelte";
+  import Button from "$lib/components/Button.svelte";
+  import Timeline from "$lib/components/Timeline.svelte";
+  import profileImg from "$lib/assets/profile.jpg";
+
+  const timelineItems = [
+    {
+      year: "2023",
+      title: "Senior Data Scientist",
+      location: "RedCarbon.ai",
+      active: true
+    },
+    {
+      year: "2022",
+      title: "PhD Completion",
+      location: "University of Trento"
+    },
+    {
+      year: "2020",
+      title: "Consulting Work",
+      location: "Mind-Mercatis SRL"
+    },
+    {
+      year: "2018",
+      title: "PhD Journey Begins",
+      location: "University of Trento"
+    },
+    {
+      year: "2015",
+      title: "Started University",
+      location: "Politecnico di Milano & BarcelonaTech"
+    }
+  ];
 </script>
 
 <section class="hero">
-	<div class="container">
-		<div class="hero-content">
-			<h1>Sivam Pasupathipillai</h1>
-			<p class="hero-subtitle">Senior AI Engineer & Data Scientist</p>
-			<p class="hero-description">
-				🤖 Turning hype into products. PhD in ICT from University of Trento.
-				Learning enthusiast 📚, guitar player 🎸
-			</p>
-			<div class="hero-cta">
-				<Button href="#about" variant="primary">Learn More</Button>
-				<Button href="#contact" variant="secondary">Get in Touch</Button>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-profile">
+        <img src={profileImg} alt="Sivam Pasupathipillai" class="profile-img" />
+      </div>
+      <h1>Sivam Pasupathipillai</h1>
+      <p class="hero-subtitle">Senior AI Engineer & Data Scientist</p>
+      <p class="hero-description">
+        🤖 Turning hype into products. PhD in ICT from University of Trento.
+        Learning enthusiast 📚, guitar player 🎸
+      </p>
+      <div class="hero-cta">
+        <Button href="#about" variant="primary">Learn More</Button>
+        <Button href="#contact" variant="secondary">Get in Touch</Button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <Section id="about" background="light">
-	<h2>About Me</h2>
-	<div class="about-content">
-		<div class="about-text">
-			<p>
-				I'm a Senior AI Engineer based in Trento, Italy, with over five years of experience in designing,
-				developing, and deploying AI-based systems to high-demanding production environments.
-				I hold a PhD in Information Technology from the University of Trento, where I focused on
-				scalable anomaly detection algorithms for large datasets.
-			</p>
-			<p>
-				Currently working as a Senior Data Scientist at RedCarbon.ai, I'm passionate about taking
-				AI systems from the lab to end users. I enjoy both model prototyping and deployment/integration,
-				with a strong background in software engineering, programming design patterns, and distributed computing.
-			</p>
-			<p>
-				When I'm not working with data and algorithms, you'll find me learning something new or
-				playing the guitar 🎸.
-			</p>
-		</div>
-		<div class="about-stats">
-			<Stat value="5+" label="Years of Experience" />
-			<Stat value="PhD" label="Information Technology" />
-			<Stat value="AI/ML" label="Specialization" />
-		</div>
-	</div>
+  <h2>About Me</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>
+        I'm a Senior AI Engineer based in Trento, Italy, with over five years of
+        experience in designing, developing, and deploying AI-based systems to
+        high-demanding production environments. I hold a PhD in Information
+        Technology from the University of Trento, where I focused on scalable
+        anomaly detection algorithms for large datasets.
+      </p>
+      <p>
+        Currently working as a Senior Data Scientist at RedCarbon.ai, I'm
+        passionate about taking AI systems from the lab to end users. I enjoy
+        both model prototyping and deployment/integration, with a strong
+        background in software engineering, programming design patterns, and
+        distributed computing.
+      </p>
+      <p>
+        When I'm not working with data and algorithms, you'll find me learning
+        something new or playing the guitar 🎸.
+      </p>
+    </div>
+    <div class="about-stats">
+      <Stat value="5+" label="Years of Experience" />
+      <Stat value="PhD" label="Information Technology" />
+      <Stat value="AI/ML" label="Specialization" />
+    </div>
+  </div>
 </Section>
 
 <Section id="experience">
-	<h2>Experience & Skills</h2>
-	<div class="experience-content">
-		<Card
-			variant="experience"
-			title="Senior Data Scientist"
-			subtitle="RedCarbon.ai"
-			description="Leading AI-based system development and deployment in high-demanding production environments. Specializing in turning research prototypes into production-ready solutions."
-		/>
-		<Card
-			variant="experience"
-			title="PhD in Information Technology"
-			subtitle="University of Trento"
-			description="Research focus on scalable anomaly detection algorithms for large datasets. Joint M.Sc. in Computer Engineering from Politecnico di Milano and BarcelonaTech."
-		/>
-		<Card
-			variant="experience"
-			title="Software Engineering Consultant"
-			subtitle="Mind-Mercatis SRL"
-			description="Consulting on software engineering projects with focus on distributed computing and programming design patterns."
-		/>
-	</div>
+  <h2>Experience & Skills</h2>
+  <Timeline items={timelineItems} />
 
-	<div class="skills">
-		<h3>Technical Skills</h3>
-		<div class="skills-grid">
-			<Card variant="skill" title="Programming Languages">
-				<div class="skill-tags">
-					<SkillBadge skill="Python" />
-					<SkillBadge skill="Scala" />
-					<SkillBadge skill="Java" />
-					<SkillBadge skill="C++" />
-				</div>
-			</Card>
-			<Card variant="skill" title="AI/ML & Data">
-				<div class="skill-tags">
-					<SkillBadge skill="Machine Learning" />
-					<SkillBadge skill="Deep Learning" />
-					<SkillBadge skill="Big Data Management" />
-					<SkillBadge skill="ML Ops" />
-					<SkillBadge skill="Apache Spark" />
-				</div>
-			</Card>
-			<Card variant="skill" title="Technologies">
-				<div class="skill-tags">
-					<SkillBadge skill="AWS" />
-					<SkillBadge skill="Distributed Computing" />
-					<SkillBadge skill="Android Development" />
-				</div>
-			</Card>
-		</div>
-	</div>
+  <div class="skills">
+    <h3>Technical Skills</h3>
+    <div class="skills-grid">
+      <Card variant="skill" title="Programming Languages">
+        <div class="skill-tags">
+          <SkillBadge skill="Python" />
+          <SkillBadge skill="Scala" />
+          <SkillBadge skill="Java" />
+          <SkillBadge skill="C++" />
+        </div>
+      </Card>
+      <Card variant="skill" title="AI/ML & Data">
+        <div class="skill-tags">
+          <SkillBadge skill="Machine Learning" />
+          <SkillBadge skill="Deep Learning" />
+          <SkillBadge skill="Big Data Management" />
+          <SkillBadge skill="ML Ops" />
+          <SkillBadge skill="Apache Spark" />
+        </div>
+      </Card>
+      <Card variant="skill" title="Technologies">
+        <div class="skill-tags">
+          <SkillBadge skill="AWS" />
+          <SkillBadge skill="Distributed Computing" />
+          <SkillBadge skill="Android Development" />
+        </div>
+      </Card>
+    </div>
+  </div>
 </Section>
 
 <Section id="projects" background="light">
-	<h2>Projects & Research</h2>
-	<div class="projects-grid">
-		<Card
-			variant="project"
-			title="Scalable Anomaly Detection"
-			description="PhD research on scalable anomaly detection algorithms for large datasets, focusing on distributed computing approaches and real-time processing."
-			tags={["Machine Learning", "Big Data", "Distributed Systems"]}
-		/>
-		<Card
-			variant="project"
-			title="Carcassone Game Implementation"
-			description="Digital version of the popular turn-based board game featuring both local and remote gameplay. Implemented using Java with RMI and custom communication protocols."
-			tags={["Java", "RMI", "Game Development"]}
-		/>
-		<Card
-			variant="project"
-			title="Industrial Durometer Controller"
-			description="Android application for controlling industrial durometer equipment via tablet over USB connection. Successfully developed and tested prototype in one month."
-			tags={["Android", "USB Communication", "Industrial IoT"]}
-		/>
-		<Card
-			variant="project"
-			title="Kernel Programming Project"
-			description="Academic project involving programming various kernel features including interrupt management, process management, and I/O management with a comprehensive testing approach."
-			tags={["Systems Programming", "Kernel Development", "C/C++"]}
-		/>
-	</div>
+  <h2>Projects & Research</h2>
+  <div class="projects-grid">
+    <Card
+      variant="project"
+      title="Scalable Anomaly Detection"
+      description="PhD research on scalable anomaly detection algorithms for large datasets, focusing on distributed computing approaches and real-time processing."
+      tags={["Machine Learning", "Big Data", "Distributed Systems"]}
+    />
+    <Card
+      variant="project"
+      title="Carcassone Game Implementation"
+      description="Digital version of the popular turn-based board game featuring both local and remote gameplay. Implemented using Java with RMI and custom communication protocols."
+      tags={["Java", "RMI", "Game Development"]}
+    />
+    <Card
+      variant="project"
+      title="Industrial Durometer Controller"
+      description="Android application for controlling industrial durometer equipment via tablet over USB connection. Successfully developed and tested prototype in one month."
+      tags={["Android", "USB Communication", "Industrial IoT"]}
+    />
+    <Card
+      variant="project"
+      title="Kernel Programming Project"
+      description="Academic project involving programming various kernel features including interrupt management, process management, and I/O management with a comprehensive testing approach."
+      tags={["Systems Programming", "Kernel Development", "C/C++"]}
+    />
+  </div>
 </Section>
 
 <Section id="contact" background="dark">
-	<h2>Get in Touch</h2>
-	<div class="contact-content">
-		<div class="contact-info">
-			<p>
-				I'm always interested in discussing new opportunities, collaborations, or
-				just having a conversation about AI, data science, and technology.
-			</p>
-			<div class="contact-links">
-				<ContactLink
-					href="https://www.linkedin.com/in/svmpsp/"
-					title="LinkedIn"
-					icon="/icons/linkedin.svg"
-					alt="LinkedIn"
-				/>
-				<ContactLink
-					href="https://github.com/svmpsp"
-					title="GitHub"
-					icon="/icons/github.svg"
-					alt="GitHub"
-				/>
-				<ContactLink
-					href="mailto:contact@sivampasupathipillai.com"
-					title="Email"
-					icon="/icons/email.svg"
-					alt="Email"
-				/>
-			</div>
-		</div>
-	</div>
+  <h2>Get in Touch</h2>
+  <div class="contact-content">
+    <div class="contact-info">
+      <p>
+        I'm always interested in discussing new opportunities, collaborations,
+        or just having a conversation about AI, data science, and technology.
+      </p>
+      <div class="contact-links">
+        <ContactLink
+          href="https://www.linkedin.com/in/svmpsp/"
+          title="LinkedIn"
+          icon="/icons/linkedin.svg"
+          alt="LinkedIn"
+        />
+        <ContactLink
+          href="https://github.com/svmpsp"
+          title="GitHub"
+          icon="/icons/github.svg"
+          alt="GitHub"
+        />
+        <ContactLink
+          href="mailto:contact@sivampasupathipillai.com"
+          title="Email"
+          icon="/icons/email.svg"
+          alt="Email"
+        />
+      </div>
+    </div>
+  </div>
 </Section>
 
 <style>
-	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 2rem;
-		width: 100%;
-	}
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+  }
 
-	/* Hero Section */
-	.hero {
-		background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
-		color: white;
-		padding: 8rem 0 6rem;
-		text-align: center;
-	}
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+    color: white;
+    padding: 8rem 0 6rem;
+    text-align: center;
+  }
 
-	.hero h1 {
-		font-size: 3.5rem;
-		margin-bottom: 1rem;
-		font-weight: 700;
-	}
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
 
-	.hero-subtitle {
-		font-size: 1.5rem;
-		margin-bottom: 1.5rem;
-		opacity: 0.9;
-	}
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
 
-	.hero-description {
-		font-size: 1.1rem;
-		margin-bottom: 2.5rem;
-		opacity: 0.8;
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-	.hero-cta {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+  .hero-profile {
+    margin-bottom: 2rem;
+  }
 
-	.about-content {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		gap: 4rem;
-		align-items: center;
-	}
+  .profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
 
-	.about-text p {
-		font-size: 1.1rem;
-		margin-bottom: 1.5rem;
-		color: #4b5563;
-	}
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-	.about-stats {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
+  .about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
 
-	.experience-content {
-		margin-bottom: 4rem;
-	}
+  .about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+  }
 
-	.skills h3 {
-		font-size: 1.8rem;
-		margin-bottom: 2rem;
-		color: #1f2937;
-		text-align: center;
-	}
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-	.skills-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2rem;
-	}
 
-	.skill-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-	}
+  .skills h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #1f2937;
+    text-align: center;
+  }
 
-	.projects-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2rem;
-	}
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
 
-	.contact-content {
-		text-align: center;
-		max-width: 600px;
-		margin: 0 auto;
-	}
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-	.contact-content p {
-		font-size: 1.1rem;
-		margin-bottom: 2rem;
-		opacity: 0.9;
-	}
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
 
-	.contact-links {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-		flex-wrap: wrap;
-	}
+  .contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
-	/* Common responsive styles for sections */
-	h2 {
-		text-align: center;
-		font-size: 2.5rem;
-		margin-bottom: 3rem;
-		color: #1f2937;
-	}
+  .contact-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
 
-	/* Override h2 color for dark sections */
-	:global(.section-dark) h2 {
-		color: white;
-	}
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 
-	/* Responsive Design */
-	@media (max-width: 768px) {
-		.container {
-			padding: 0 1rem;
-			max-width: 100%;
-		}
+  /* Common responsive styles for sections */
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1f2937;
+  }
 
-		.hero {
-			padding: 6rem 0 4rem;
-		}
+  /* Override h2 color for dark sections */
+  :global(.section-dark) h2 {
+    color: white;
+  }
 
-		.hero h1 {
-			font-size: 2.5rem;
-		}
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+      max-width: 100%;
+    }
 
-		.hero-subtitle {
-			font-size: 1.25rem;
-		}
+    .hero {
+      padding: 6rem 0 4rem;
+    }
 
-		.about-content {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
+    .hero h1 {
+      font-size: 2.5rem;
+    }
 
-		.about-stats {
-			flex-direction: row;
-			justify-content: center;
-			gap: 1rem;
-		}
+    .hero-subtitle {
+      font-size: 1.25rem;
+    }
 
-		.hero-cta {
-			flex-direction: column;
-			align-items: center;
-		}
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
 
-		.contact-links {
-			gap: 1.5rem;
-		}
+    .about-stats {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-		.skills-grid {
-			grid-template-columns: 1fr;
-			gap: 1rem;
-		}
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
 
-		.projects-grid {
-			grid-template-columns: 1fr;
-			gap: 1rem;
-		}
-	}
+    .contact-links {
+      gap: 1.5rem;
+    }
 
-	@media (max-width: 480px) {
-		.container {
-			padding: 0 0.75rem;
-		}
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
-		.hero h1 {
-			font-size: 2rem;
-			word-break: break-word;
-		}
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
-		.hero-subtitle {
-			font-size: 1.1rem;
-		}
+  }
 
-		.about-stats {
-			flex-direction: column;
-			gap: 1rem;
-		}
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 0.75rem;
+    }
 
-		.skill-tags {
-			gap: 0.3rem;
-		}
-	}
+    .hero h1 {
+      font-size: 2rem;
+      word-break: break-word;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .about-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .skill-tags {
+      gap: 0.3rem;
+    }
+
+  }
 </style>
