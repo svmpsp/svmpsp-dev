@@ -13,28 +13,28 @@
       year: "2023",
       title: "Senior Data Scientist",
       location: "RedCarbon.ai",
-      active: true
+      active: true,
     },
     {
       year: "2022",
       title: "PhD Completion",
-      location: "University of Trento"
+      location: "University of Trento",
     },
     {
       year: "2020",
       title: "Consulting Work",
-      location: "Mind-Mercatis SRL"
+      location: "Mind-Mercatis SRL",
     },
     {
       year: "2018",
       title: "PhD Journey Begins",
-      location: "University of Trento"
+      location: "University of Trento",
     },
     {
       year: "2015",
       title: "Started University",
-      location: "Politecnico di Milano & BarcelonaTech"
-    }
+      location: "Politecnico di Milano & BarcelonaTech",
+    },
   ];
 </script>
 
@@ -50,6 +50,26 @@
         🤖 Turning hype into products. PhD in ICT from University of Trento.
         Learning enthusiast 📚, guitar player 🎸
       </p>
+      <div class="hero-contact-links">
+        <ContactLink
+          href="https://www.linkedin.com/in/svmpsp/"
+          title="LinkedIn"
+          icon="/icons/linkedin.svg"
+          alt="LinkedIn"
+        />
+        <ContactLink
+          href="https://github.com/svmpsp"
+          title="GitHub"
+          icon="/icons/github.svg"
+          alt="GitHub"
+        />
+        <ContactLink
+          href="mailto:contact@sivampasupathipillai.com"
+          title="Email"
+          icon="/icons/email.svg"
+          alt="Email"
+        />
+      </div>
       <div class="hero-cta">
         <Button href="#about" variant="primary">Learn More</Button>
         <Button href="#contact" variant="secondary">Get in Touch</Button>
@@ -63,22 +83,28 @@
   <div class="about-content">
     <div class="about-text">
       <p>
-        I'm a Senior AI Engineer based in Trento, Italy, with over five years of
-        experience in designing, developing, and deploying AI-based systems to
-        high-demanding production environments. I hold a PhD in Information
-        Technology from the University of Trento, where I focused on scalable
-        anomaly detection algorithms for large datasets.
+        I work on turning AI research into practical solutions. Over the past 5+
+        years, I've focused on bridging the gap between academic research and
+        real-world applications, helping deploy machine learning systems that
+        handle large-scale data processing in production environments.
       </p>
       <p>
-        Currently working as a Senior Data Scientist at RedCarbon.ai, I'm
-        passionate about taking AI systems from the lab to end users. I enjoy
-        both model prototyping and deployment/integration, with a strong
-        background in software engineering, programming design patterns, and
-        distributed computing.
+        My PhD in Information Technology from University of Trento explored
+        scalable anomaly detection algorithms for large datasets. This research
+        experience has been valuable in my current role as a Senior Data
+        Scientist at RedCarbon.ai, where I contribute to AI product development
+        from initial concepts through deployment.
       </p>
       <p>
-        When I'm not working with data and algorithms, you'll find me learning
-        something new or playing the guitar 🎸.
+        I enjoy working at the intersection of research and engineering—whether
+        it's optimizing distributed systems, building ML pipelines, or
+        collaborating with teams on technical challenges. I find it rewarding to
+        help make complex AI technology more accessible and useful.
+      </p>
+      <p>
+        When I'm not coding or analyzing data, I enjoy learning new things and
+        playing guitar 🎸. I believe there's always something new to discover
+        and improve upon.
       </p>
     </div>
     <div class="about-stats">
@@ -95,31 +121,39 @@
 
   <div class="skills">
     <h3>Technical Skills</h3>
-    <div class="skills-grid">
-      <Card variant="skill" title="Programming Languages">
-        <div class="skill-tags">
-          <SkillBadge skill="Python" />
-          <SkillBadge skill="Scala" />
-          <SkillBadge skill="Java" />
-          <SkillBadge skill="C++" />
+    <div class="skills-table">
+      <div class="skills-headers">
+        <h4>Programming Languages</h4>
+        <h4>AI/ML & Data</h4>
+        <h4>Technologies</h4>
+      </div>
+      <div class="skills-rows">
+        <div class="skills-row">
+          <SkillBadge skill="Python" proficiency={9} />
+          <SkillBadge skill="Machine Learning" proficiency={9} />
+          <SkillBadge skill="AWS" proficiency={7} />
         </div>
-      </Card>
-      <Card variant="skill" title="AI/ML & Data">
-        <div class="skill-tags">
-          <SkillBadge skill="Machine Learning" />
-          <SkillBadge skill="Deep Learning" />
-          <SkillBadge skill="Big Data Management" />
-          <SkillBadge skill="ML Ops" />
-          <SkillBadge skill="Apache Spark" />
+        <div class="skills-row">
+          <SkillBadge skill="Scala" proficiency={8} />
+          <SkillBadge skill="Deep Learning" proficiency={8} />
+          <SkillBadge skill="Distributed Computing" proficiency={8} />
         </div>
-      </Card>
-      <Card variant="skill" title="Technologies">
-        <div class="skill-tags">
-          <SkillBadge skill="AWS" />
-          <SkillBadge skill="Distributed Computing" />
-          <SkillBadge skill="Android Development" />
+        <div class="skills-row">
+          <SkillBadge skill="Java" proficiency={7} />
+          <SkillBadge skill="Big Data Management" proficiency={8} />
+          <SkillBadge skill="Android Development" proficiency={6} />
         </div>
-      </Card>
+        <div class="skills-row">
+          <SkillBadge skill="C++" proficiency={6} />
+          <SkillBadge skill="ML Ops" proficiency={7} />
+          <div class="skill-placeholder"></div>
+        </div>
+        <div class="skills-row">
+          <div class="skill-placeholder"></div>
+          <SkillBadge skill="Apache Spark" proficiency={8} />
+          <div class="skill-placeholder"></div>
+        </div>
+      </div>
     </div>
   </div>
 </Section>
@@ -228,12 +262,46 @@
   }
 
   .profile-img {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-contact-links :global(.contact-link) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .hero-contact-links :global(.contact-link:hover) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px) scale(1.1);
+  }
+
+  .hero-contact-links :global(.contact-link img) {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+
+  .hero-contact-links :global(.contact-link:hover img) {
+    opacity: 1;
   }
 
   .hero-cta {
@@ -262,7 +330,6 @@
     gap: 2rem;
   }
 
-
   .skills h3 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
@@ -270,16 +337,45 @@
     text-align: center;
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  .skills-table {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
-  .skill-tags {
+  .skills-headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .skills-headers h4 {
+    font-size: 1.2rem;
+    color: #0f766e;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .skills-rows {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skills-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .skill-placeholder {
+    height: 1px;
   }
 
   .projects-grid {
@@ -305,6 +401,33 @@
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+  }
+
+  .contact-links :global(.contact-link) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .contact-links :global(.contact-link:hover) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px) scale(1.1);
+  }
+
+  .contact-links :global(.contact-link img) {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+
+  .contact-links :global(.contact-link:hover img) {
+    opacity: 1;
   }
 
   /* Common responsive styles for sections */
@@ -355,12 +478,45 @@
       align-items: center;
     }
 
+    .hero-contact-links {
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-contact-links :global(.contact-link) {
+      width: 54px;
+      height: 54px;
+    }
+
+    .hero-contact-links :global(.contact-link img) {
+      width: 42px;
+      height: 42px;
+    }
+
     .contact-links {
       gap: 1.5rem;
     }
 
-    .skills-grid {
-      grid-template-columns: 1fr;
+    .contact-links :global(.contact-link) {
+      width: 54px;
+      height: 54px;
+    }
+
+    .contact-links :global(.contact-link img) {
+      width: 42px;
+      height: 42px;
+    }
+
+    .skills-table {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
+
+    .skills-headers {
+      gap: 1rem;
+    }
+
+    .skills-row {
       gap: 1rem;
     }
 
@@ -368,7 +524,6 @@
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-
   }
 
   @media (max-width: 480px) {
@@ -390,9 +545,45 @@
       gap: 1rem;
     }
 
-    .skill-tags {
-      gap: 0.3rem;
+    .hero-contact-links {
+      gap: 0.8rem;
+      margin-bottom: 1rem;
     }
 
+    .hero-contact-links :global(.contact-link) {
+      width: 48px;
+      height: 48px;
+    }
+
+    .hero-contact-links :global(.contact-link img) {
+      width: 36px;
+      height: 36px;
+    }
+
+    .contact-links :global(.contact-link) {
+      width: 48px;
+      height: 48px;
+    }
+
+    .contact-links :global(.contact-link img) {
+      width: 36px;
+      height: 36px;
+    }
+
+    .skills-headers h4 {
+      font-size: 1rem;
+    }
+
+    .skills-headers {
+      margin-bottom: 1rem;
+    }
+
+    .skills-table {
+      padding: 1rem;
+    }
+
+    .skills-row {
+      gap: 0.5rem;
+    }
   }
 </style>

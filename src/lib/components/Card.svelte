@@ -49,6 +49,9 @@
 		border-radius: 12px;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 		margin-bottom: 2rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.card-link {
@@ -120,6 +123,10 @@
 
 	.card-skill .tags {
 		gap: 0.5rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 	}
 
 	.card-skill .tag {
