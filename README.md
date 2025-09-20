@@ -17,8 +17,8 @@ This is a single-page application featuring:
 - **Framework**: SvelteKit 2.22
 - **Language**: TypeScript
 - **Styling**: CSS (component-scoped)
-- **Testing**: Vitest with Testing Library
-- **Build Tool**: Vite 7
+- **Testing**: Vitest 3.2.4 with Testing Library
+- **Build Tool**: Vite 7.0.4
 - **Package Manager**: pnpm
 
 ## Development
@@ -57,19 +57,12 @@ Run unit tests:
 pnpm test
 ```
 
-Run tests with UI:
-
-```sh
-pnpm test:ui
-```
-
 ## Project Structure
 
 ```
 src/
 ├── lib/
-│   ├── components/     # Reusable Svelte components
-│   └── utils.ts       # Utility functions
+│   └── components/     # Reusable Svelte components (Button, Card, ContactLink, Section, SkillBadge, Stat)
 ├── routes/
 │   ├── +layout.svelte # Global layout
 │   └── +page.svelte   # Main page content

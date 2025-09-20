@@ -20,10 +20,13 @@
 		border-radius: 8px;
 		font-weight: 600;
 		transition: transform 0.2s ease, box-shadow 0.2s ease;
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		text-decoration: none;
 		border: none;
 		cursor: pointer;
+		line-height: 1;
 	}
 
 	.btn:hover:not(.disabled) {
@@ -32,14 +35,21 @@
 	}
 
 	.btn-primary {
-		background: #667eea;
+		background: rgba(255, 255, 255, 0.2);
 		color: white;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(10px);
+	}
+
+	.btn-primary:hover:not(.disabled) {
+		background: rgba(255, 255, 255, 0.3);
+		border-color: rgba(255, 255, 255, 0.5);
 	}
 
 	.btn-secondary {
 		background: transparent;
-		color: #667eea;
-		border: 2px solid #667eea;
+		color: white;
+		border: 2px solid white;
 	}
 
 	.btn:disabled,
