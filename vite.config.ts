@@ -7,6 +7,12 @@ export default defineConfig({
     include: ["src/**/*.{test,spec}.{js,ts}"],
     environment: "happy-dom",
     setupFiles: ["./src/tests/setup.ts"],
+    coverage: {
+      provider: "v8",
+      reporter: ["text"],
+      include: ["src/**/*.{ts,js,svelte}"],
+      exclude: ["src/tests/**", "src/**/*.{test,spec}.{ts,js}", "**/*.d.ts"],
+    },
   },
   resolve: {
     conditions: ["browser"],
