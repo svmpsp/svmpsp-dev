@@ -1,20 +1,25 @@
-import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vitest/config";
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
-    include: ["src/**/*.{test,spec}.{js,ts}"],
-    environment: "happy-dom",
-    setupFiles: ["./src/tests/setup.ts"],
+    include: ['src/**/*.{test,spec}.{js,ts}'],
+    environment: 'happy-dom',
+    setupFiles: ['./src/tests/setup.ts'],
     coverage: {
-      provider: "v8",
-      reporter: ["text"],
-      include: ["src/**/*.{ts,js,svelte}"],
-      exclude: ["src/tests/**", "src/**/*.{test,spec}.{ts,js}", "**/*.d.ts"],
+      provider: 'v8',
+      reporter: ['text'],
+      include: ['src/**/*.{ts,js,svelte}'],
+      exclude: [
+        'src/tests/**',
+        'src/routes/**',
+        'src/**/*.{test,spec}.{ts,js.svelte}',
+        '**/*.d.ts',
+      ],
     },
   },
   resolve: {
-    conditions: ["browser"],
+    conditions: ['browser'],
   },
 });
