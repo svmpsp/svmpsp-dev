@@ -1,5 +1,5 @@
 <script lang="ts">
-  import favicon from "$lib/assets/favicon.svg";
+  import favicon from '$lib/assets/favicon.svg';
 
   let { children } = $props();
 </script>
@@ -15,10 +15,11 @@
       <a href="/">svmpsp.dev</a>
     </div>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#projects">Projects</a>
+      <a href="/blog">Blog</a>
+      <a href="/#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -32,10 +33,10 @@
     margin: 0;
     padding: 0;
     font-family:
-      "Inter",
+      'Inter',
       -apple-system,
       BlinkMacSystemFont,
-      "Segoe UI",
+      'Segoe UI',
       Roboto,
       sans-serif;
     line-height: 1.6;
@@ -132,17 +133,13 @@
   }
 
   .nav-links a::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(15, 118, 110, 0.1),
-      rgba(19, 78, 74, 0.1)
-    );
+    background: linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(19, 78, 74, 0.1));
     border-radius: 0.5rem;
     opacity: 0;
     transition: opacity 0.3s ease;

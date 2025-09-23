@@ -1,39 +1,39 @@
 <script>
-  import Section from "$lib/components/Section.svelte";
-  import Card from "$lib/components/Card.svelte";
-  import SkillBadge from "$lib/components/SkillBadge.svelte";
-  import ContactLink from "$lib/components/ContactLink.svelte";
-  import Stat from "$lib/components/Stat.svelte";
-  import Button from "$lib/components/Button.svelte";
-  import Timeline from "$lib/components/Timeline.svelte";
-  import profileImg from "$lib/assets/profile.jpg";
+  import Section from '$lib/components/Section.svelte';
+  import Card from '$lib/components/Card.svelte';
+  import SkillBadge from '$lib/components/SkillBadge.svelte';
+  import ContactLink from '$lib/components/ContactLink.svelte';
+  import Stat from '$lib/components/Stat.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import Timeline from '$lib/components/Timeline.svelte';
+  import profileImg from '$lib/assets/profile.jpg';
 
   const timelineItems = [
     {
-      year: "2023",
-      title: "Senior Data Scientist",
-      location: "RedCarbon.ai",
+      year: '2023',
+      title: 'Senior Data Scientist',
+      location: 'RedCarbon.ai',
       active: true,
     },
     {
-      year: "2022",
-      title: "PhD Completion",
-      location: "University of Trento",
+      year: '2022',
+      title: 'PhD Completion',
+      location: 'University of Trento',
     },
     {
-      year: "2020",
-      title: "Consulting Work",
-      location: "Mind-Mercatis SRL",
+      year: '2020',
+      title: 'Consulting Work',
+      location: 'Mind-Mercatis SRL',
     },
     {
-      year: "2018",
-      title: "PhD Journey Begins",
-      location: "University of Trento",
+      year: '2018',
+      title: 'PhD Journey Begins',
+      location: 'University of Trento',
     },
     {
-      year: "2015",
-      title: "Started University",
-      location: "Politecnico di Milano & BarcelonaTech",
+      year: '2015',
+      title: 'Started University',
+      location: 'Politecnico di Milano & BarcelonaTech',
     },
   ];
 </script>
@@ -47,8 +47,8 @@
       <h1>Sivam Pasupathipillai</h1>
       <p class="hero-subtitle">Senior AI Engineer & Data Scientist</p>
       <p class="hero-description">
-        🤖 Turning hype into products. PhD in ICT from University of Trento.
-        Learning enthusiast 📚, guitar player 🎸
+        🤖 Turning hype into products. PhD in ICT from University of Trento. Learning enthusiast 📚,
+        guitar player 🎸
       </p>
       <div class="hero-contact-links">
         <ContactLink
@@ -83,28 +83,25 @@
   <div class="about-content">
     <div class="about-text">
       <p>
-        I work on turning AI research into practical solutions. Over the past 5+
-        years, I've focused on bridging the gap between academic research and
-        real-world applications, helping deploy machine learning systems that
-        handle large-scale data processing in production environments.
+        I work on turning AI research into practical solutions. Over the past 5+ years, I've focused
+        on bridging the gap between academic research and real-world applications, helping deploy
+        machine learning systems that handle large-scale data processing in production environments.
       </p>
       <p>
-        My PhD in Information Technology from University of Trento explored
-        scalable anomaly detection algorithms for large datasets. This research
-        experience has been valuable in my current role as a Senior Data
-        Scientist at RedCarbon.ai, where I contribute to AI product development
-        from initial concepts through deployment.
+        My PhD in Information Technology from University of Trento explored scalable anomaly
+        detection algorithms for large datasets. This research experience has been valuable in my
+        current role as a Senior Data Scientist at RedCarbon.ai, where I contribute to AI product
+        development from initial concepts through deployment.
       </p>
       <p>
-        I enjoy working at the intersection of research and engineering—whether
-        it's optimizing distributed systems, building ML pipelines, or
-        collaborating with teams on technical challenges. I find it rewarding to
-        help make complex AI technology more accessible and useful.
+        I enjoy working at the intersection of research and engineering—whether it's optimizing
+        distributed systems, building ML pipelines, or collaborating with teams on technical
+        challenges. I find it rewarding to help make complex AI technology more accessible and
+        useful.
       </p>
       <p>
-        When I'm not coding or analyzing data, I enjoy learning new things and
-        playing guitar 🎸. I believe there's always something new to discover
-        and improve upon.
+        When I'm not coding or analyzing data, I enjoy learning new things and playing guitar 🎸. I
+        believe there's always something new to discover and improve upon.
       </p>
     </div>
     <div class="about-stats">
@@ -165,25 +162,25 @@
       variant="project"
       title="Scalable Anomaly Detection"
       description="PhD research on scalable anomaly detection algorithms for large datasets, focusing on distributed computing approaches and real-time processing."
-      tags={["Machine Learning", "Big Data", "Distributed Systems"]}
+      tags={['Machine Learning', 'Big Data', 'Distributed Systems']}
     />
     <Card
       variant="project"
       title="Carcassone Game Implementation"
       description="Digital version of the popular turn-based board game featuring both local and remote gameplay. Implemented using Java with RMI and custom communication protocols."
-      tags={["Java", "RMI", "Game Development"]}
+      tags={['Java', 'RMI', 'Game Development']}
     />
     <Card
       variant="project"
       title="Industrial Durometer Controller"
       description="Android application for controlling industrial durometer equipment via tablet over USB connection. Successfully developed and tested prototype in one month."
-      tags={["Android", "USB Communication", "Industrial IoT"]}
+      tags={['Android', 'USB Communication', 'Industrial IoT']}
     />
     <Card
       variant="project"
       title="Kernel Programming Project"
       description="Academic project involving programming various kernel features including interrupt management, process management, and I/O management with a comprehensive testing approach."
-      tags={["Systems Programming", "Kernel Development", "C/C++"]}
+      tags={['Systems Programming', 'Kernel Development', 'C/C++']}
     />
   </div>
 </Section>
@@ -193,8 +190,8 @@
   <div class="contact-content">
     <div class="contact-info">
       <p>
-        I'm always interested in discussing new opportunities, collaborations,
-        or just having a conversation about AI, data science, and technology.
+        I'm always interested in discussing new opportunities, collaborations, or just having a
+        conversation about AI, data science, and technology.
       </p>
       <div class="contact-links">
         <ContactLink
@@ -210,7 +207,7 @@
           alt="GitHub"
         />
         <ContactLink
-          href="mailto:contact@sivampasupathipillai.com"
+          href="mailto:me@svmpsp.dev"
           title="Email"
           icon="/icons/email.svg"
           alt="Email"

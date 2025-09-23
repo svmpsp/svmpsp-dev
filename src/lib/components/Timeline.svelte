@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TimelineItem from "./TimelineItem.svelte";
+  import TimelineItem from './TimelineItem.svelte';
 
   interface TimelineItemData {
     year: string;
@@ -39,7 +39,7 @@
   }
 
   .timeline::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 14px;
     left: 0;
