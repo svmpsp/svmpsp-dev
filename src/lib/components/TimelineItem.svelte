@@ -38,7 +38,7 @@
   }
 
   .timeline-dot.active {
-    background: #dc2626;
+    background: #cba012;
     transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
   }

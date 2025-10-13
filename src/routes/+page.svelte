@@ -10,29 +10,29 @@
 
   const timelineItems = [
     {
-      year: '2023',
+      year: 'Today',
       title: 'Senior Data Scientist',
       location: 'RedCarbon.ai',
       active: true,
     },
     {
-      year: '2022',
-      title: 'PhD Completion',
+      year: '2019-23',
+      title: 'Data Scientist',
+      location: 'WithSecure Inc.',
+    },
+    {
+      year: '2016-20',
+      title: 'PhD Candidate',
       location: 'University of Trento',
     },
     {
-      year: '2020',
-      title: 'Consulting Work',
-      location: 'Mind-Mercatis SRL',
+      year: '2015-16',
+      title: 'Software Consultant',
+      location: 'Mind-Mercatis Srl',
     },
     {
-      year: '2018',
-      title: 'PhD Journey Begins',
-      location: 'University of Trento',
-    },
-    {
-      year: '2015',
-      title: 'Started University',
+      year: '2012-14',
+      title: 'MSc Computer Engineering',
       location: 'Politecnico di Milano & BarcelonaTech',
     },
   ];
@@ -47,8 +47,7 @@
       <h1>Sivam Pasupathipillai</h1>
       <p class="hero-subtitle">Senior AI Engineer & Data Scientist</p>
       <p class="hero-description">
-        🤖 Turning hype into products. PhD in ICT from University of Trento. Learning enthusiast 📚,
-        guitar player 🎸
+        🤖 Turning hype into products. PhD in ICT from University of Trento. Learning enthusiast 📚 Guitar player 🎸
       </p>
       <div class="hero-contact-links">
         <ContactLink
@@ -100,7 +99,7 @@
         useful.
       </p>
       <p>
-        When I'm not coding or analyzing data, I enjoy learning new things and playing guitar 🎸. I
+        When I'm not coding or analyzing data, I enjoy learning new things and playing guitar. I
         believe there's always something new to discover and improve upon.
       </p>
     </div>
@@ -128,27 +127,22 @@
         <div class="skills-row">
           <SkillBadge skill="Python" proficiency={9} />
           <SkillBadge skill="Machine Learning" proficiency={9} />
-          <SkillBadge skill="AWS" proficiency={7} />
+          <SkillBadge skill="Cloud Computing" proficiency={7} />
         </div>
         <div class="skills-row">
-          <SkillBadge skill="Scala" proficiency={8} />
+          <SkillBadge skill="Typescript" proficiency={8} />
           <SkillBadge skill="Deep Learning" proficiency={8} />
           <SkillBadge skill="Distributed Computing" proficiency={8} />
         </div>
         <div class="skills-row">
           <SkillBadge skill="Java" proficiency={7} />
-          <SkillBadge skill="Big Data Management" proficiency={8} />
-          <SkillBadge skill="Android Development" proficiency={6} />
+          <SkillBadge skill="Big Data Management" proficiency={7} />
+          <SkillBadge skill="Docker | Kubernetes" proficiency={8} />
         </div>
         <div class="skills-row">
           <SkillBadge skill="C++" proficiency={6} />
           <SkillBadge skill="ML Ops" proficiency={7} />
-          <div class="skill-placeholder"></div>
-        </div>
-        <div class="skills-row">
-          <div class="skill-placeholder"></div>
-          <SkillBadge skill="Apache Spark" proficiency={8} />
-          <div class="skill-placeholder"></div>
+          <SkillBadge skill="Android Development" proficiency={4} />
         </div>
       </div>
     </div>
