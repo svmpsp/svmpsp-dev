@@ -12,7 +12,7 @@
 <nav>
   <div class="nav-container">
     <div class="nav-brand">
-      <a href="/">svmpsp.dev</a>
+      <a href="/">Personal blog</a>
     </div>
     <div class="nav-links">
       <a href="/#about">About</a>

@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - '3000:10000'
+    environment:
+      - DATABASE_URL=file:/data/db.sqlite
+    volumes:
+      - db-data:/data
+
+volumes:
+  db-data:
