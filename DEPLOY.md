@@ -92,12 +92,12 @@ NODE_ENV="production"
 
 ## Platform Options
 
-| Platform | Cost | Database | Difficulty | Best For |
-|----------|------|----------|------------|----------|
-| **Railway** | $5/month | Included | Easy | Full-stack apps |
-| **Vercel** | Free/$$$ | External | Medium | Static + API |
-| **Render** | Free/$7+ | $7/month | Easy | Small projects |
-| **DigitalOcean** | $5/month | $15/month | Medium | Production apps |
+| Platform         | Cost     | Database  | Difficulty | Best For        |
+| ---------------- | -------- | --------- | ---------- | --------------- |
+| **Railway**      | $5/month | Included  | Easy       | Full-stack apps |
+| **Vercel**       | Free/$$$ | External  | Medium     | Static + API    |
+| **Render**       | Free/$7+ | $7/month  | Easy       | Small projects  |
+| **DigitalOcean** | $5/month | $15/month | Medium     | Production apps |
 
 ## Railway Deployment (Recommended)
 
@@ -106,6 +106,7 @@ Railway is the easiest option for full-stack SvelteKit apps with databases.
 ### Step 1: Prepare Your Project
 
 1. **Install Railway CLI:**
+
    ```bash
    npm install -g @railway/cli
    ```
@@ -118,6 +119,7 @@ Railway is the easiest option for full-stack SvelteKit apps with databases.
 ### Step 2: Deploy to Railway
 
 1. **Initialize Railway project:**
+
    ```bash
    railway new
    # Choose "Deploy from GitHub repo"
@@ -125,6 +127,7 @@ Railway is the easiest option for full-stack SvelteKit apps with databases.
    ```
 
 2. **Add PostgreSQL database:**
+
    ```bash
    railway add postgresql
    ```
@@ -157,16 +160,19 @@ Create `railway.json` in your project root:
 ### Step 4: Deploy and Setup
 
 1. **Deploy your application:**
+
    ```bash
    railway up
    ```
 
 2. **Run database migrations:**
+
    ```bash
    railway run "pnpm prisma migrate deploy"
    ```
 
 3. **Create admin user:**
+
    ```bash
    railway run "pnpm db:admin"
    ```
@@ -191,12 +197,14 @@ Choose a database provider:
 ### Step 2: Configure SvelteKit for Vercel
 
 1. **Install Vercel adapter:**
+
    ```bash
    pnpm remove @sveltejs/adapter-auto
    pnpm add @sveltejs/adapter-vercel
    ```
 
 2. **Update `svelte.config.js`:**
+
    ```javascript
    import adapter from '@sveltejs/adapter-vercel';
    import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
@@ -205,9 +213,9 @@ Choose a database provider:
      preprocess: vitePreprocess(),
      kit: {
        adapter: adapter({
-         runtime: 'nodejs18.x'
-       })
-     }
+         runtime: 'nodejs18.x',
+       }),
+     },
    };
 
    export default config;
@@ -216,11 +224,13 @@ Choose a database provider:
 ### Step 3: Deploy to Vercel
 
 1. **Install Vercel CLI:**
+
    ```bash
    npm install -g vercel
    ```
 
 2. **Login and deploy:**
+
    ```bash
    vercel login
    vercel --prod
@@ -234,6 +244,7 @@ Choose a database provider:
 ### Step 4: Setup Database
 
 1. **Run migrations:**
+
    ```bash
    vercel env pull .env.local
    pnpm prisma migrate deploy
@@ -269,6 +280,7 @@ Render offers a free tier with automatic deployments from GitHub.
 ### Step 4: Configure Environment
 
 Add environment variables in Render dashboard:
+
 ```bash
 DATABASE_URL=postgresql://...
 ADMIN_EMAIL=your-email@example.com
@@ -300,19 +312,19 @@ Professional-grade hosting with managed databases.
 # .do/app.yaml
 name: svmpsp-website
 services:
-- name: web
-  source_dir: /
-  github:
-    repo: your-username/your-repo
-    branch: main
-  run_command: node build
-  build_command: pnpm install && pnpm build
-  environment_slug: node-js
-  instance_count: 1
-  instance_size_slug: basic-xxs
-  env:
-  - key: NODE_ENV
-    value: production
+  - name: web
+    source_dir: /
+    github:
+      repo: your-username/your-repo
+      branch: main
+    run_command: node build
+    build_command: pnpm install && pnpm build
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    env:
+      - key: NODE_ENV
+        value: production
 ```
 
 ### Step 3: Add Database
@@ -350,6 +362,7 @@ NODE_ENV="production"
 Before deploying, test with PostgreSQL locally:
 
 1. **Install PostgreSQL** (or use Docker):
+
    ```bash
    # Using Docker
    docker run --name postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres
@@ -368,11 +381,13 @@ Before deploying, test with PostgreSQL locally:
 ### Production Migration Steps
 
 1. **Create new migration:**
+
    ```bash
    pnpm prisma migrate dev --name production-setup
    ```
 
 2. **Deploy migration:**
+
    ```bash
    pnpm prisma migrate deploy
    ```
@@ -387,6 +402,7 @@ Before deploying, test with PostgreSQL locally:
 ### 1. Verify Deployment
 
 Check these endpoints:
+
 - `https://your-domain.com` - Portfolio homepage
 - `https://your-domain.com/blog` - Blog listing
 - `https://your-domain.com/admin` - Admin login
@@ -414,6 +430,7 @@ pnpm db:seed
 ### 4. Setup Custom Domain
 
 Most platforms support custom domains:
+
 1. **Add domain** in platform dashboard
 2. **Update DNS** records as instructed
 3. **Enable HTTPS** (usually automatic)
@@ -448,17 +465,20 @@ git push origin main
 When updating database schema:
 
 1. **Create migration locally:**
+
    ```bash
    pnpm prisma migrate dev --name your-change-name
    ```
 
 2. **Test migration:**
+
    ```bash
    pnpm test
    pnpm build
    ```
 
 3. **Deploy:**
+
    ```bash
    git add .
    git commit -m "feat: database schema update"
@@ -475,6 +495,7 @@ When updating database schema:
 ### Backup Strategy
 
 #### Railway/Render (PostgreSQL)
+
 ```bash
 # Create backup
 pg_dump $DATABASE_URL > backup.sql
@@ -484,6 +505,7 @@ psql $DATABASE_URL < backup.sql
 ```
 
 #### Automated Backups
+
 - **Railway**: Automatic daily backups
 - **Render**: Backup add-on available
 - **DigitalOcean**: Managed database backups
@@ -495,12 +517,14 @@ psql $DATABASE_URL < backup.sql
 #### Build Failures
 
 **Error: "Cannot find module @prisma/client"**
+
 ```bash
 # Add postbuild script to package.json
 "postbuild": "prisma generate"
 ```
 
 **Error: "Database connection failed"**
+
 - Verify `DATABASE_URL` format
 - Check database is running
 - Ensure network connectivity
@@ -508,6 +532,7 @@ psql $DATABASE_URL < backup.sql
 #### Runtime Errors
 
 **Error: "Admin user creation failed"**
+
 ```bash
 # Check admin script logs
 # Verify ADMIN_EMAIL and ADMIN_PASSWORD are set
@@ -515,6 +540,7 @@ psql $DATABASE_URL < backup.sql
 ```
 
 **Error: "Migration failed"**
+
 ```bash
 # Reset database (development only)
 pnpm prisma migrate reset
@@ -526,6 +552,7 @@ pnpm prisma migrate resolve --applied "migration-name"
 ### Database Connection Issues
 
 1. **Check connection string format:**
+
    ```bash
    # Correct format
    postgresql://username:password@hostname:port/database
@@ -542,6 +569,7 @@ pnpm prisma migrate resolve --applied "migration-name"
 ### Performance Issues
 
 1. **Enable query logging:**
+
    ```typescript
    // Add to your Prisma client
    const prisma = new PrismaClient({
@@ -557,8 +585,8 @@ pnpm prisma migrate resolve --applied "migration-name"
        id: true,
        title: true,
        excerpt: true,
-       createdAt: true
-     }
+       createdAt: true,
+     },
    });
    ```
 
@@ -576,6 +604,7 @@ pnpm prisma migrate resolve --applied "migration-name"
    - https://kit.svelte.dev
 
 4. **Check logs:**
+
    ```bash
    # Railway
    railway logs

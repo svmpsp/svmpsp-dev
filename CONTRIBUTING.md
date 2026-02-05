@@ -31,17 +31,20 @@ This project adheres to a code of conduct that promotes a welcoming and inclusiv
 ### Development Setup
 
 1. **Fork and clone the repository:**
+
    ```bash
    git clone https://github.com/your-username/svmpsp-dev.git
    cd svmpsp-dev
    ```
 
 2. **Install dependencies:**
+
    ```bash
    pnpm install
    ```
 
 3. **Set up the database:**
+
    ```bash
    # Seed blog posts (optional)
    pnpm db:seed
@@ -51,6 +54,7 @@ This project adheres to a code of conduct that promotes a welcoming and inclusiv
    ```
 
 4. **Start the development server:**
+
    ```bash
    pnpm dev
    ```
@@ -67,6 +71,7 @@ This project uses Prisma as the ORM with SQLite as the database. This section pr
 ### Database Configuration
 
 The database configuration is defined in:
+
 - **Schema**: `prisma/schema.prisma` - Defines models, relationships, and database configuration
 - **Database File**: `prisma/dev.db` - SQLite database file (created automatically)
 - **Environment**: Database URL is configured via `DATABASE_URL` environment variable
@@ -74,11 +79,13 @@ The database configuration is defined in:
 ### Prisma CLI Commands
 
 Install Prisma CLI globally for easier access:
+
 ```bash
 npm install -g prisma
 ```
 
 Or use via pnpm:
+
 ```bash
 pnpm prisma [command]
 ```
@@ -88,6 +95,7 @@ pnpm prisma [command]
 #### 1. Database Initialization
 
 **First-time setup:**
+
 ```bash
 # Generate Prisma client
 pnpm prisma generate
@@ -97,6 +105,7 @@ pnpm prisma db push
 ```
 
 **For existing projects:**
+
 ```bash
 # Install dependencies (includes Prisma client generation)
 pnpm install
@@ -118,17 +127,20 @@ pnpm prisma migrate dev --name descriptive-migration-name
 ```
 
 **Key differences:**
+
 - `db push` - Quick prototyping, no migration files
 - `migrate dev` - Creates migration files, better for team collaboration
 
 #### 3. Database Migrations
 
 **Create a new migration:**
+
 ```bash
 pnpm prisma migrate dev --name add-new-field
 ```
 
 **Apply migrations:**
+
 ```bash
 # Development environment
 pnpm prisma migrate dev
@@ -138,6 +150,7 @@ pnpm prisma migrate deploy
 ```
 
 **Migration best practices:**
+
 - Use descriptive names: `add-user-roles`, `update-blog-schema`
 - Review generated SQL before committing
 - Test migrations on a copy of production data
@@ -146,25 +159,31 @@ pnpm prisma migrate deploy
 #### 4. Database Inspection
 
 **View database schema:**
+
 ```bash
 pnpm prisma studio
 ```
+
 Opens a web interface at http://localhost:5555 for browsing data
 
 **Generate ERD (Entity Relationship Diagram):**
+
 ```bash
 pnpm prisma generate --generator erd
 ```
 
 **Database introspection:**
+
 ```bash
 pnpm prisma db pull
 ```
+
 Updates schema.prisma based on existing database
 
 #### 5. Data Management
 
 **Seeding:**
+
 ```bash
 # Seed blog posts from JSON data
 pnpm db:seed
@@ -187,7 +206,7 @@ async function main() {
   await prisma.blogPost.createMany({
     data: [
       // Your data
-    ]
+    ],
   });
 }
 
@@ -272,6 +291,7 @@ author      User     @relation(fields: [authorId], references: [id])
 #### Relationship Patterns
 
 **One-to-Many:**
+
 ```prisma
 model User {
   id    String @id @default(cuid())
@@ -286,6 +306,7 @@ model BlogPost {
 ```
 
 **Many-to-Many:**
+
 ```prisma
 model Post {
   id   String @id @default(cuid())
@@ -333,9 +354,9 @@ const post = await prisma.blogPost.create({
     content: 'Post content',
     published: true,
     author: {
-      connect: { id: userId }
-    }
-  }
+      connect: { id: userId },
+    },
+  },
 });
 
 // Read with relations
@@ -344,18 +365,18 @@ const posts = await prisma.blogPost.findMany({
   include: { author: true },
   orderBy: { createdAt: 'desc' },
   take: 10,
-  skip: 0
+  skip: 0,
 });
 
 // Update
 const updatedPost = await prisma.blogPost.update({
   where: { id: postId },
-  data: { title: 'Updated Title' }
+  data: { title: 'Updated Title' },
 });
 
 // Delete
 await prisma.blogPost.delete({
-  where: { id: postId }
+  where: { id: postId },
 });
 
 // Transactions
@@ -394,7 +415,7 @@ Create a separate test database:
 import { PrismaClient } from '@prisma/client';
 
 const testDb = new PrismaClient({
-  datasources: { db: { url: 'file:./test.db' } }
+  datasources: { db: { url: 'file:./test.db' } },
 });
 
 export { testDb };
@@ -461,17 +482,20 @@ cp prisma/backup-20240101.db prisma/dev.db
 #### Common Issues
 
 **Schema drift:**
+
 ```bash
 pnpm prisma migrate reset
 pnpm prisma migrate dev
 ```
 
 **Client generation issues:**
+
 ```bash
 pnpm prisma generate --force-version
 ```
 
 **Database lock (SQLite):**
+
 ```bash
 # Stop all Node processes
 # Delete prisma/dev.db-journal if exists
@@ -481,6 +505,7 @@ pnpm prisma db push
 #### Debugging
 
 Enable query logging:
+
 ```typescript
 const prisma = new PrismaClient({
   log: ['query', 'info', 'warn', 'error'],
@@ -536,6 +561,7 @@ When making schema changes:
 
 - Use `<script lang="ts">` for TypeScript support
 - Follow consistent component structure:
+
   ```svelte
   <script lang="ts">
     // Imports
@@ -593,7 +619,11 @@ import YourComponent from './YourComponent.svelte';
 
 describe('YourComponent', () => {
   it('should render correctly', () => {
-    render(YourComponent, { props: { /* test props */ } });
+    render(YourComponent, {
+      props: {
+        /* test props */
+      },
+    });
     expect(screen.getByText('expected text')).toBeInTheDocument();
   });
 });
@@ -637,16 +667,19 @@ test(components): add tests for Timeline component
 ### Before Submitting
 
 1. **Run the full test suite:**
+
    ```bash
    pnpm test
    ```
 
 2. **Check code formatting:**
+
    ```bash
    pnpm format:check
    ```
 
 3. **Verify type checking:**
+
    ```bash
    pnpm check
    ```
@@ -668,20 +701,24 @@ test(components): add tests for Timeline component
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## Testing
+
 - [ ] Tests pass locally
 - [ ] New tests added (if applicable)
 - [ ] Manual testing completed
 
 ## Checklist
+
 - [ ] Code follows project conventions
 - [ ] Self-review completed
 - [ ] Documentation updated (if needed)
@@ -702,6 +739,7 @@ Brief description of changes
 Clear description of the bug
 
 **Steps to Reproduce**
+
 1. Step one
 2. Step two
 3. Step three
@@ -713,6 +751,7 @@ What should happen
 What actually happens
 
 **Environment**
+
 - OS: [e.g., macOS, Windows, Linux]
 - Node.js version: [e.g., 18.17.0]
 - Browser: [e.g., Chrome, Firefox]

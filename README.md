@@ -7,6 +7,7 @@ A modern, responsive personal website built with SvelteKit featuring both portfo
 This application features:
 
 ### Portfolio Section
+
 - **Hero Section**: Professional introduction with contact CTAs
 - **About**: Background, experience, and career highlights
 - **Experience & Skills**: Work history and technical competencies
@@ -14,6 +15,7 @@ This application features:
 - **Contact**: Professional contact information and links
 
 ### Blog Section
+
 - **Blog Listing**: Paginated list of published blog posts
 - **Individual Posts**: Full blog post pages with Markdown support
 - **Admin Interface**: Content management system for creating and editing posts
@@ -144,6 +146,7 @@ scripts/
 ## Database Schema
 
 ### BlogPost
+
 - `id`: Unique identifier (cuid)
 - `title`: Post title
 - `slug`: URL-friendly identifier
@@ -153,6 +156,7 @@ scripts/
 - `createdAt`, `updatedAt`: Timestamps
 
 ### User
+
 - `id`: Unique identifier (cuid)
 - `email`: User email (unique)
 - `passwordHash`: Hashed password
@@ -162,6 +166,7 @@ scripts/
 ## Features
 
 ### Portfolio Features
+
 - Fully responsive design
 - Modern gradient backgrounds and hover effects
 - Accessible component architecture
@@ -169,6 +174,7 @@ scripts/
 - Project showcase with detailed descriptions
 
 ### Blog Features
+
 - Markdown content support with sanitization
 - Paginated blog post listing
 - SEO-friendly URL slugs
@@ -177,6 +183,7 @@ scripts/
 - Draft and publish workflow
 
 ### Technical Features
+
 - Type-safe development with TypeScript
 - Comprehensive test coverage with Vitest
 - Component-scoped CSS styling

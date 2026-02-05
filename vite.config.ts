@@ -7,6 +7,10 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{js,ts}'],
     environment: 'happy-dom',
     setupFiles: ['./src/tests/setup.ts'],
+    globalSetup: ['./src/tests/global-setup.ts'],
+    env: {
+      DATABASE_URL: 'file:./test.db',
+    },
     coverage: {
       provider: 'v8',
       reporter: ['text'],

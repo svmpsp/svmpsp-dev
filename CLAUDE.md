@@ -90,10 +90,12 @@ pnpm db:admin     # Create admin user
 ### Component Architecture
 
 Core components in `src/lib/components/`:
+
 - Button, Card, ContactLink, Section, SkillBadge, Stat
 - Timeline, TimelineItem (for experience display)
 
 Blog components in `src/lib/components/blog/`:
+
 - BlogCard (post preview), BlogPost (full post), Pagination
 
 ### Route Structure
