@@ -64,7 +64,7 @@
           alt="GitHub"
         />
         <ContactLink
-          href="mailto:contact@sivampasupathipillai.com"
+          href="mailto:sivam.pasupathipillai@gmail.com"
           title="Email"
           icon="/icons/email.svg"
           alt="Email"
@@ -202,7 +202,7 @@
           alt="GitHub"
         />
         <ContactLink
-          href="mailto:me@svmpsp.dev"
+          href="mailto:sivam.pasupathipillai@gmail.com"
           title="Email"
           icon="/icons/email.svg"
           alt="Email"
