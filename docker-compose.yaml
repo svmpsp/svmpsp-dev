@@ -1,8 +1,17 @@
 services:
   app:
+    container_name: svmpsp-dev
+    image: svmpsp-dev
     build: .
-    ports:
-      - '3000:10000'
+    networks:
+      - infra-network
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.svmpsp-dev.rule=Host(`svmpsp.dev`) && PathPrefix(`/`)'
+      - 'traefik.http.routers.svmpsp-dev.priority=1'
+      - 'traefik.http.routers.svmpsp-dev.entrypoints=websecure'
+      - 'traefik.http.routers.svmpsp-dev.tls.certresolver=letsencrypt'
+      - 'traefik.http.services.svmpsp-dev.loadbalancer.server.port=10000'
     environment:
       - DATABASE_URL=file:/data/db.sqlite
     volumes:
@@ -10,3 +19,7 @@ services:
 
 volumes:
   db-data:
+
+networks:
+  infra-network:
+    external: true
