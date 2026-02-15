@@ -6,7 +6,7 @@
   let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
   // Check if we have user data (not on login page)
-  const hasUser = data.user;
+  let hasUser = $derived(data.user);
 
   async function logout() {
     await fetch('/api/auth/logout', { method: 'POST' });

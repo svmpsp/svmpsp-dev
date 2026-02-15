@@ -366,10 +366,6 @@
     align-items: center;
   }
 
-  .skill-placeholder {
-    height: 1px;
-  }
-
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
