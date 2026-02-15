@@ -155,6 +155,13 @@
   <div class="projects-grid">
     <Card
       variant="project"
+      title="Bloggen"
+      description="An AI-powered static site generator that creates professional blogs from a simple topic. Supports multiple LLM providers (Ollama, OpenAI, Anthropic), interactive site map review, and multiple themes."
+      tags={['TypeScript', 'SvelteKit', 'AI/LLM', 'CLI']}
+      href="https://bloggen.svmpsp.dev/"
+    />
+    <Card
+      variant="project"
       title="Scalable Anomaly Detection"
       description="PhD research on scalable anomaly detection algorithms for large datasets, focusing on distributed computing approaches and real-time processing."
       tags={['Machine Learning', 'Big Data', 'Distributed Systems']}
