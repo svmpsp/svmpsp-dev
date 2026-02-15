@@ -45,7 +45,7 @@
         <img src={profileImg} alt="Sivam Pasupathipillai" class="profile-img" />
       </div>
       <h1>Sivam Pasupathipillai</h1>
-      <p class="hero-subtitle">Senior AI Specialist</p>
+      <p class="hero-subtitle">AI Specialist</p>
       <p class="hero-description">
         🤖 Turning hype into products. PhD in ICT from University of Trento. Learning enthusiast 📚
         Guitar player 🎸

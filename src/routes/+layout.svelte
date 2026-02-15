@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Sivam Pasupathipillai - Senior AI Engineer & Data Scientist</title>
+  <title>svmpsp - Sivam Pasupathipillai's personal website</title>
   <link rel="icon" href={favicon} />
 </svelte:head>
 
