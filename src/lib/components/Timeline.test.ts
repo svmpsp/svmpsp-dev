@@ -31,7 +31,7 @@ test('Timeline handles active items', () => {
     { year: '2022', title: 'Developer', location: 'Start Corp', active: false },
   ];
 
-  const { container } = render(Timeline, { props: { items } });
+  render(Timeline, { props: { items } });
 
   // Check that timeline items are rendered (active state is handled by TimelineItem component)
   expect(screen.getByText('2023')).toBeInTheDocument();

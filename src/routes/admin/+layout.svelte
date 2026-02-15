@@ -1,9 +1,9 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import Button from '$lib/components/Button.svelte';
   import type { LayoutData } from './$types';
+  import type { Snippet } from 'svelte';
 
-  let { data, children }: { data: LayoutData; children: any } = $props();
+  let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
   // Check if we have user data (not on login page)
   const hasUser = data.user;

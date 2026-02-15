@@ -1,6 +1,5 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import Button from '$lib/components/Button.svelte';
 
   let email = '';
   let password = '';
@@ -31,7 +30,7 @@
         const data = await response.json();
         error = data.error || 'Login failed';
       }
-    } catch (e) {
+    } catch (_e) {
       error = 'An error occurred during login';
     } finally {
       loading = false;

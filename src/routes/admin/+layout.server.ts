@@ -32,7 +32,7 @@ export const load: LayoutServerLoad = async ({ cookies, url }) => {
     return {
       user: sessionData,
     };
-  } catch (error) {
+  } catch (_error) {
     // Clear invalid session cookie
     cookies.delete('session', { path: '/' });
     throw redirect(302, '/admin/login');

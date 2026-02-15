@@ -5,7 +5,6 @@
   let title = '';
   let content = '';
   let excerpt = '';
-  let published = false;
   let loading = false;
   let error = '';
 
@@ -33,13 +32,13 @@
       });
 
       if (response.ok) {
-        const post = await response.json();
+        await response.json();
         goto('/admin/posts');
       } else {
         const data = await response.json();
         error = data.error || 'Failed to create post';
       }
-    } catch (e) {
+    } catch (_e) {
       error = 'An error occurred while creating the post';
     } finally {
       loading = false;

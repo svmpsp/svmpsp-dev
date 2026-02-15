@@ -36,13 +36,13 @@
       });
 
       if (response.ok) {
-        const updatedPost = await response.json();
+        await response.json();
         goto('/admin/posts');
       } else {
         const errorData = await response.json();
         error = errorData.error || 'Failed to update post';
       }
-    } catch (e) {
+    } catch (_e) {
       error = 'An error occurred while updating the post';
     } finally {
       loading = false;

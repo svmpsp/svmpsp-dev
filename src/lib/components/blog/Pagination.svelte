@@ -30,7 +30,7 @@
     return pages;
   }
 
-  $: pageNumbers = getPageNumbers();
+  const pageNumbers = getPageNumbers();
 </script>
 
 {#if pagination.totalPages > 1}
@@ -45,7 +45,7 @@
       {/if}
 
       <div class="pagination-numbers">
-        {#each pageNumbers as pageNum}
+        {#each pageNumbers as pageNum (pageNum)}
           {#if pageNum === pagination.page}
             <span class="pagination-current" aria-current="page">
               {pageNum}

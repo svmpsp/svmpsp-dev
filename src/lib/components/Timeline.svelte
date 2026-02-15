@@ -13,7 +13,7 @@
 
 <div class="timeline-container">
   <div class="timeline">
-    {#each items as item}
+    {#each items as item (item.year)}
       <TimelineItem
         year={item.year}
         title={item.title}

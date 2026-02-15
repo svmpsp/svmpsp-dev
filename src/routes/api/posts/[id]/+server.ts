@@ -27,7 +27,7 @@ export const PUT: RequestHandler = async ({ request, params, cookies }) => {
     const data = await request.json();
     const { title, content, excerpt, published } = data;
 
-    const updateData: any = {};
+    const updateData: Record<string, unknown> = {};
     if (title !== undefined) updateData.title = title;
     if (content !== undefined) updateData.content = content;
     if (excerpt !== undefined) updateData.excerpt = excerpt;

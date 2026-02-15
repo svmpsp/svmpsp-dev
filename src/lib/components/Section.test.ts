@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import { test, expect } from 'vitest';
 import Section from './Section.svelte';
 

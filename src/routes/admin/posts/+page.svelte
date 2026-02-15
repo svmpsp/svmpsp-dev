@@ -31,10 +31,10 @@
         // Reload the page to refresh the posts list
         window.location.reload();
       } else {
-        const error = await response.json();
-        message = error.error || 'Failed to delete post';
+        const errorData = await response.json();
+        message = errorData.error || 'Failed to delete post';
       }
-    } catch (error) {
+    } catch (_error) {
       message = 'An error occurred while deleting the post';
     } finally {
       loading = false;
@@ -59,10 +59,10 @@
         // Reload the page to refresh the posts list
         window.location.reload();
       } else {
-        const error = await response.json();
-        message = error.error || 'Failed to update post';
+        const errorData = await response.json();
+        message = errorData.error || 'Failed to update post';
       }
-    } catch (error) {
+    } catch (_error) {
       message = 'An error occurred while updating the post';
     } finally {
       loading = false;
@@ -88,7 +88,7 @@
 
   {#if data.posts.length > 0}
     <div class="posts-list">
-      {#each data.posts as post}
+      {#each data.posts as post (post.id)}
         <div class="post-item">
           <div class="post-info">
             <h3>

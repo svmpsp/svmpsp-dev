@@ -10,13 +10,18 @@
     "prepare": "(svelte-kit sync || echo '') && (husky || echo '')",
     "typecheck": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "typecheck:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write .",
+    "lint": "eslint src",
+    "format": "prettier --write -l .",
     "format:check": "prettier --check .",
     "test": "pnpm vitest run --coverage",
     "db:seed": "pnpm tsx scripts/seed-blog.ts",
     "db:admin": "pnpm tsx scripts/create-admin.ts"
   },
+  "packageManager": "pnpm@10.26.1",
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-svelte": "^3.11.1",
     "@sveltejs/adapter-auto": "^6.1.1",
     "@sveltejs/adapter-node": "^5.5.2",
     "@sveltejs/kit": "^2.50.2",
@@ -34,6 +39,7 @@
     "svelte-check": "^4.3.6",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
     "vite": "^7.3.1",
     "vitest": "^3.2.4"
   },

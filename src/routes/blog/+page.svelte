@@ -28,7 +28,7 @@
 <Section id="blog-posts" background="light">
   {#if data.posts.length > 0}
     <div class="blog-posts-grid">
-      {#each data.posts as post}
+      {#each data.posts as post (post.slug)}
         <BlogCard {post} />
       {/each}
     </div>

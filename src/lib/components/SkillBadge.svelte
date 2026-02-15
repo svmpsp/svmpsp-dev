@@ -10,7 +10,7 @@
 <div class="skill-badge">
   <div class="skill-name">{skill}</div>
   <div class="proficiency-squares">
-    {#each Array(10) as _, i}
+    {#each Array(10) as _item, i (i)}
       <div class="square square-{variant}" class:filled={i < clampedProficiency}></div>
     {/each}
   </div>

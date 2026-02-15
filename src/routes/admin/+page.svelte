@@ -14,7 +14,9 @@
       if (response.ok) {
         const data = await response.json();
         stats.totalPosts = data.pagination.total;
-        stats.draftPosts = data.posts.filter((post: any) => !post.published).length;
+        stats.draftPosts = data.posts.filter(
+          (post: { published: boolean }) => !post.published
+        ).length;
         stats.publishedPosts = stats.totalPosts - stats.draftPosts;
       }
     } catch (error) {

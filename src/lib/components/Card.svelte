@@ -16,7 +16,7 @@
     <p class="description">{description}</p>
     {#if tags.length > 0}
       <div class="tags">
-        {#each tags as tag}
+        {#each tags as tag (tag)}
           <span class="tag">{tag}</span>
         {/each}
       </div>
@@ -34,7 +34,7 @@
     <slot />
     {#if tags.length > 0}
       <div class="tags">
-        {#each tags as tag}
+        {#each tags as tag (tag)}
           <span class="tag">{tag}</span>
         {/each}
       </div>
