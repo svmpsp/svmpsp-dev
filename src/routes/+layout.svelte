@@ -1,12 +1,10 @@
 <script lang="ts">
-  import favicon from '$lib/assets/favicon.svg';
-
   let { children } = $props();
 </script>
 
 <svelte:head>
   <title>svmpsp - Sivam Pasupathipillai's personal website</title>
-  <link rel="icon" href={favicon} />
+  <link rel="icon" href="/favicon.svg" />
 </svelte:head>
 
 <nav>
@@ -19,6 +17,7 @@
       <a href="/#experience">Experience</a>
       <a href="/#projects">Projects</a>
       <a href="/blog">Blog</a>
+      <a href="/resume.pdf" download>Resume</a>
       <a href="/#contact">Contact</a>
     </div>
   </div>
