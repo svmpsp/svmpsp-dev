@@ -12,7 +12,7 @@
 <nav>
   <div class="nav-container">
     <div class="nav-brand">
-      <a href="/">Personal blog</a>
+      <a href="/">Home</a>
     </div>
     <div class="nav-links">
       <a href="/#about">About</a>
