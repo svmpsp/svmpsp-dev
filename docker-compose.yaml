@@ -16,6 +16,7 @@ services:
       - DATABASE_URL=file:/data/db.sqlite
     volumes:
       - db-data:/data
+    restart: unless-stopped
 
 volumes:
   db-data:
