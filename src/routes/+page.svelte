@@ -105,7 +105,7 @@
       </p>
     </div>
     <div class="about-stats">
-      <Stat value="5+" label="Years of Experience" />
+      <Stat value="7+" label="Years of Experience" />
       <Stat value="PhD" label="Information Technology" />
       <Stat value="AI/ML" label="Specialization" />
     </div>
