@@ -54,13 +54,18 @@ API endpoints (`src/routes/api/`):
 
 ## Shared library (`src/lib/`)
 
-- `components/` — reusable UI: `Button`, `Card`, `ContactLink`, `Section`,
-  `SkillBadge`, `Stat`, `Timeline`, `TimelineItem`
+- `components/` — reusable UI: `Button`, `Card`, `ContactLink`, `Section`, `Stat`
+- `components/character/` — the "character sheet" Experience & Skills section:
+  `CharacterSheet` (avatar + Level/Class header + Stats/Quests tabs), `Avatar`
+  (swappable 2D-illustration renderer), `StatsPanel`, `QuestsPanel`, and
+  `character.ts` (declarative identity/attributes/skills/quests data + level
+  computation). See [ADR-0007](adr/0007-character-sheet-avatar-rendering.md).
 - `components/blog/` — `BlogCard`, `BlogPost`, `Pagination`
 - `server/database.ts` — Prisma client + data access (server-only)
 - `server/auth.ts` — password hashing / session auth (bcryptjs)
 - `types/` — shared TypeScript types
-- `assets/` — imported assets
+- `assets/` — imported assets (profile photo, favicon, `wizard-placeholder.svg`
+  for the character-sheet avatar)
 
 ## Data model (`prisma/schema.prisma`)
 
