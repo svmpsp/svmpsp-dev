@@ -1,5 +1,5 @@
 <script lang="ts">
-  import placeholder from '$lib/assets/wizard-placeholder.svg';
+  import placeholder from '$lib/assets/wizard_low.png';
 
   // Swappable renderer: v1 shows a lazy-loaded 2D illustration. Keep this prop
   // interface stable (src/alt) so a sprite-sheet or three.js renderer can take
@@ -53,7 +53,7 @@
   .avatar-aura {
     position: absolute;
     inset: 8% 12% 4%;
-    background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.35), transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(251, 191, 36, 0.4), transparent 70%);
     filter: blur(12px);
     z-index: 0;
   }

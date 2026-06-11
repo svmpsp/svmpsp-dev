@@ -97,7 +97,7 @@
     align-items: center;
     gap: 1.25rem;
     padding: 1.5rem;
-    background: linear-gradient(160deg, #0f766e 0%, #134e4a 100%);
+    background: linear-gradient(160deg, #b45309 0%, #451a03 100%);
     border-radius: 12px;
     color: white;
   }
@@ -163,12 +163,12 @@
   }
 
   .tab:hover {
-    color: #0f766e;
+    color: #b45309;
   }
 
   .tab.selected {
-    color: #0f766e;
-    border-bottom-color: #0f766e;
+    color: #b45309;
+    border-bottom-color: #b45309;
   }
 
   .panel {
