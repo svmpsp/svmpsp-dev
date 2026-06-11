@@ -8,6 +8,8 @@
   import Timeline from '$lib/components/Timeline.svelte';
   import profileImg from '$lib/assets/profile.jpg';
 
+  const yearsOfExperience = new Date().getFullYear() - 2019;
+
   const timelineItems = [
     {
       year: 'Today',
@@ -105,7 +107,7 @@
       </p>
     </div>
     <div class="about-stats">
-      <Stat value="7+" label="Years of Experience" />
+      <Stat value="{yearsOfExperience}+" label="Years of Experience" />
       <Stat value="PhD" label="Information Technology" />
       <Stat value="AI/ML" label="Specialization" />
     </div>
