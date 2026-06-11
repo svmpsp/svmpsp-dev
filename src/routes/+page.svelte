@@ -1,43 +1,13 @@
 <script>
   import Section from '$lib/components/Section.svelte';
   import Card from '$lib/components/Card.svelte';
-  import SkillBadge from '$lib/components/SkillBadge.svelte';
   import ContactLink from '$lib/components/ContactLink.svelte';
   import Stat from '$lib/components/Stat.svelte';
   import Button from '$lib/components/Button.svelte';
-  import Timeline from '$lib/components/Timeline.svelte';
+  import CharacterSheet from '$lib/components/character/CharacterSheet.svelte';
   import profileImg from '$lib/assets/profile.jpg';
 
   const yearsOfExperience = new Date().getFullYear() - 2019;
-
-  const timelineItems = [
-    {
-      year: 'Today',
-      title: 'Senior Data Scientist',
-      location: 'RedCarbon.ai',
-      active: true,
-    },
-    {
-      year: '2019-23',
-      title: 'Data Scientist',
-      location: 'WithSecure Inc.',
-    },
-    {
-      year: '2016-20',
-      title: 'PhD Candidate',
-      location: 'University of Trento',
-    },
-    {
-      year: '2015-16',
-      title: 'Software Consultant',
-      location: 'Mind-Mercatis Srl',
-    },
-    {
-      year: '2012-14',
-      title: 'MSc Computer Engineering',
-      location: 'Politecnico di Milano & BarcelonaTech',
-    },
-  ];
 </script>
 
 <section class="hero">
@@ -116,40 +86,7 @@
 
 <Section id="experience">
   <h2>Experience & Skills</h2>
-  <Timeline items={timelineItems} />
-
-  <div class="skills">
-    <h3>Technical Skills</h3>
-    <div class="skills-table">
-      <div class="skills-headers">
-        <h4>Programming Languages</h4>
-        <h4>AI/ML & Data</h4>
-        <h4>Technologies</h4>
-      </div>
-      <div class="skills-rows">
-        <div class="skills-row">
-          <SkillBadge skill="Python" proficiency={9} />
-          <SkillBadge skill="Machine Learning" proficiency={9} />
-          <SkillBadge skill="Cloud Computing" proficiency={7} />
-        </div>
-        <div class="skills-row">
-          <SkillBadge skill="Typescript" proficiency={8} />
-          <SkillBadge skill="Deep Learning" proficiency={8} />
-          <SkillBadge skill="Distributed Computing" proficiency={8} />
-        </div>
-        <div class="skills-row">
-          <SkillBadge skill="Java" proficiency={7} />
-          <SkillBadge skill="Big Data Management" proficiency={7} />
-          <SkillBadge skill="Docker | Kubernetes" proficiency={8} />
-        </div>
-        <div class="skills-row">
-          <SkillBadge skill="C++" proficiency={6} />
-          <SkillBadge skill="ML Ops" proficiency={7} />
-          <SkillBadge skill="Android Development" proficiency={4} />
-        </div>
-      </div>
-    </div>
-  </div>
+  <CharacterSheet />
 </Section>
 
 <Section id="projects" background="light">
@@ -331,50 +268,6 @@
     gap: 2rem;
   }
 
-  .skills h3 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: #1f2937;
-    text-align: center;
-  }
-
-  .skills-table {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  .skills-headers {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    text-align: left;
-  }
-
-  .skills-headers h4 {
-    font-size: 1.2rem;
-    color: #0f766e;
-    margin: 0;
-    font-weight: 600;
-  }
-
-  .skills-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .skills-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -504,19 +397,6 @@
       height: 42px;
     }
 
-    .skills-table {
-      max-width: 100%;
-      padding: 1.5rem;
-    }
-
-    .skills-headers {
-      gap: 1rem;
-    }
-
-    .skills-row {
-      gap: 1rem;
-    }
-
     .projects-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
@@ -565,22 +445,6 @@
     .contact-links :global(.contact-link img) {
       width: 36px;
       height: 36px;
-    }
-
-    .skills-headers h4 {
-      font-size: 1rem;
-    }
-
-    .skills-headers {
-      margin-bottom: 1rem;
-    }
-
-    .skills-table {
-      padding: 1rem;
-    }
-
-    .skills-row {
-      gap: 0.5rem;
     }
   }
 </style>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Placeholder avatar for the character sheet (Avatar.svelte).
+  Replace src/lib/assets/wizard-placeholder.svg (or pass a `src` to <Avatar />)
+  with a GenAI-generated illustration once it is ready. Suggested prompt:
+  "Cute cartoon wizard portrait, friendly man with dark brown skin, short black
+   hair and beard, round glasses, deep blue pointed wizard hat with stars,
+   teal robe, flat vector style, centered, transparent background."
+-->
+<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wizard avatar placeholder">
+  <!-- robe -->
+  <path d="M55 220 Q55 165 100 155 Q145 165 145 220 Z" fill="#0f766e" />
+  <path d="M100 155 L88 220 L112 220 Z" fill="#0b5a54" />
+  <!-- neck -->
+  <rect x="90" y="138" width="20" height="20" rx="6" fill="#7a4a28" />
+  <!-- head -->
+  <circle cx="100" cy="110" r="34" fill="#8a5530" />
+  <!-- beard -->
+  <path d="M70 112 Q100 165 130 112 Q120 140 100 142 Q80 140 70 112 Z" fill="#2b2b2b" />
+  <!-- glasses -->
+  <g fill="none" stroke="#1f2937" stroke-width="3">
+    <circle cx="86" cy="108" r="11" />
+    <circle cx="114" cy="108" r="11" />
+    <line x1="97" y1="108" x2="103" y2="108" />
+  </g>
+  <!-- eyes -->
+  <circle cx="86" cy="108" r="3" fill="#1f2937" class="wiz-eye" />
+  <circle cx="114" cy="108" r="3" fill="#1f2937" class="wiz-eye" />
+  <!-- smile -->
+  <path d="M88 124 Q100 132 112 124" fill="none" stroke="#3a2415" stroke-width="2.5" stroke-linecap="round" />
+  <!-- wizard hat -->
+  <path d="M62 86 Q100 96 138 86 L118 78 Q100 18 82 78 Z" fill="#1e3a8a" />
+  <path d="M58 86 Q100 100 142 86 L142 92 Q100 104 58 92 Z" fill="#172e6e" />
+  <!-- hat stars -->
+  <g fill="#fcd34d">
+    <circle cx="100" cy="55" r="2.5" />
+    <circle cx="92" cy="70" r="2" />
+    <circle cx="110" cy="72" r="2" />
+  </g>
+</svg>

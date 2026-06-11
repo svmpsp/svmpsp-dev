@@ -41,6 +41,7 @@ old one `Superseded` (linking forward). Do not rewrite an accepted ADR in place.
 | [0004](0004-sveltekit-with-node-adapter.md)          | SvelteKit with the Node adapter  | Accepted |
 | [0005](0005-prisma-sqlite-datastore.md)              | Prisma + SQLite datastore        | Accepted |
 | [0006](0006-markdown-rendering-with-sanitization.md) | Markdown content w/ sanitization | Accepted |
+| [0007](0007-character-sheet-avatar-rendering.md)     | Character-sheet avatar rendering | Accepted |
 
 ## Adding a new ADR
 
