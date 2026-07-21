@@ -12,6 +12,9 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Screenshot output (pnpm screenshot)
+/screenshot.png
+
 # Env
 .env
 .env.*

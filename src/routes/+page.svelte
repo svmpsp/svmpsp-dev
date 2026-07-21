@@ -55,9 +55,10 @@
   <div class="about-content">
     <div class="about-text">
       <p>
-        I work on turning AI research into practical solutions. Over the past 5+ years, I've focused
-        on bridging the gap between academic research and real-world applications, helping deploy
-        machine learning systems that handle large-scale data processing in production environments.
+        I work on turning AI research into practical solutions. Over the past {yearsOfExperience}+
+        years, I've focused on bridging the gap between academic research and real-world
+        applications, helping deploy machine learning systems that handle large-scale data
+        processing in production environments.
       </p>
       <p>
         My PhD in Information Technology from University of Trento explored scalable anomaly

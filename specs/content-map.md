@@ -15,18 +15,18 @@ containerized and deployed over SSH to a self-hosted server.
 
 ## Top-level layout
 
-| Path                 | Purpose                                                          |
-| -------------------- | ---------------------------------------------------------------- |
-| `src/`               | Application source (routes, components, server libs, tests)      |
-| `src/routes/`        | SvelteKit file-based routes (pages, layouts, API endpoints)      |
-| `src/lib/`           | Shared library code: components, server utilities, types, assets |
-| `src/tests/`         | Test setup / shared test helpers                                 |
-| `prisma/`            | Prisma schema, migrations, and the dev SQLite database           |
-| `scripts/`           | One-off Node/TS scripts (seed blog, create admin) + seed data    |
-| `static/`            | Static assets served as-is (favicon, resume, images)             |
-| `build/`             | Production build output from `adapter-node` (generated)          |
-| `.github/workflows/` | CI/CD pipeline (`ci.yaml`)                                       |
-| `specs/`             | SDD artifacts: this content map + Architecture Decision Records  |
+| Path                 | Purpose                                                           |
+| -------------------- | ----------------------------------------------------------------- |
+| `src/`               | Application source (routes, components, server libs, tests)       |
+| `src/routes/`        | SvelteKit file-based routes (pages, layouts, API endpoints)       |
+| `src/lib/`           | Shared library code: components, server utilities, types, assets  |
+| `src/tests/`         | Test setup / shared test helpers                                  |
+| `prisma/`            | Prisma schema, migrations, and the dev SQLite database            |
+| `scripts/`           | Node/TS scripts (seed blog, create admin, screenshot) + seed data |
+| `static/`            | Static assets served as-is (favicon, resume, images)              |
+| `build/`             | Production build output from `adapter-node` (generated)           |
+| `.github/workflows/` | CI/CD pipeline (`ci.yaml`)                                        |
+| `specs/`             | SDD artifacts: this content map + Architecture Decision Records   |
 
 ## Routes (`src/routes/`)
 
@@ -112,9 +112,16 @@ pnpm lint           # eslint src
 pnpm format         # prettier --write
 pnpm format:check   # prettier --check
 pnpm test           # vitest run with coverage
+pnpm screenshot     # full-page screenshot of a running app (Playwright/Chromium)
 pnpm db:seed        # seed blog posts from scripts/data/blog-posts.json
 pnpm db:admin       # create an admin user
 ```
+
+`pnpm screenshot [url] [outfile]` (`scripts/screenshot.mjs`, defaults to
+`http://localhost:5173` → `screenshot.png`) captures the running dev server for
+visual checks. Start the dev server first (`pnpm dev`). Playwright is a dev
+dependency; run `pnpm exec playwright install chromium` once after a fresh
+install to fetch the browser.
 
 ## Deeper documentation
 
