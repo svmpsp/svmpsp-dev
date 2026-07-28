@@ -88,4 +88,6 @@ jobs:
           script: |
             cd ~/apps/svmpsp-dev
             git pull origin main
-            docker compose up --build --force-recreate --remove-orphans -d
+            # -f pins the production stack: a bare `docker compose` would also merge any
+            # docker-compose.override.yaml present on the server.
+            docker compose -f docker-compose.yaml up --build --force-recreate --remove-orphans -d
