@@ -85,46 +85,60 @@
   </div>
 </Section>
 
-<Section id="experience">
-  <h2>Experience & Skills</h2>
-  <CharacterSheet />
-</Section>
-
-<Section id="projects" background="light">
+<Section id="projects">
   <h2>Projects & Research</h2>
   <div class="projects-grid">
     <Card
       variant="project"
       title="Bloggen"
-      description="An AI-powered static site generator that creates professional blogs from a simple topic. Supports multiple LLM providers (Ollama, OpenAI, Anthropic), interactive site map review, and multiple themes."
+      description="Describe a topic, get a finished blog. Bloggen turns a one-line idea into a polished, ready-to-publish site in minutes — no templates to wrangle, no blank page to stare at."
       tags={['TypeScript', 'SvelteKit', 'AI/LLM', 'CLI']}
       href="https://bloggen.svmpsp.dev/"
     />
     <Card
       variant="project"
+      title="The Flow"
+      description="The AI news firehose, tamed. Every night it sweeps the research and industry feeds so you can skim what actually matters — search by meaning instead of keywords, and follow any story to the ones like it."
+      tags={['SvelteKit', 'PostgreSQL', 'pgvector', 'Embeddings']}
+      href="https://theflow.svmpsp.dev/"
+    />
+    <Card
+      variant="project"
+      title="Pirate Bay"
+      description="See who else is sailing these waters, right now. Every visitor is christened with a pirate name and a flag, joins the crew on screen for 15 minutes, then fades into the deep."
+      tags={['SvelteKit', 'Redis', 'SSE', 'GeoIP']}
+      href="https://pirate-bay.svmpsp.dev/"
+    />
+    <Card
+      variant="project"
       title="Scalable Anomaly Detection"
-      description="PhD research on scalable anomaly detection algorithms for large datasets, focusing on distributed computing approaches and real-time processing."
+      description="Finding the needle in haystacks too big to search. PhD research on catching the rare, the broken, and the suspicious in data at scale — as it happens, not hours later."
       tags={['Machine Learning', 'Big Data', 'Distributed Systems']}
     />
     <Card
       variant="project"
       title="Carcassone Game Implementation"
-      description="Digital version of the popular turn-based board game featuring both local and remote gameplay. Implemented using Java with RMI and custom communication protocols."
+      description="The tile-laying classic, rebuilt for the screen. Claim your cities and roads against friends around the table — or halfway across the world."
       tags={['Java', 'RMI', 'Game Development']}
     />
     <Card
       variant="project"
       title="Industrial Durometer Controller"
-      description="Android application for controlling industrial durometer equipment via tablet over USB connection. Successfully developed and tested prototype in one month."
+      description="A factory-floor testing rig, driven from a tablet. Put an entire industrial hardness tester at the operator's fingertips — designed, built, and proven on real equipment in a single month."
       tags={['Android', 'USB Communication', 'Industrial IoT']}
     />
     <Card
       variant="project"
       title="Kernel Programming Project"
-      description="Academic project involving programming various kernel features including interrupt management, process management, and I/O management with a comprehensive testing approach."
+      description="Under the hood of an operating system. A ground-up build of the machinery every other program takes for granted — the part of the stack most developers never get to touch."
       tags={['Systems Programming', 'Kernel Development', 'C/C++']}
     />
   </div>
+</Section>
+
+<Section id="experience" background="light">
+  <h2>Experience & Skills</h2>
+  <CharacterSheet />
 </Section>
 
 <Section id="contact" background="dark">
